@@ -1,0 +1,24 @@
+namespace Index5.Application.DTOs;
+
+public class LoginRequest
+{
+    public string Username { get; set; } = string.Empty;
+    public string Password { get; set; } = string.Empty;
+}
+
+public class LoginResponse
+{
+    public string Token { get; set; } = string.Empty;
+    public string Username { get; set; } = string.Empty;
+    public string Role { get; set; } = string.Empty;
+    public int? ClienteId { get; set; }
+}
+
+public class RegistroRequest
+{
+    public string Username { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
+    public string Password { get; set; } = string.Empty;
+    public string Role { get; set; } = "Cliente"; // Padrão é cliente
+    public int? ClienteId { get; set; }
+}

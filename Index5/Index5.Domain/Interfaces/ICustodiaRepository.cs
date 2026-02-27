@@ -13,4 +13,7 @@ public interface ICustodiaRepository
     Task<CustodiaMaster?> GetMasterByTickerAsync(string ticker);
     Task AddMasterAsync(CustodiaMaster custodia);
     void UpdateMaster(CustodiaMaster custodia);
+
+    Task AddHistoricoAsync(OperacaoHistorico operacao);
+    Task<List<OperacaoHistorico>> GetHistoricoByClienteIdAsync(int clienteId);
 }

@@ -1,6 +1,7 @@
 using Index5.Application.DTOs;
 using Index5.Domain.Entities;
 using Index5.Domain.Interfaces;
+using Microsoft.Extensions.Configuration;
 
 namespace Index5.Application.Services;
 
@@ -8,11 +9,22 @@ public class CestaService
 {
     private readonly ICestaRepository _cestaRepo;
     private readonly IUnitOfWork _unitOfWork;
+    private readonly RebalanceamentoService _rebalanceamentoService;
+    private readonly ICotahistParser _cotahistParser;
+    private readonly string _cotacoesFolder;
 
-    public CestaService(ICestaRepository cestaRepo, IUnitOfWork unitOfWork)
+    public CestaService(
+        ICestaRepository cestaRepo, 
+        IUnitOfWork unitOfWork, 
+        RebalanceamentoService rebalanceamentoService,
+        ICotahistParser cotahistParser,
+        Microsoft.Extensions.Configuration.IConfiguration config)
     {
         _cestaRepo = cestaRepo;
         _unitOfWork = unitOfWork;
+        _rebalanceamentoService = rebalanceamentoService;
+        _cotahistParser = cotahistParser;
+        _cotacoesFolder = config["Cotacoes:Folder"] ?? "cotacoes";
     }
 
     public async Task<CestaResponse> CadastrarAsync(CestaRequest request)
@@ -25,29 +37,48 @@ public class CestaService
             throw new InvalidOperationException("PERCENTUAIS_INVALIDOS");
 
         var cestaAtual = await _cestaRepo.GetActiveAsync();
-        bool hasRebalancing = false;
+        RebalanceamentoSummary? summary = null;
+        CestaAnteriorDto? anteriorDto = null;
 
         if (cestaAtual != null)
         {
+            anteriorDto = new CestaAnteriorDto
+            {
+                CestaId = cestaAtual.Id,
+                Nome = cestaAtual.Nome,
+                DataDesativacao = DateTime.UtcNow
+            };
+
             cestaAtual.Ativa = false;
-            cestaAtual.DataDesativacao = DateTime.UtcNow;
+            cestaAtual.DataDesativacao = anteriorDto.DataDesativacao;
             _cestaRepo.Update(cestaAtual);
-            hasRebalancing = true;
         }
+
+        var novaCestaEntities = request.Itens.Select(i => new ItemCesta
+        {
+            Ticker = i.Ticker,
+            Percentual = i.Percentual
+        }).ToList();
 
         var novaCesta = new CestaRecomendacao
         {
             Nome = request.Nome,
             Ativa = true,
             DataCriacao = DateTime.UtcNow,
-            Itens = request.Itens.Select(i => new ItemCesta
-            {
-                Ticker = i.Ticker,
-                Percentual = i.Percentual
-            }).ToList()
+            Itens = novaCestaEntities
         };
 
         await _cestaRepo.AddAsync(novaCesta);
+        
+        // Trigger Rebalancing if there was a previous basket
+        if (cestaAtual != null)
+        {
+            summary = await _rebalanceamentoService.RebalancearTodosClientesAsync(
+                novaCesta, 
+                cestaAtual, 
+                ticker => _cotahistParser.GetClosingQuote(_cotacoesFolder, ticker)?.PrecoFechamento ?? 0);
+        }
+
         await _unitOfWork.SaveChangesAsync();
 
         return new CestaResponse
@@ -61,9 +92,12 @@ public class CestaService
                 Ticker = i.Ticker,
                 Percentual = i.Percentual
             }).ToList(),
-            RebalanceamentoDisparado = hasRebalancing,
-            Mensagem = hasRebalancing
-                ? "Cesta atualizada. Rebalanceamento disparado."
+            CestaAnteriorDesativada = anteriorDto,
+            RebalanceamentoDisparado = summary != null,
+            AtivosRemovidos = summary?.AtivosRemovidos,
+            AtivosAdicionados = summary?.AtivosAdicionados,
+            Mensagem = summary != null
+                ? $"Cesta atualizada. Rebalanceamento disparado para {summary.ClientesAfetados} clientes ativos."
                 : "Primeira cesta cadastrada com sucesso."
         };
     }

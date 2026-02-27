@@ -1,6 +1,6 @@
 using System.Text.Json;
 using Confluent.Kafka;
-using Index5.Application.Interfaces;
+using Index5.Domain.Interfaces;
 
 namespace Index5.Infrastructure.Kafka;
 

@@ -10,6 +10,7 @@ public class ItemCestaDto
 {
     public string Ticker { get; set; } = string.Empty;
     public decimal Percentual { get; set; }
+    public decimal? CotacaoAtual { get; set; }
 }
 
 public class CestaResponse
@@ -19,8 +20,20 @@ public class CestaResponse
     public bool Ativa { get; set; }
     public DateTime DataCriacao { get; set; }
     public List<ItemCestaDto> Itens { get; set; } = new();
+
+    // Rebalancing details
+    public CestaAnteriorDto? CestaAnteriorDesativada { get; set; }
     public bool RebalanceamentoDisparado { get; set; }
+    public List<string>? AtivosRemovidos { get; set; }
+    public List<string>? AtivosAdicionados { get; set; }
     public string Mensagem { get; set; } = string.Empty;
+}
+
+public class CestaAnteriorDto
+{
+    public int CestaId { get; set; }
+    public string Nome { get; set; } = string.Empty;
+    public DateTime DataDesativacao { get; set; }
 }
 
 public class HistoricoCestasResponse

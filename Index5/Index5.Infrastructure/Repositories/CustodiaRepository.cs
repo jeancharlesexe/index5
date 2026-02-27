@@ -59,4 +59,17 @@ public class CustodiaRepository : ICustodiaRepository
     {
         _context.CustodiaMaster.Update(custodia);
     }
+
+    public async Task AddHistoricoAsync(OperacaoHistorico operacao)
+    {
+        await _context.HistoricoOperacoes.AddAsync(operacao);
+    }
+
+    public async Task<List<OperacaoHistorico>> GetHistoricoByClienteIdAsync(int clienteId)
+    {
+        return await _context.HistoricoOperacoes
+            .Where(h => h.ClienteId == clienteId)
+            .OrderBy(h => h.DataOperacao)
+            .ToListAsync();
+    }
 }

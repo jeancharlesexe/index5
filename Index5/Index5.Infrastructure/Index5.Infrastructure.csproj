@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Index5.Application\Index5.Application.csproj" />
     <ProjectReference Include="..\Index5.Domain\Index5.Domain.csproj" />
   </ItemGroup>
 
