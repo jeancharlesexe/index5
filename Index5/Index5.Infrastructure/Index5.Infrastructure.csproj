@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="10.0.1" />
+    <PackageReference Include="Confluent.Kafka" Version="2.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Index5.Application\Index5.Application.csproj" />
     <ProjectReference Include="..\Index5.Domain\Index5.Domain.csproj" />
   </ItemGroup>
