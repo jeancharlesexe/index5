@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="Index5.API/Index5.API.csproj" />
+    <Project Path="Index5.Application/Index5.Application.csproj" />
+    <Project Path="Index5.Domain/Index5.Domain.csproj" />
+    <Project Path="Index5.Infrastructure/Index5.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="Index5.IntegrationTests/Index5.IntegrationTests.csproj" />
+    <Project Path="Index5.UnitTests/Index5.UnitTests.csproj" />
+  </Folder>
+</Solution>
