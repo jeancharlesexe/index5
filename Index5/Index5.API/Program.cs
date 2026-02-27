@@ -1,14 +1,50 @@
+using Index5.Application.Interfaces;
+using Index5.Application.Services;
+using Index5.Domain.Interfaces;
+using Index5.Infrastructure.Cotacoes;
+using Index5.Infrastructure.Data;
+using Index5.Infrastructure.Kafka;
+using Index5.Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Database (MySQL)
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySQL(connectionString!));
+
+// Repositories
+builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+builder.Services.AddScoped<ICestaRepository, CestaRepository>();
+builder.Services.AddScoped<ICustodiaRepository, CustodiaRepository>();
+builder.Services.AddScoped<IUnitOfWork>(provider => provider.GetRequiredService<AppDbContext>());
+
+// Kafka
+var kafkaServer = builder.Configuration.GetValue<string>("Kafka:BootstrapServers") ?? "localhost:9092";
+builder.Services.AddSingleton<IKafkaProducer>(new KafkaProducerService(kafkaServer));
+
+// Cotahist Parser
+builder.Services.AddSingleton<ICotahistParser, CotahistParser>();
+
+// Application Services
+builder.Services.AddScoped<ClienteService>();
+builder.Services.AddScoped<CestaService>();
+
+// Controllers + OpenAPI
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Auto-create database on startup
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.EnsureCreated();
+}
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -16,9 +52,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
