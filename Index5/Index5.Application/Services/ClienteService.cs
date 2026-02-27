@@ -26,7 +26,12 @@ public class ClienteService
         if (existing != null)
             throw new InvalidOperationException("CLIENTE_CPF_DUPLICADO");
 
-        // 2. Validar se o usuário logado já possui uma adesão ativa
+        // 2. Validar Email duplicado
+        var existingEmail = await _clienteRepo.GetByEmailAsync(request.Email);
+        if (existingEmail != null)
+            throw new InvalidOperationException("CLIENTE_EMAIL_DUPLICADO");
+
+        // 3. Validar se o usuário logado já possui uma adesão ativa
         if (usuarioId.HasValue)
         {
             var usuario = await _usuarioRepo.GetByIdAsync(usuarioId.Value);

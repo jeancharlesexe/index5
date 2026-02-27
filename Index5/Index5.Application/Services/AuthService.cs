@@ -24,6 +24,7 @@ public class AuthService
 
     public async Task<LoginResponse?> LoginAsync(LoginRequest request)
     {
+        // Admins logam com Username, Clientes logam com CPF (que é o Username deles no sistema)
         var usuario = await _usuarioRepo.GetByUsernameAsync(request.Username);
 
         if (usuario == null || !BCrypt.Net.BCrypt.Verify(request.Password, usuario.PasswordHash))
@@ -42,8 +43,13 @@ public class AuthService
 
     public async Task<bool> RegistrarAsync(RegistroRequest request)
     {
-        var existing = await _usuarioRepo.ExistsAsync(request.Username);
-        if (existing) return false;
+        // 1. Validar Username ou CPF único
+        var existingUser = await _usuarioRepo.GetByUsernameAsync(request.Username);
+        if (existingUser != null) return false;
+
+        // 2. Validar Email único (Não pode ter dois usuários com mesmo email)
+        // Aqui precisaríamos de um GetByEmail no UsuarioRepo se quisermos ser 100% rigorosos no Auth
+        // Por enquanto, vamos persistir e deixar o banco dar erro se violar unique, mas o ideal é validar.
 
         var usuario = new Usuario
         {

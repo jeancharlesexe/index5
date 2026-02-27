@@ -1,3 +1,4 @@
+using Index5.Application.DTOs;
 using Index5.Application.Services;
 using Index5.Domain.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -42,6 +43,10 @@ public class ClienteController : ControllerBase
         catch (InvalidOperationException ex) when (ex.Message == "CLIENTE_CPF_DUPLICADO")
         {
             return BadRequest(new ErrorResponse { Erro = "CPF ja cadastrado no sistema.", Codigo = ex.Message });
+        }
+        catch (InvalidOperationException ex) when (ex.Message == "CLIENTE_EMAIL_DUPLICADO")
+        {
+            return BadRequest(new ErrorResponse { Erro = "E-mail ja cadastrado no sistema.", Codigo = ex.Message });
         }
         catch (InvalidOperationException ex) when (ex.Message == "VALOR_MENSAL_INVALIDO")
         {
