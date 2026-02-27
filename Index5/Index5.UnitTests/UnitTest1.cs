@@ -1,11 +1,3 @@
-﻿namespace Index5.UnitTests
-{
-    public class UnitTest1
-    {
-        [Fact]
-        public void Test1()
-        {
-
-        }
-    }
-}
+﻿// Este arquivo foi substituido pelos testes especificos em cada arquivo de teste.
+// Veja: ClienteServiceTests.cs, CestaServiceTests.cs, MotorCompraServiceTests.cs,
+//       RebalanceamentoServiceTests.cs, CotahistParserTests.cs
