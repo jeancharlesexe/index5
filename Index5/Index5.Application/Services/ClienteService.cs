@@ -8,36 +8,20 @@ public class ClienteService
 {
     private readonly IClienteRepository _clienteRepo;
     private readonly ICustodiaRepository _custodiaRepo;
-    private readonly IUsuarioRepository _usuarioRepo;
     private readonly IUnitOfWork _unitOfWork;
 
-    public ClienteService(IClienteRepository clienteRepo, ICustodiaRepository custodiaRepo, IUsuarioRepository usuarioRepo, IUnitOfWork unitOfWork)
+    public ClienteService(IClienteRepository clienteRepo, ICustodiaRepository custodiaRepo, IUnitOfWork unitOfWork)
     {
         _clienteRepo = clienteRepo;
         _custodiaRepo = custodiaRepo;
-        _usuarioRepo = usuarioRepo;
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<AdesaoResponse> AderirAsync(AdesaoRequest request, int? usuarioId = null)
+    public async Task<AdesaoResponse> AderirAsync(AdesaoRequest request)
     {
-        // 1. Validar CPF duplicado (Requisito)
         var existing = await _clienteRepo.GetByCpfAsync(request.Cpf);
         if (existing != null)
             throw new InvalidOperationException("CLIENTE_CPF_DUPLICADO");
-
-        // 2. Validar Email duplicado
-        var existingEmail = await _clienteRepo.GetByEmailAsync(request.Email);
-        if (existingEmail != null)
-            throw new InvalidOperationException("CLIENTE_EMAIL_DUPLICADO");
-
-        // 3. Validar se o usuário logado já possui uma adesão ativa
-        if (usuarioId.HasValue)
-        {
-            var usuario = await _usuarioRepo.GetByIdAsync(usuarioId.Value);
-            if (usuario != null && usuario.ClienteId != null)
-                throw new InvalidOperationException("USUARIO_JA_TEM_ADESAO");
-        }
 
         if (request.ValorMensal < 100)
             throw new InvalidOperationException("VALOR_MENSAL_INVALIDO");
@@ -59,18 +43,6 @@ public class ClienteService
         };
 
         await _clienteRepo.AddAsync(cliente);
-
-        // Se o usuário já existe (fluxo de conta antes), vinculamos agora
-        if (usuarioId.HasValue)
-        {
-            var usuario = await _usuarioRepo.GetByIdAsync(usuarioId.Value);
-            if (usuario != null && usuario.ClienteId == null)
-            {
-                usuario.ClienteId = cliente.Id;
-                _usuarioRepo.Update(usuario);
-            }
-        }
-
         await _unitOfWork.SaveChangesAsync();
 
         return new AdesaoResponse

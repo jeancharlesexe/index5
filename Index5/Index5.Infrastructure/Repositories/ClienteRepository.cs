@@ -18,6 +18,7 @@ public class ClienteRepository : IClienteRepository
     {
         return await _context.Clientes
             .Include(c => c.ContaGrafica)
+                .ThenInclude(cg => cg!.Custodias)
             .FirstOrDefaultAsync(c => c.Id == id);
     }
 
@@ -25,12 +26,6 @@ public class ClienteRepository : IClienteRepository
     {
         return await _context.Clientes
             .FirstOrDefaultAsync(c => c.Cpf == cpf);
-    }
-
-    public async Task<Cliente?> GetByEmailAsync(string email)
-    {
-        return await _context.Clientes
-            .FirstOrDefaultAsync(c => c.Email == email);
     }
 
     public async Task<List<Cliente>> GetAllActivesAsync()

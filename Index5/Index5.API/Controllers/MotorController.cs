@@ -1,13 +1,11 @@
 using Index5.Application.DTOs;
 using Index5.Application.Services;
 using Index5.Domain.Interfaces;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
 namespace Index5.API.Controllers;
 
-[Authorize(Roles = "Admin")]
 [ApiController]
 [Route("api/motor")]
 public class MotorController : ControllerBase

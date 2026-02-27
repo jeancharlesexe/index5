@@ -17,8 +17,6 @@ public class AppDbContext : DbContext, IUnitOfWork
     public DbSet<OrdemCompra> OrdensCompra => Set<OrdemCompra>();
     public DbSet<Distribuicao> Distribuicoes => Set<Distribuicao>();
     public DbSet<OperacaoHistorico> HistoricoOperacoes => Set<OperacaoHistorico>();
-    public DbSet<Usuario> Usuarios => Set<Usuario>();
-
     public async Task<int> SaveChangesAsync() => await base.SaveChangesAsync();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -115,19 +113,6 @@ public class AppDbContext : DbContext, IUnitOfWork
             entity.HasOne(e => e.Cliente)
                   .WithMany()
                   .HasForeignKey(e => e.ClienteId);
-        });
-
-        modelBuilder.Entity<Usuario>(entity =>
-        {
-            entity.HasKey(e => e.Id);
-            entity.HasIndex(e => e.Username).IsUnique();
-            entity.Property(e => e.Username).HasMaxLength(50).IsRequired();
-            entity.Property(e => e.Email).HasMaxLength(200).IsRequired();
-            entity.Property(e => e.Role).HasMaxLength(20).IsRequired();
-
-            entity.HasOne(e => e.Cliente)
-                  .WithOne()
-                  .HasForeignKey<Usuario>(u => u.ClienteId);
         });
     }
 }
