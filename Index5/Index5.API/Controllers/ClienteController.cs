@@ -21,15 +21,15 @@ public class ClienteController : ControllerBase
         try
         {
             var result = await _clienteService.AderirAsync(request);
-            return StatusCode(201, ApiResponse<AdesaoResponse>.Created(result, "Cliente cadastrado com sucesso."));
+            return Created($"/api/v1/clientes/{result.ClienteId}/carteira", result);
         }
         catch (InvalidOperationException ex) when (ex.Message == "CLIENTE_CPF_DUPLICADO")
         {
-            return BadRequest(ApiResponse<object>.Error("CPF ja cadastrado no sistema.", ex.Message));
+            return BadRequest(new ErrorResponse { Erro = "CPF ja cadastrado no sistema.", Codigo = ex.Message });
         }
         catch (InvalidOperationException ex) when (ex.Message == "VALOR_MENSAL_INVALIDO")
         {
-            return BadRequest(ApiResponse<object>.Error("O valor mensal minimo e de R$ 100,00.", ex.Message));
+            return BadRequest(new ErrorResponse { Erro = "O valor mensal minimo e de R$ 100,00.", Codigo = ex.Message });
         }
     }
 
@@ -39,15 +39,15 @@ public class ClienteController : ControllerBase
         try
         {
             var result = await _clienteService.SairAsync(clienteId);
-            return Ok(ApiResponse<SaidaResponse>.Success(result, "Adesao encerrada com sucesso."));
+            return Ok(result);
         }
         catch (KeyNotFoundException)
         {
-            return NotFound(ApiResponse<object>.Error("Cliente nao encontrado.", "CLIENTE_NAO_ENCONTRADO", 404));
+            return NotFound(new ErrorResponse { Erro = "Cliente nao encontrado.", Codigo = "CLIENTE_NAO_ENCONTRADO" });
         }
         catch (InvalidOperationException ex) when (ex.Message == "CLIENTE_JA_INATIVO")
         {
-            return BadRequest(ApiResponse<object>.Error("Cliente ja havia saido do produto.", ex.Message));
+            return BadRequest(new ErrorResponse { Erro = "Cliente ja havia saido do produto.", Codigo = ex.Message });
         }
     }
 
@@ -57,15 +57,15 @@ public class ClienteController : ControllerBase
         try
         {
             var result = await _clienteService.AlterarValorMensalAsync(clienteId, request);
-            return Ok(ApiResponse<AlterarValorResponse>.Success(result, "Valor mensal atualizado com sucesso."));
+            return Ok(result);
         }
         catch (KeyNotFoundException)
         {
-            return NotFound(ApiResponse<object>.Error("Cliente nao encontrado.", "CLIENTE_NAO_ENCONTRADO", 404));
+            return NotFound(new ErrorResponse { Erro = "Cliente nao encontrado.", Codigo = "CLIENTE_NAO_ENCONTRADO" });
         }
         catch (InvalidOperationException ex) when (ex.Message == "VALOR_MENSAL_INVALIDO")
         {
-            return BadRequest(ApiResponse<object>.Error("O valor mensal minimo e de R$ 100,00.", ex.Message));
+            return BadRequest(new ErrorResponse { Erro = "O valor mensal minimo e de R$ 100,00.", Codigo = ex.Message });
         }
     }
 
@@ -75,11 +75,11 @@ public class ClienteController : ControllerBase
         try
         {
             var result = await _clienteService.ConsultarCarteiraAsync(clienteId, ticker => 0m);
-            return Ok(ApiResponse<CarteiraResponse>.Success(result, "Carteira consultada com sucesso."));
+            return Ok(result);
         }
         catch (KeyNotFoundException)
         {
-            return NotFound(ApiResponse<object>.Error("Cliente nao encontrado.", "CLIENTE_NAO_ENCONTRADO", 404));
+            return NotFound(new ErrorResponse { Erro = "Cliente nao encontrado.", Codigo = "CLIENTE_NAO_ENCONTRADO" });
         }
     }
 }

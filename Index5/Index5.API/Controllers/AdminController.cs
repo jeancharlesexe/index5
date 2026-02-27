@@ -21,19 +21,23 @@ public class AdminController : ControllerBase
         try
         {
             var result = await _cestaService.CadastrarAsync(request);
-            return StatusCode(201, ApiResponse<CestaResponse>.Created(result, "Cesta cadastrada com sucesso."));
+            return Created("/api/v1/admin/cesta/atual", result);
         }
         catch (InvalidOperationException ex) when (ex.Message == "QUANTIDADE_ATIVOS_INVALIDA")
         {
-            return BadRequest(ApiResponse<object>.Error(
-                $"A cesta deve conter exatamente 5 ativos. Quantidade informada: {request.Itens.Count}.",
-                ex.Message));
+            return BadRequest(new ErrorResponse
+            {
+                Erro = $"A cesta deve conter exatamente 5 ativos. Quantidade informada: {request.Itens.Count}.",
+                Codigo = ex.Message
+            });
         }
         catch (InvalidOperationException ex) when (ex.Message == "PERCENTUAIS_INVALIDOS")
         {
-            return BadRequest(ApiResponse<object>.Error(
-                $"A soma dos percentuais deve ser exatamente 100%. Soma atual: {request.Itens.Sum(i => i.Percentual)}%.",
-                ex.Message));
+            return BadRequest(new ErrorResponse
+            {
+                Erro = $"A soma dos percentuais deve ser exatamente 100%. Soma atual: {request.Itens.Sum(i => i.Percentual)}%.",
+                Codigo = ex.Message
+            });
         }
     }
 
@@ -42,15 +46,15 @@ public class AdminController : ControllerBase
     {
         var cesta = await _cestaService.GetActiveAsync();
         if (cesta == null)
-            return NotFound(ApiResponse<object>.Error("Nenhuma cesta ativa encontrada.", "CESTA_NAO_ENCONTRADA", 404));
+            return NotFound(new ErrorResponse { Erro = "Nenhuma cesta ativa encontrada.", Codigo = "CESTA_NAO_ENCONTRADA" });
 
-        return Ok(ApiResponse<CestaResponse>.Success(cesta, "Cesta ativa encontrada."));
+        return Ok(cesta);
     }
 
     [HttpGet("cesta/historico")]
     public async Task<IActionResult> GetHistorico()
     {
         var result = await _cestaService.GetHistoricoAsync();
-        return Ok(ApiResponse<HistoricoCestasResponse>.Success(result, "Historico de cestas."));
+        return Ok(result);
     }
 }
