@@ -26,6 +26,20 @@ public class ClientController : ControllerBase
         _configuration = configuration;
     }
 
+    [HttpGet("me")]
+    public async Task<IActionResult> GetMyStatus()
+    {
+        var cpf = User.FindFirst("cpf")?.Value;
+        if (string.IsNullOrEmpty(cpf))
+            return Unauthorized(ApiResponse<object>.Error("User CPF not found in token.", "UNAUTHORIZED", 401));
+
+        var client = await _clientService.GetByCpfAsync(cpf);
+        if (client == null)
+            return NotFound(ApiResponse<object>.Error("You are not registered as a client yet.", "CLIENT_NOT_FOUND", 404));
+
+        return Ok(ApiResponse<JoinResponse>.Success(client, "Client status retrieved successfully."));
+    }
+
     [HttpPost("join")]
     public async Task<IActionResult> Join([FromBody] JoinRequest request)
     {

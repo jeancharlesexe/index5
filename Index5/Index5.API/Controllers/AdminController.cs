@@ -61,6 +61,15 @@ public class AdminController : ControllerBase
         }
     }
 
+    [HttpGet("assets")]
+    public IActionResult GetAvailableAssets()
+    {
+        var quotesFolder = _configuration.GetValue<string>("Cotacoes:Folder") ?? "cotacoes";
+        var tickers = _cotahistParser.GetAllAvailableTickers(quotesFolder);
+
+        return Ok(ApiResponse<List<string>>.Success(tickers, "Available assets retrieved successfully."));
+    }
+
     [HttpPost("basket")]
     public async Task<IActionResult> CreateBasket([FromBody] BasketRequest request)
     {

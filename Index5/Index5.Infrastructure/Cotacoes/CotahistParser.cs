@@ -48,6 +48,38 @@ public class CotahistParser : ICotahistParser
         return null;
     }
 
+    public List<string> GetAllAvailableTickers(string quotesFolder)
+    {
+        if (!Directory.Exists(quotesFolder)) return new List<string>();
+
+        var latestFile = Directory.GetFiles(quotesFolder, "COTAHIST_D*.TXT")
+            .OrderByDescending(f => f)
+            .FirstOrDefault();
+
+        if (latestFile == null) return new List<string>();
+
+        var tickers = new HashSet<string>();
+        foreach (var line in File.ReadLines(latestFile))
+        {
+            if (line.Length < 245) continue;
+
+            var recordType = line.Substring(0, 2);
+            if (recordType != "01") continue;
+
+            var marketType = line.Substring(24, 3).Trim();
+            // 10 = Vista
+            if (marketType != "10") continue;
+
+            var ticker = line.Substring(12, 12).Trim();
+            if (!string.IsNullOrEmpty(ticker))
+            {
+                tickers.Add(ticker);
+            }
+        }
+
+        return tickers.OrderBy(t => t).ToList();
+    }
+
     private CotacaoB3? ParseLine(string line)
     {
         if (line.Length < 245) return null;

@@ -19,6 +19,31 @@ public class ClientService
         _unitOfWork = unitOfWork;
     }
 
+    public async Task<JoinResponse?> GetByCpfAsync(string cpf)
+    {
+        var client = await _clientRepo.GetByCpfAsync(cpf);
+        if (client == null) return null;
+
+        return new JoinResponse
+        {
+            ClientId = client.Id,
+            Name = client.Name,
+            Cpf = client.Cpf,
+            Email = client.Email,
+            MonthlyValue = client.MonthlyValue,
+            Status = client.ExitDate != null ? "EXITED" : (client.Active ? "ACTIVE" : "PENDING"),
+            JoinDate = client.JoinDate,
+            Message = client.Active ? "Active client." : "Waiting for administrator approval.",
+            GraphicAccount = client.GraphicAccount != null ? new GraphicAccountDto
+            {
+                Id = client.GraphicAccount.Id,
+                AccountNumber = client.GraphicAccount.AccountNumber,
+                Type = client.GraphicAccount.Type,
+                CreatedAt = client.GraphicAccount.CreatedAt
+            } : null
+        };
+    }
+
     public async Task<JoinResponse> JoinAsync(JoinRequest request, string cpf)
     {
         var user = await _userRepo.GetByCpfAsync(cpf);
