@@ -8,111 +8,127 @@ public class AppDbContext : DbContext, IUnitOfWork
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-    public DbSet<Cliente> Clientes => Set<Cliente>();
-    public DbSet<ContaGrafica> ContasGraficas => Set<ContaGrafica>();
-    public DbSet<CustodiaFilhote> CustodiasFilhote => Set<CustodiaFilhote>();
-    public DbSet<CustodiaMaster> CustodiaMaster => Set<CustodiaMaster>();
-    public DbSet<CestaRecomendacao> CestasRecomendacao => Set<CestaRecomendacao>();
-    public DbSet<ItemCesta> ItensCesta => Set<ItemCesta>();
-    public DbSet<OrdemCompra> OrdensCompra => Set<OrdemCompra>();
-    public DbSet<Distribuicao> Distribuicoes => Set<Distribuicao>();
-    public DbSet<OperacaoHistorico> HistoricoOperacoes => Set<OperacaoHistorico>();
+    public DbSet<Client> Clients => Set<Client>();
+    public DbSet<GraphicAccount> GraphicAccounts => Set<GraphicAccount>();
+    public DbSet<ChildCustody> ChildCustodies => Set<ChildCustody>();
+    public DbSet<MasterCustody> MasterCustodies => Set<MasterCustody>();
+    public DbSet<RecommendationBasket> RecommendationBaskets => Set<RecommendationBasket>();
+    public DbSet<BasketItem> BasketItems => Set<BasketItem>();
+    public DbSet<PurchaseOrder> PurchaseOrders => Set<PurchaseOrder>();
+    public DbSet<Distribution> Distributions => Set<Distribution>();
+    public DbSet<OperationHistory> OperationHistory => Set<OperationHistory>();
+    public DbSet<User> Users => Set<User>();
+
     public async Task<int> SaveChangesAsync() => await base.SaveChangesAsync();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Cliente>(entity =>
+        modelBuilder.Entity<Client>(entity =>
         {
             entity.HasKey(e => e.Id);
             entity.HasIndex(e => e.Cpf).IsUnique();
-            entity.Property(e => e.Nome).HasMaxLength(200).IsRequired();
+            entity.Property(e => e.Name).HasMaxLength(200).IsRequired();
             entity.Property(e => e.Cpf).HasMaxLength(11).IsRequired();
             entity.Property(e => e.Email).HasMaxLength(200).IsRequired();
-            entity.Property(e => e.ValorMensal).HasColumnType("decimal(18,2)");
+            entity.Property(e => e.MonthlyValue).HasColumnType("decimal(18,2)");
 
-            entity.HasOne(e => e.ContaGrafica)
-                  .WithOne(c => c.Cliente)
-                  .HasForeignKey<ContaGrafica>(c => c.ClienteId);
+            entity.HasOne(e => e.GraphicAccount)
+                  .WithOne(c => c.Client)
+                  .HasForeignKey<GraphicAccount>(c => c.ClientId);
         });
 
-        modelBuilder.Entity<ContaGrafica>(entity =>
+        modelBuilder.Entity<GraphicAccount>(entity =>
         {
             entity.HasKey(e => e.Id);
-            entity.HasIndex(e => e.NumeroConta).IsUnique();
-            entity.Property(e => e.NumeroConta).HasMaxLength(20).IsRequired();
-            entity.Property(e => e.Tipo).HasMaxLength(10).IsRequired();
+            entity.HasIndex(e => e.AccountNumber).IsUnique();
+            entity.Property(e => e.AccountNumber).HasMaxLength(20).IsRequired();
+            entity.Property(e => e.Type).HasMaxLength(10).IsRequired();
         });
 
-        modelBuilder.Entity<CustodiaFilhote>(entity =>
-        {
-            entity.HasKey(e => e.Id);
-            entity.Property(e => e.Ticker).HasMaxLength(10).IsRequired();
-            entity.Property(e => e.PrecoMedio).HasColumnType("decimal(18,4)");
-
-            entity.HasOne(e => e.ContaGrafica)
-                  .WithMany(c => c.Custodias)
-                  .HasForeignKey(e => e.ContaGraficaId);
-        });
-
-        modelBuilder.Entity<CustodiaMaster>(entity =>
+        modelBuilder.Entity<ChildCustody>(entity =>
         {
             entity.HasKey(e => e.Id);
             entity.Property(e => e.Ticker).HasMaxLength(10).IsRequired();
-            entity.Property(e => e.PrecoMedio).HasColumnType("decimal(18,4)");
-            entity.Property(e => e.Origem).HasMaxLength(200);
+            entity.Property(e => e.AveragePrice).HasColumnType("decimal(18,4)");
+
+            entity.HasOne(e => e.GraphicAccount)
+                  .WithMany(c => c.Custodies)
+                  .HasForeignKey(e => e.GraphicAccountId);
         });
 
-        modelBuilder.Entity<CestaRecomendacao>(entity =>
-        {
-            entity.HasKey(e => e.Id);
-            entity.Property(e => e.Nome).HasMaxLength(100).IsRequired();
-
-            entity.HasMany(e => e.Itens)
-                  .WithOne(i => i.CestaRecomendacao)
-                  .HasForeignKey(i => i.CestaRecomendacaoId);
-        });
-
-        modelBuilder.Entity<ItemCesta>(entity =>
+        modelBuilder.Entity<MasterCustody>(entity =>
         {
             entity.HasKey(e => e.Id);
             entity.Property(e => e.Ticker).HasMaxLength(10).IsRequired();
-            entity.Property(e => e.Percentual).HasColumnType("decimal(5,2)");
+            entity.Property(e => e.AveragePrice).HasColumnType("decimal(18,4)");
+            entity.Property(e => e.Origin).HasMaxLength(200);
         });
 
-        modelBuilder.Entity<OrdemCompra>(entity =>
+        modelBuilder.Entity<RecommendationBasket>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.Name).HasMaxLength(100).IsRequired();
+
+            entity.HasMany(e => e.Items)
+                  .WithOne(i => i.RecommendationBasket)
+                  .HasForeignKey(i => i.RecommendationBasketId);
+        });
+
+        modelBuilder.Entity<BasketItem>(entity =>
         {
             entity.HasKey(e => e.Id);
             entity.Property(e => e.Ticker).HasMaxLength(10).IsRequired();
-            entity.Property(e => e.PrecoUnitario).HasColumnType("decimal(18,4)");
-            entity.Property(e => e.ValorTotal).HasColumnType("decimal(18,2)");
-
-            entity.HasMany(e => e.Distribuicoes)
-                  .WithOne(d => d.OrdemCompra)
-                  .HasForeignKey(d => d.OrdemCompraId);
+            entity.Property(e => e.Percentage).HasColumnType("decimal(5,2)");
         });
 
-        modelBuilder.Entity<Distribuicao>(entity =>
+        modelBuilder.Entity<PurchaseOrder>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.Ticker).HasMaxLength(10).IsRequired();
+            entity.Property(e => e.UnitPrice).HasColumnType("decimal(18,4)");
+            entity.Property(e => e.TotalValue).HasColumnType("decimal(18,2)");
+
+            entity.HasMany(e => e.Distributions)
+                  .WithOne(d => d.PurchaseOrder)
+                  .HasForeignKey(d => d.PurchaseOrderId);
+        });
+
+        modelBuilder.Entity<Distribution>(entity =>
         {
             entity.HasKey(e => e.Id);
             entity.Property(e => e.Ticker).HasMaxLength(10).IsRequired();
 
-            entity.HasOne(e => e.Cliente)
-                  .WithMany(c => c.Distribuicoes)
-                  .HasForeignKey(e => e.ClienteId);
+            entity.HasOne(e => e.Client)
+                  .WithMany(c => c.Distributions)
+                  .HasForeignKey(e => e.ClientId);
         });
 
-        modelBuilder.Entity<OperacaoHistorico>(entity =>
+        modelBuilder.Entity<OperationHistory>(entity =>
         {
             entity.HasKey(e => e.Id);
             entity.Property(e => e.Ticker).HasMaxLength(10).IsRequired();
-            entity.Property(e => e.TipoOperacao).HasMaxLength(10).IsRequired();
-            entity.Property(e => e.Motivo).HasMaxLength(50).IsRequired();
-            entity.Property(e => e.PrecoUnitario).HasColumnType("decimal(18,4)");
-            entity.Property(e => e.ValorTotal).HasColumnType("decimal(18,2)");
+            entity.Property(e => e.OperationType).HasMaxLength(10).IsRequired();
+            entity.Property(e => e.Reason).HasMaxLength(50).IsRequired();
+            entity.Property(e => e.UnitPrice).HasColumnType("decimal(18,4)");
+            entity.Property(e => e.TotalValue).HasColumnType("decimal(18,2)");
 
-            entity.HasOne(e => e.Cliente)
+            entity.HasOne(e => e.Client)
                   .WithMany()
-                  .HasForeignKey(e => e.ClienteId);
+                  .HasForeignKey(e => e.ClientId);
+        });
+
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.HasIndex(e => e.Cpf).IsUnique();
+            entity.HasIndex(e => e.Email).IsUnique();
+            entity.HasIndex(e => e.Username).IsUnique();
+            entity.Property(e => e.Name).HasMaxLength(200).IsRequired();
+            entity.Property(e => e.Cpf).HasMaxLength(11).IsRequired();
+            entity.Property(e => e.Email).HasMaxLength(200).IsRequired();
+            entity.Property(e => e.Username).HasMaxLength(100);
+            entity.Property(e => e.PasswordHash).HasMaxLength(200).IsRequired();
+            entity.Property(e => e.Role).HasMaxLength(10).IsRequired();
         });
     }
 }

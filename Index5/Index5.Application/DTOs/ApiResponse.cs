@@ -23,7 +23,7 @@ public class ApiResponse<T>
         {
             Status = status,
             Message = message,
-            Data = new { codigo = code }
+            Data = new { code = code }
         };
     }
 }

@@ -1,116 +1,145 @@
 using Index5.Application.DTOs;
 using Index5.Application.Services;
 using Index5.Domain.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
 namespace Index5.API.Controllers;
 
 [ApiController]
-[Route("api/admin")]
+[Route("api/v1/admin")]
+[Authorize(Roles = "ADMIN")]
 public class AdminController : ControllerBase
 {
-    private readonly CestaService _cestaService;
-    private readonly ICustodiaRepository _custodiaRepo;
+    private readonly BasketService _basketService;
+    private readonly ClientService _clientService;
+    private readonly ICustodyRepository _custodyRepo;
     private readonly ICotahistParser _cotahistParser;
     private readonly IConfiguration _configuration;
 
     public AdminController(
-        CestaService cestaService, 
-        ICustodiaRepository custodiaRepo,
+        BasketService basketService, 
+        ClientService clientService,
+        ICustodyRepository custodyRepo,
         ICotahistParser cotahistParser,
         IConfiguration configuration)
     {
-        _cestaService = cestaService;
-        _custodiaRepo = custodiaRepo;
+        _basketService = basketService;
+        _clientService = clientService;
+        _custodyRepo = custodyRepo;
         _cotahistParser = cotahistParser;
         _configuration = configuration;
     }
 
-    [HttpPost("cesta")]
-    public async Task<IActionResult> CadastrarCesta([FromBody] CestaRequest request)
+    [HttpGet("clients/pending")]
+    public async Task<IActionResult> GetPendingClients()
+    {
+        var result = await _clientService.GetPendingClientsAsync();
+        return Ok(ApiResponse<List<PendingClientDto>>.Success(result, "Pending clients retrieved successfully."));
+    }
+
+    [HttpPost("clients/{clientId}/approve")]
+    public async Task<IActionResult> ApproveClient(int clientId)
     {
         try
         {
-            var result = await _cestaService.CadastrarAsync(request);
-            return Created("/api/admin/cesta/atual", result);
+            var result = await _clientService.ApproveClientAsync(clientId);
+            return Ok(ApiResponse<JoinResponse>.Success(result, "Client approved successfully."));
         }
-        catch (InvalidOperationException ex) when (ex.Message == "QUANTIDADE_ATIVOS_INVALIDA")
+        catch (KeyNotFoundException)
         {
-            return BadRequest(new ErrorResponse
-            {
-                Erro = $"A cesta deve conter exatamente 5 ativos. Quantidade informada: {request.Itens.Count}.",
-                Codigo = ex.Message
-            });
+            return NotFound(ApiResponse<object>.Error("Client not found.", "CLIENT_NOT_FOUND", 404));
         }
-        catch (InvalidOperationException ex) when (ex.Message == "PERCENTUAIS_INVALIDOS")
+        catch (InvalidOperationException ex) when (ex.Message == "CLIENT_ALREADY_ACTIVE")
         {
-            return BadRequest(new ErrorResponse
-            {
-                Erro = $"A soma dos percentuais deve ser exatamente 100%. Soma atual: {request.Itens.Sum(i => i.Percentual)}%.",
-                Codigo = ex.Message
-            });
+            return BadRequest(ApiResponse<object>.Error("Client is already active/approved.", ex.Message));
+        }
+        catch (InvalidOperationException ex) when (ex.Message == "CLIENT_ALREADY_EXITED")
+        {
+            return BadRequest(ApiResponse<object>.Error("Client has already exited.", ex.Message));
         }
     }
 
-    [HttpGet("cesta/atual")]
-    public async Task<IActionResult> GetCestaAtual()
+    [HttpPost("basket")]
+    public async Task<IActionResult> CreateBasket([FromBody] BasketRequest request)
     {
-        var cesta = await _cestaService.GetActiveAsync();
-        if (cesta == null)
-            return NotFound(new ErrorResponse { Erro = "Nenhuma cesta ativa encontrada.", Codigo = "CESTA_NAO_ENCONTRADA" });
+        try
+        {
+            var result = await _basketService.CreateAsync(request);
+            return StatusCode(201, ApiResponse<BasketResponse>.Created(result, result.Message));
+        }
+        catch (InvalidOperationException ex) when (ex.Message == "INVALID_ASSET_COUNT")
+        {
+            return BadRequest(ApiResponse<object>.Error(
+                $"Basket must contain exactly 5 assets. Count provided: {request.Items.Count}.",
+                ex.Message));
+        }
+        catch (InvalidOperationException ex) when (ex.Message == "INVALID_PERCENTAGES")
+        {
+            return BadRequest(ApiResponse<object>.Error(
+                $"Percentages must sum to exactly 100%. Current sum: {request.Items.Sum(i => i.Percentage)}%.",
+                ex.Message));
+        }
+    }
 
-        // Add real quotes to items
+    [HttpGet("basket/current")]
+    public async Task<IActionResult> GetCurrentBasket()
+    {
+        var basket = await _basketService.GetActiveAsync();
+        if (basket == null)
+            return NotFound(ApiResponse<object>.Error("No active basket found.", "BASKET_NOT_FOUND", 404));
+
         var quotesFolder = _configuration.GetValue<string>("Cotacoes:Folder") ?? "cotacoes";
-        foreach (var item in cesta.Itens)
+        foreach (var item in basket.Items)
         {
             var quote = _cotahistParser.GetClosingQuote(quotesFolder, item.Ticker);
-            item.CotacaoAtual = quote?.PrecoFechamento;
+            item.CurrentQuote = quote?.PrecoFechamento;
         }
 
-        return Ok(cesta);
+        return Ok(ApiResponse<BasketResponse>.Success(basket, "Current basket retrieved successfully."));
     }
 
-    [HttpGet("cesta/historico")]
-    public async Task<IActionResult> GetHistorico()
+    [HttpGet("basket/history")]
+    public async Task<IActionResult> GetBasketHistory()
     {
-        var result = await _cestaService.GetHistoricoAsync();
-        return Ok(result);
+        var result = await _basketService.GetHistoryAsync();
+        return Ok(ApiResponse<BasketHistoryResponse>.Success(result, "Basket history retrieved successfully."));
     }
 
-    [HttpGet("conta-master/custodia")]
-    public async Task<IActionResult> GetCustodiaMaster()
+    [HttpGet("master-account/custody")]
+    public async Task<IActionResult> GetMasterCustody()
     {
-        var custodias = await _custodiaRepo.GetAllMasterAsync();
+        var custodias = await _custodyRepo.GetAllMasterAsync();
         var quotesFolder = _configuration.GetValue<string>("Cotacoes:Folder") ?? "cotacoes";
 
-        var custodiaDtos = custodias.Select(c =>
+        var custodyItems = custodias.Select(c =>
         {
             var quote = _cotahistParser.GetClosingQuote(quotesFolder, c.Ticker);
-            var valorAtual = quote?.PrecoFechamento ?? 0;
+            var currentValue = quote?.PrecoFechamento ?? 0;
 
-            return new CustodiaMasterItemDto
+            return new MasterCustodyItemDto
             {
                 Ticker = c.Ticker,
-                Quantidade = c.Quantidade,
-                PrecoMedio = c.PrecoMedio,
-                ValorAtual = valorAtual,
-                Origem = c.Origem ?? ""
+                Quantity = c.Quantity,
+                AveragePrice = c.AveragePrice,
+                CurrentValue = currentValue,
+                Origin = c.Origin ?? ""
             };
         }).ToList();
 
-        var response = new CustodiaMasterResponse
+        var response = new MasterCustodyResponse
         {
-            ContaMaster = new ContaMasterDto
+            MasterAccount = new MasterAccountDto
             {
                 Id = 1,
-                NumeroConta = "MST-000001",
-                Tipo = "MASTER"
+                AccountNumber = "MST-000001",
+                Type = "MASTER"
             },
-            Custodia = custodiaDtos,
-            ValorTotalResiduo = custodiaDtos.Sum(c => c.Quantidade * c.ValorAtual)
+            Custody = custodyItems,
+            TotalResidueValue = custodyItems.Sum(c => c.Quantity * c.CurrentValue)
         };
 
-        return Ok(response);
+        return Ok(ApiResponse<MasterCustodyResponse>.Success(response, "Master custody retrieved successfully."));
     }
 }
