@@ -33,10 +33,27 @@ public class AdminController : ControllerBase
     }
 
     [HttpGet("clients/pending")]
-    public async Task<IActionResult> GetPendingClients()
+    public async Task<IActionResult> GetPendingClients(
+        [FromQuery] string? name,
+        [FromQuery] decimal? minValue,
+        [FromQuery] decimal? maxValue,
+        [FromQuery] int page = 1,
+        [FromQuery] int pageSize = 10)
     {
-        var result = await _clientService.GetPendingClientsAsync();
-        return Ok(ApiResponse<List<PendingClientDto>>.Success(result, "Pending clients retrieved successfully."));
+        var result = await _clientService.GetFilteredPendingClientsAsync(name, minValue, maxValue, page, pageSize);
+        return Ok(ApiResponse<PagedResult<PendingClientDto>>.Success(result, "Pending clients retrieved successfully."));
+    }
+
+    [HttpGet("clients/active")]
+    public async Task<IActionResult> GetActiveClients(
+        [FromQuery] string? name,
+        [FromQuery] decimal? minValue,
+        [FromQuery] decimal? maxValue,
+        [FromQuery] int page = 1,
+        [FromQuery] int pageSize = 10)
+    {
+        var result = await _clientService.GetPagedActiveClientsAsync(name, minValue, maxValue, page, pageSize);
+        return Ok(ApiResponse<PagedResult<ActiveClientDto>>.Success(result, "Active clients retrieved successfully."));
     }
 
     [HttpPost("clients/{clientId}/approve")]
@@ -58,6 +75,42 @@ public class AdminController : ControllerBase
         catch (InvalidOperationException ex) when (ex.Message == "CLIENT_ALREADY_EXITED")
         {
             return BadRequest(ApiResponse<object>.Error("Client has already exited.", ex.Message));
+        }
+    }
+
+    [HttpPost("clients/{clientId}/reject")]
+    public async Task<IActionResult> RejectClient(int clientId)
+    {
+        try
+        {
+            var result = await _clientService.RejectClientAsync(clientId);
+            return Ok(ApiResponse<object>.Success(result, "Application rejected successfully."));
+        }
+        catch (KeyNotFoundException)
+        {
+            return NotFound(ApiResponse<object>.Error("Client not found.", "CLIENT_NOT_FOUND", 404));
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(ApiResponse<object>.Error(ex.Message, "INVALID_REJECTION"));
+        }
+    }
+
+    [HttpPost("clients/{clientId}/deactivate")]
+    public async Task<IActionResult> DeactivateClient(int clientId)
+    {
+        try
+        {
+            var result = await _clientService.DeactivateClientAsync(clientId);
+            return Ok(ApiResponse<ExitResponse>.Success(result, "Investor deactivated successfully."));
+        }
+        catch (KeyNotFoundException)
+        {
+            return NotFound(ApiResponse<object>.Error("Client not found.", "CLIENT_NOT_FOUND", 404));
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(ApiResponse<object>.Error(ex.Message, "INVALID_DEACTIVATION"));
         }
     }
 

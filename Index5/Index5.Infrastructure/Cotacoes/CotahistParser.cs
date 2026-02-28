@@ -66,9 +66,9 @@ public class CotahistParser : ICotahistParser
             var recordType = line.Substring(0, 2);
             if (recordType != "01") continue;
 
-            var marketType = line.Substring(24, 3).Trim();
-            // 10 = Vista
-            if (marketType != "10") continue;
+            var marketType = line.Substring(24, 3);
+            // 010 = VISTA
+            if (marketType != "010") continue;
 
             var ticker = line.Substring(12, 12).Trim();
             if (!string.IsNullOrEmpty(ticker))

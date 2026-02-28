@@ -32,6 +32,17 @@ public class PendingClientDto
     public DateTime JoinDate { get; set; }
 }
 
+public class ActiveClientDto
+{
+    public int ClientId { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string Cpf { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
+    public decimal MonthlyValue { get; set; }
+    public string AccountNumber { get; set; } = string.Empty;
+    public DateTime JoinDate { get; set; }
+}
+
 public class GraphicAccountDto
 {
     public int Id { get; set; }
@@ -67,4 +78,13 @@ public class ErrorResponse
 {
     public string Error { get; set; } = string.Empty;
     public string Code { get; set; } = string.Empty;
+}
+
+public class PagedResult<T>
+{
+    public List<T> Items { get; set; } = new();
+    public int TotalCount { get; set; }
+    public int Page { get; set; }
+    public int PageSize { get; set; }
+    public int TotalPages => (int)Math.Ceiling((double)TotalCount / PageSize);
 }

@@ -42,6 +42,55 @@ public class ClientRepository : IClientRepository
             .ToListAsync();
     }
 
+    public async Task<(List<Client> Items, int TotalCount)> GetFilteredPendingAsync(string? name, decimal? minValue, decimal? maxValue, int page, int pageSize)
+    {
+        var query = _context.Clients
+            .Where(c => !c.Active && c.ExitDate == null && c.GraphicAccount == null);
+
+        if (!string.IsNullOrWhiteSpace(name))
+            query = query.Where(c => c.Name.Contains(name));
+
+        if (minValue.HasValue)
+            query = query.Where(c => c.MonthlyValue >= minValue.Value);
+
+        if (maxValue.HasValue)
+            query = query.Where(c => c.MonthlyValue <= maxValue.Value);
+
+        var totalCount = await query.CountAsync();
+        var items = await query
+            .OrderByDescending(c => c.JoinDate)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        return (items, totalCount);
+    }
+
+    public async Task<(List<Client> Items, int TotalCount)> GetFilteredActiveAsync(string? name, decimal? minValue, decimal? maxValue, int page, int pageSize)
+    {
+        var query = _context.Clients
+            .Include(c => c.GraphicAccount)
+            .Where(c => c.Active);
+
+        if (!string.IsNullOrWhiteSpace(name))
+            query = query.Where(c => c.Name.Contains(name));
+
+        if (minValue.HasValue)
+            query = query.Where(c => c.MonthlyValue >= minValue.Value);
+
+        if (maxValue.HasValue)
+            query = query.Where(c => c.MonthlyValue <= maxValue.Value);
+
+        var totalCount = await query.CountAsync();
+        var items = await query
+            .OrderByDescending(c => c.JoinDate)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        return (items, totalCount);
+    }
+
     public async Task AddAsync(Client client)
     {
         await _context.Clients.AddAsync(client);
@@ -50,5 +99,10 @@ public class ClientRepository : IClientRepository
     public void Update(Client client)
     {
         _context.Clients.Update(client);
+    }
+
+    public void Remove(Client client)
+    {
+        _context.Clients.Remove(client);
     }
 }

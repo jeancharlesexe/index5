@@ -97,6 +97,64 @@ public class ClientService
         }).ToList();
     }
 
+    public async Task<PagedResult<PendingClientDto>> GetFilteredPendingClientsAsync(string? name, decimal? minValue, decimal? maxValue, int page, int pageSize)
+    {
+        var (items, totalCount) = await _clientRepo.GetFilteredPendingAsync(name, minValue, maxValue, page, pageSize);
+
+        return new PagedResult<PendingClientDto>
+        {
+            Items = items.Select(c => new PendingClientDto
+            {
+                ClientId = c.Id,
+                Name = c.Name,
+                Cpf = c.Cpf,
+                Email = c.Email,
+                MonthlyValue = c.MonthlyValue,
+                JoinDate = c.JoinDate
+            }).ToList(),
+            TotalCount = totalCount,
+            Page = page,
+            PageSize = pageSize
+        };
+    }
+
+    public async Task<List<ActiveClientDto>> GetActiveClientsAsync()
+    {
+        var active = await _clientRepo.GetAllActiveAsync();
+        return active.Select(c => new ActiveClientDto
+        {
+            ClientId = c.Id,
+            Name = c.Name,
+            Cpf = c.Cpf,
+            Email = c.Email,
+            MonthlyValue = c.MonthlyValue,
+            AccountNumber = c.GraphicAccount?.AccountNumber ?? "",
+            JoinDate = c.JoinDate
+        }).ToList();
+    }
+
+    public async Task<PagedResult<ActiveClientDto>> GetPagedActiveClientsAsync(string? name, decimal? minValue, decimal? maxValue, int page, int pageSize)
+    {
+        var (items, totalCount) = await _clientRepo.GetFilteredActiveAsync(name, minValue, maxValue, page, pageSize);
+
+        return new PagedResult<ActiveClientDto>
+        {
+            Items = items.Select(c => new ActiveClientDto
+            {
+                ClientId = c.Id,
+                Name = c.Name,
+                Cpf = c.Cpf,
+                Email = c.Email,
+                MonthlyValue = c.MonthlyValue,
+                AccountNumber = c.GraphicAccount?.AccountNumber ?? "",
+                JoinDate = c.JoinDate
+            }).ToList(),
+            TotalCount = totalCount,
+            Page = page,
+            PageSize = pageSize
+        };
+    }
+
     public async Task<JoinResponse> ApproveClientAsync(int clientId)
     {
         var client = await _clientRepo.GetByIdAsync(clientId);
@@ -137,6 +195,52 @@ public class ClientService
                 Type = client.GraphicAccount.Type,
                 CreatedAt = client.GraphicAccount.CreatedAt
             }
+        };
+    }
+
+    public async Task<object> RejectClientAsync(int clientId)
+    {
+        var client = await _clientRepo.GetByIdAsync(clientId);
+        if (client == null)
+            throw new KeyNotFoundException("CLIENT_NOT_FOUND");
+
+        if (client.Active || client.GraphicAccount != null)
+            throw new InvalidOperationException("CANNOT_REJECT_ACTIVE_CLIENT");
+
+        _clientRepo.Remove(client);
+        await _unitOfWork.SaveChangesAsync();
+
+        return new
+        {
+            ClientId = client.Id,
+            Name = client.Name,
+            Cpf = client.Cpf,
+            RejectedAt = DateTime.UtcNow,
+            Message = "Client application rejected and removed from pending queue."
+        };
+    }
+
+    public async Task<ExitResponse> DeactivateClientAsync(int clientId)
+    {
+        var client = await _clientRepo.GetByIdAsync(clientId);
+        if (client == null)
+            throw new KeyNotFoundException("CLIENT_NOT_FOUND");
+
+        if (!client.Active)
+            throw new InvalidOperationException("CLIENT_ALREADY_INACTIVE");
+
+        client.Active = false;
+        client.ExitDate = DateTime.UtcNow;
+        _clientRepo.Update(client);
+        await _unitOfWork.SaveChangesAsync();
+
+        return new ExitResponse
+        {
+            ClientId = client.Id,
+            Name = client.Name,
+            Active = false,
+            ExitDate = client.ExitDate,
+            Message = "Investor has been forcibly deactivated by the administrator (Compliance/Admin Action)."
         };
     }
 
