@@ -43,9 +43,9 @@ public class AuthController : ControllerBase
         {
             return BadRequest(ApiResponse<object>.Error("Birth date is required.", ex.Message));
         }
-        catch (InvalidOperationException ex) when (ex.Message == "CLIENT_SHOULD_NOT_HAVE_USERNAME")
+        catch (InvalidOperationException ex) when (ex.Message == "CLIENT_SHOULD_NOT_HAVE_JKEY")
         {
-            return BadRequest(ApiResponse<object>.Error("Clients should not have a username.", ex.Message));
+            return BadRequest(ApiResponse<object>.Error("Clients should not have a JKey.", ex.Message));
         }
         catch (InvalidOperationException ex) when (ex.Message == "CPF_ALREADY_REGISTERED")
         {
@@ -55,13 +55,13 @@ public class AuthController : ControllerBase
         {
             return BadRequest(ApiResponse<object>.Error("Email already registered.", ex.Message));
         }
-        catch (InvalidOperationException ex) when (ex.Message == "USERNAME_ALREADY_REGISTERED")
+        catch (InvalidOperationException ex) when (ex.Message == "JKEY_ALREADY_REGISTERED")
         {
-            return BadRequest(ApiResponse<object>.Error("Username already registered.", ex.Message));
+            return BadRequest(ApiResponse<object>.Error("JKey already registered.", ex.Message));
         }
-        catch (InvalidOperationException ex) when (ex.Message == "USERNAME_REQUIRED")
+        catch (InvalidOperationException ex) when (ex.Message == "JKEY_REQUIRED")
         {
-            return BadRequest(ApiResponse<object>.Error("Username is required for administrators.", ex.Message));
+            return BadRequest(ApiResponse<object>.Error("JKey is required for administrators.", ex.Message));
         }
         catch (InvalidOperationException ex) when (ex.Message == "INVALID_ROLE")
         {
@@ -97,7 +97,7 @@ public class AuthController : ControllerBase
         }
         catch (InvalidOperationException ex) when (ex.Message == "INVALID_CREDENTIALS")
         {
-            return Unauthorized(ApiResponse<object>.Error("Invalid username or password.", ex.Message, 401));
+            return Unauthorized(ApiResponse<object>.Error("Invalid JKey or password.", ex.Message, 401));
         }
         catch (InvalidOperationException ex) when (ex.Message == "INACTIVE_USER")
         {

@@ -122,11 +122,11 @@ public class AppDbContext : DbContext, IUnitOfWork
             entity.HasKey(e => e.Id);
             entity.HasIndex(e => e.Cpf).IsUnique();
             entity.HasIndex(e => e.Email).IsUnique();
-            entity.HasIndex(e => e.Username).IsUnique();
+            entity.HasIndex(e => e.JKey).IsUnique();
             entity.Property(e => e.Name).HasMaxLength(200).IsRequired();
             entity.Property(e => e.Cpf).HasMaxLength(11).IsRequired();
             entity.Property(e => e.Email).HasMaxLength(200).IsRequired();
-            entity.Property(e => e.Username).HasMaxLength(100);
+            entity.Property(e => e.JKey).HasMaxLength(100);
             entity.Property(e => e.PasswordHash).HasMaxLength(200).IsRequired();
             entity.Property(e => e.Role).HasMaxLength(10).IsRequired();
         });

@@ -17,7 +17,7 @@ public class RegisterRequest
     [EmailAddress(ErrorMessage = "Invalid email format")]
     public string Email { get; set; } = string.Empty;
 
-    public string? Username { get; set; } // Required only for ADMIN, checked in Service
+    public string? JKey { get; set; } // Required only for ADMIN, checked in Service
 
     [Required(ErrorMessage = "Password is required")]
     [MinLength(6, ErrorMessage = "Password must be at least 6 characters")]
@@ -36,7 +36,7 @@ public class RegisterResponse
     public string Name { get; set; } = string.Empty;
     public string Cpf { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
-    public string? Username { get; set; }
+    public string? JKey { get; set; }
     public string Role { get; set; } = string.Empty;
     public DateTime CreatedAt { get; set; }
 }
@@ -54,8 +54,8 @@ public class LoginClientRequest
 
 public class LoginAdminRequest
 {
-    [Required(ErrorMessage = "Username is required")]
-    public string Username { get; set; } = string.Empty;
+    [Required(ErrorMessage = "JKey is required")]
+    public string JKey { get; set; } = string.Empty;
 
     [Required(ErrorMessage = "Password is required")]
     public string Password { get; set; } = string.Empty;

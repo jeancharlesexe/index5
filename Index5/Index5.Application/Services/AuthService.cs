@@ -45,11 +45,11 @@ public class AuthService
         if (request.Role != "ADMIN" && request.Role != "CLIENT")
             throw new InvalidOperationException("INVALID_ROLE");
 
-        if (request.Role == "ADMIN" && string.IsNullOrWhiteSpace(request.Username))
-            throw new InvalidOperationException("USERNAME_REQUIRED");
+        if (request.Role == "ADMIN" && string.IsNullOrWhiteSpace(request.JKey))
+            throw new InvalidOperationException("JKEY_REQUIRED");
 
-        if (request.Role == "CLIENT" && !string.IsNullOrWhiteSpace(request.Username))
-            throw new InvalidOperationException("CLIENT_SHOULD_NOT_HAVE_USERNAME");
+        if (request.Role == "CLIENT" && !string.IsNullOrWhiteSpace(request.JKey))
+            throw new InvalidOperationException("CLIENT_SHOULD_NOT_HAVE_JKEY");
 
         var existingCpf = await _userRepo.GetByCpfAsync(request.Cpf);
         if (existingCpf != null)
@@ -59,11 +59,11 @@ public class AuthService
         if (existingEmail != null)
             throw new InvalidOperationException("EMAIL_ALREADY_REGISTERED");
 
-        if (!string.IsNullOrWhiteSpace(request.Username))
+        if (!string.IsNullOrWhiteSpace(request.JKey))
         {
-            var existingUsername = await _userRepo.GetByUsernameAsync(request.Username);
-            if (existingUsername != null)
-                throw new InvalidOperationException("USERNAME_ALREADY_REGISTERED");
+            var existingJKey = await _userRepo.GetByJKeyAsync(request.JKey);
+            if (existingJKey != null)
+                throw new InvalidOperationException("JKEY_ALREADY_REGISTERED");
         }
 
         var user = new User
@@ -71,7 +71,7 @@ public class AuthService
             Name = request.Name,
             Cpf = request.Cpf,
             Email = request.Email,
-            Username = request.Role == "ADMIN" ? request.Username : null,
+            JKey = request.Role == "ADMIN" ? request.JKey : null,
             PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
             BirthDate = request.BirthDate,
             Role = request.Role,
@@ -88,7 +88,7 @@ public class AuthService
             Name = user.Name,
             Cpf = user.Cpf,
             Email = user.Email,
-            Username = user.Username,
+            JKey = user.JKey,
             Role = user.Role,
             CreatedAt = user.CreatedAt
         };
@@ -111,7 +111,7 @@ public class AuthService
 
     public async Task<LoginResponse> LoginAdminAsync(LoginAdminRequest request)
     {
-        var user = await _userRepo.GetByUsernameAsync(request.Username);
+        var user = await _userRepo.GetByJKeyAsync(request.JKey);
         if (user == null || user.Role != "ADMIN")
             throw new InvalidOperationException("INVALID_CREDENTIALS");
 
@@ -139,8 +139,8 @@ public class AuthService
             new("cpf", user.Cpf)
         };
 
-        if (!string.IsNullOrEmpty(user.Username))
-            claims.Add(new Claim("username", user.Username));
+        if (!string.IsNullOrEmpty(user.JKey))
+            claims.Add(new Claim("jKey", user.JKey));
 
         var token = new JwtSecurityToken(
             issuer: jwtSettings["Issuer"],

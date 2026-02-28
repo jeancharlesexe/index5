@@ -19,9 +19,9 @@ public class UserRepository : IUserRepository
         return await _context.Users.FirstOrDefaultAsync(u => u.Cpf == cpf);
     }
 
-    public async Task<User?> GetByUsernameAsync(string username)
+    public async Task<User?> GetByJKeyAsync(string jKey)
     {
-        return await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+        return await _context.Users.FirstOrDefaultAsync(u => u.JKey == jKey);
     }
 
     public async Task<User?> GetByEmailAsync(string email)

@@ -5,7 +5,7 @@ namespace Index5.Domain.Interfaces;
 public interface IUserRepository
 {
     Task<User?> GetByCpfAsync(string cpf);
-    Task<User?> GetByUsernameAsync(string username);
+    Task<User?> GetByJKeyAsync(string jKey);
     Task<User?> GetByEmailAsync(string email);
     Task AddAsync(User user);
 }
