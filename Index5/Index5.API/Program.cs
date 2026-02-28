@@ -38,6 +38,9 @@ builder.Services.AddScoped<PurchaseEngineService>();
 builder.Services.AddScoped<RebalancingService>();
 builder.Services.AddScoped<AuthService>();
 
+// Background Services
+builder.Services.AddHostedService<Index5.API.BackgroundServices.PurchaseSchedulerService>();
+
 // JWT Authentication
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]!);

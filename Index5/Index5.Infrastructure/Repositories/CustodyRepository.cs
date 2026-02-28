@@ -69,12 +69,17 @@ public class CustodyRepository : ICustodyRepository
     {
         await _context.OperationHistory.AddAsync(history);
     }
-
     public async Task<List<OperationHistory>> GetHistoryByClientIdAsync(int clientId)
     {
         return await _context.OperationHistory
             .Where(h => h.ClientId == clientId)
             .OrderByDescending(h => h.OperationDate)
             .ToListAsync();
+    }
+
+    public async Task<bool> HasScheduledPurchaseTodayAsync(DateTime date)
+    {
+        return await _context.OperationHistory
+            .AnyAsync(h => h.Reason == "COMPRA_PROGRAMADA" && h.OperationDate.Date == date.Date);
     }
 }

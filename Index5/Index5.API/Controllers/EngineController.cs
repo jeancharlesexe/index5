@@ -9,7 +9,7 @@ namespace Index5.API.Controllers;
 
 [ApiController]
 [Route("api/v1/engine")]
-[Authorize(Roles = "ADMIN")]
+[Authorize]
 public class EngineController : ControllerBase
 {
     private readonly PurchaseEngineService _engineService;
@@ -32,7 +32,16 @@ public class EngineController : ControllerBase
         _basketRepo = basketRepo;
     }
 
+    [HttpGet("status")]
+    [Authorize(Roles = "ADMIN,CLIENT")]
+    public IActionResult GetStatus()
+    {
+        var status = _engineService.GetStatus();
+        return Ok(ApiResponse<EngineStatusDto>.Success(status, "Engine status retrieved successfully."));
+    }
+
     [HttpPost("execute-purchase")]
+    [Authorize(Roles = "ADMIN")]
     public async Task<IActionResult> ExecutePurchase([FromBody] ExecutePurchaseRequest request)
     {
         try
@@ -59,6 +68,7 @@ public class EngineController : ControllerBase
     }
 
     [HttpPost("execute-rebalance")]
+    [Authorize(Roles = "ADMIN")]
     public async Task<IActionResult> ExecuteRebalance()
     {
         try

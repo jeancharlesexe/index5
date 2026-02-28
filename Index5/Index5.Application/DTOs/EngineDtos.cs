@@ -75,3 +75,9 @@ public class MasterCustodyItemDto
     public decimal CurrentValue { get; set; }
     public string Origin { get; set; } = string.Empty;
 }
+
+public class EngineStatusDto
+{
+    public DateTime NextPurchaseDate { get; set; }
+    public decimal ProgressPercentage { get; set; }
+}

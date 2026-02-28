@@ -11,19 +11,38 @@ public class PurchaseEngineService
     private readonly ICustodyRepository _custodyRepo;
     private readonly IUnitOfWork _unitOfWork;
     private readonly IKafkaProducer _kafkaProducer;
+    private readonly ICotahistParser _cotahistParser;
+    private readonly IConfiguration _configuration;
 
     public PurchaseEngineService(
         IClientRepository clientRepo,
         IBasketRepository basketRepo,
         ICustodyRepository custodyRepo,
         IUnitOfWork unitOfWork,
-        IKafkaProducer kafkaProducer)
+        IKafkaProducer kafkaProducer,
+        ICotahistParser cotahistParser,
+        IConfiguration configuration)
     {
         _clientRepo = clientRepo;
         _basketRepo = basketRepo;
         _custodyRepo = custodyRepo;
         _unitOfWork = unitOfWork;
         _kafkaProducer = kafkaProducer;
+        _cotahistParser = cotahistParser;
+        _configuration = configuration;
+    }
+
+    /// <summary>
+    /// Versão para execução automática (usada pelo BackgroundService)
+    /// </summary>
+    public async Task<ExecutePurchaseResponse> ExecutePurchaseAsync()
+    {
+        var folder = _configuration.GetValue<string>("Cotacoes:Folder") ?? "";
+        return await ExecutePurchaseAsync(DateTime.UtcNow.ToString("yyyy-MM-dd"), (ticker) =>
+        {
+            var q = _cotahistParser.GetClosingQuote(folder, ticker);
+            return q?.PrecoFechamento ?? 0;
+        });
     }
 
     public async Task<ExecutePurchaseResponse> ExecutePurchaseAsync(
@@ -230,6 +249,90 @@ public class PurchaseEngineService
             IREventsPublished = irEvents,
             Message = $"Scheduled purchase executed successfully for {clients.Count} clients."
         };
+    }
+
+    public EngineStatusDto GetStatus()
+    {
+        var now = DateTime.UtcNow;
+        var nextExecution = GetNextExecutionDate(now);
+        
+        // Simulação simples de progresso baseada no próximo ciclo
+        var scheduledDates = new[] { 5, 15, 25 };
+        var prevExecution = scheduledDates
+            .Select(d => GetExecutionDate(now.Year, now.Month, d))
+            .Where(d => d.Date < now.Date)
+            .OrderByDescending(d => d)
+            .FirstOrDefault();
+
+        if (prevExecution == default)
+        {
+            // Pega o dia 25 do mês passado
+            var prevMonth = now.AddMonths(-1);
+            prevExecution = GetExecutionDate(prevMonth.Year, prevMonth.Month, 25);
+        }
+
+        var totalDays = (nextExecution - prevExecution).TotalDays;
+        var elapsedDays = (now - prevExecution).TotalDays;
+        
+        var progress = (decimal)(elapsedDays / totalDays) * 100;
+        if (progress < 0) progress = 0;
+        if (progress > 100) progress = 100;
+
+        return new EngineStatusDto
+        {
+            NextPurchaseDate = nextExecution,
+            ProgressPercentage = Math.Round(progress, 2)
+        };
+    }
+
+    public bool IsDueToday(DateTime date)
+    {
+        var scheduledDays = new[] { 5, 15, 25 };
+        foreach (var day in scheduledDays)
+        {
+            var executionDate = GetExecutionDate(date.Year, date.Month, day);
+            if (executionDate.Date == date.Date)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public DateTime GetNextExecutionDate(DateTime fromDate)
+    {
+        var scheduledDays = new[] { 5, 15, 25 };
+        
+        // Tenta encontrar o próximo no mês atual
+        foreach (var day in scheduledDays)
+        {
+            var executionDate = GetExecutionDate(fromDate.Year, fromDate.Month, day);
+            if (executionDate.Date > fromDate.Date)
+            {
+                return executionDate;
+            }
+        }
+
+        // Se não houver mais no mês atual, pega o dia 5 do próximo mês
+        var nextMonth = fromDate.AddMonths(1);
+        return GetExecutionDate(nextMonth.Year, nextMonth.Month, 5);
+    }
+
+    private DateTime GetExecutionDate(int year, int month, int day)
+    {
+        var date = new DateTime(year, month, day, 0, 0, 0, DateTimeKind.Utc);
+        
+        // RN-021: Se cair no fim de semana, move para a próxima segunda
+        if (date.DayOfWeek == DayOfWeek.Saturday)
+        {
+            date = date.AddDays(2);
+        }
+        else if (date.DayOfWeek == DayOfWeek.Sunday)
+        {
+            date = date.AddDays(1);
+        }
+        
+        return date;
     }
 
     private List<OrderDetailDto> CalculateLotDetails(string ticker, int quantity)
