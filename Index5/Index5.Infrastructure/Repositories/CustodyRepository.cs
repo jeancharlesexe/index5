@@ -28,6 +28,11 @@ public class CustodyRepository : ICustodyRepository
             .FirstOrDefaultAsync(c => c.GraphicAccountId == graphicAccountId && c.Ticker == ticker);
     }
 
+    public async Task<List<ChildCustody>> GetAllChildCustodiesAsync()
+    {
+        return await _context.ChildCustodies.ToListAsync();
+    }
+
     public async Task AddAsync(ChildCustody custody)
     {
         await _context.ChildCustodies.AddAsync(custody);

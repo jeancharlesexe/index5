@@ -7,6 +7,7 @@ public interface ICustodyRepository
     // Client Custody
     Task<List<ChildCustody>> GetByGraphicAccountIdAsync(int graphicAccountId);
     Task<ChildCustody?> GetByAccountAndTickerAsync(int graphicAccountId, string ticker);
+    Task<List<ChildCustody>> GetAllChildCustodiesAsync();
     Task AddAsync(ChildCustody custody);
     void Update(ChildCustody custody);
 

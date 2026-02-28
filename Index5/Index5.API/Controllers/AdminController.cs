@@ -204,4 +204,35 @@ public class AdminController : ControllerBase
 
         return Ok(ApiResponse<MasterCustodyResponse>.Success(response, "Master custody retrieved successfully."));
     }
+
+    [HttpGet("aum")]
+    public async Task<IActionResult> GetTotalAum()
+    {
+        var quotesFolder = _configuration.GetValue<string>("Cotacoes:Folder") ?? "cotacoes";
+        
+        var masterCustodies = await _custodyRepo.GetAllMasterAsync();
+        var masterTotal = masterCustodies.Sum(c =>
+        {
+            var quote = _cotahistParser.GetClosingQuote(quotesFolder, c.Ticker);
+            return c.Quantity * (quote?.PrecoFechamento ?? 0);
+        });
+
+        var childCustodies = await _custodyRepo.GetAllChildCustodiesAsync();
+        var childrenTotal = childCustodies.Sum(c =>
+        {
+            var quote = _cotahistParser.GetClosingQuote(quotesFolder, c.Ticker);
+            return c.Quantity * (quote?.PrecoFechamento ?? 0);
+        });
+
+        var totalAum = masterTotal + childrenTotal;
+
+        var result = new
+        {
+            MasterTotal = masterTotal,
+            ChildrenTotal = childrenTotal,
+            TotalAum = totalAum
+        };
+
+        return Ok(ApiResponse<object>.Success(result, "Total Assets Under Management retrieved successfully."));
+    }
 }
