@@ -52,7 +52,41 @@ public class ClientService
 
         var existing = await _clientRepo.GetByCpfAsync(cpf);
         if (existing != null)
+        {
+            if (existing.ExitDate != null)
+            {
+                if (request.MonthlyValue < 100)
+                    throw new InvalidOperationException("INVALID_MONTHLY_VALUE");
+
+                existing.Active = true;
+                existing.ExitDate = null;
+                existing.MonthlyValue = request.MonthlyValue;
+                
+                _clientRepo.Update(existing);
+                await _unitOfWork.SaveChangesAsync();
+
+                return new JoinResponse
+                {
+                    ClientId = existing.Id,
+                    Name = existing.Name,
+                    Cpf = existing.Cpf,
+                    Email = existing.Email,
+                    MonthlyValue = existing.MonthlyValue,
+                    Status = existing.GraphicAccount != null ? "ACTIVE" : "PENDING",
+                    JoinDate = existing.JoinDate,
+                    Message = "Welcome back! Your subscription has been successfully reactivated.",
+                    GraphicAccount = existing.GraphicAccount != null ? new GraphicAccountDto
+                    {
+                        Id = existing.GraphicAccount.Id,
+                        AccountNumber = existing.GraphicAccount.AccountNumber,
+                        Type = existing.GraphicAccount.Type,
+                        CreatedAt = existing.GraphicAccount.CreatedAt
+                    } : null
+                };
+            }
+            
             throw new InvalidOperationException("DUPLICATE_CPF");
+        }
 
         if (request.MonthlyValue < 100)
             throw new InvalidOperationException("INVALID_MONTHLY_VALUE");

@@ -15,15 +15,21 @@ public class EngineController : ControllerBase
     private readonly PurchaseEngineService _engineService;
     private readonly ICotahistParser _cotahistParser;
     private readonly IConfiguration _configuration;
+    private readonly RebalancingService _rebalancingService;
+    private readonly IBasketRepository _basketRepo;
 
     public EngineController(
         PurchaseEngineService engineService,
         ICotahistParser cotahistParser,
-        IConfiguration configuration)
+        IConfiguration configuration,
+        RebalancingService rebalancingService,
+        IBasketRepository basketRepo)
     {
         _engineService = engineService;
         _cotahistParser = cotahistParser;
         _configuration = configuration;
+        _rebalancingService = rebalancingService;
+        _basketRepo = basketRepo;
     }
 
     [HttpPost("execute-purchase")]
@@ -49,6 +55,38 @@ public class EngineController : ControllerBase
         catch (InvalidOperationException ex) when (ex.Message == "NO_ACTIVE_CLIENTS")
         {
             return BadRequest(ApiResponse<object>.Error("No active clients found.", ex.Message));
+        }
+    }
+
+    [HttpPost("execute-rebalance")]
+    public async Task<IActionResult> ExecuteRebalance()
+    {
+        try
+        {
+            var activeBasket = await _basketRepo.GetActiveAsync();
+            if (activeBasket == null)
+            {
+                return NotFound(ApiResponse<object>.Error("No active basket found to run rebalancing.", "BASKET_NOT_FOUND", 404));
+            }
+
+            var quotesFolder = _configuration.GetValue<string>("Cotacoes:Folder") ?? "cotacoes";
+            
+            Func<string, decimal> getQuote = ticker => 
+            {
+                var quote = _cotahistParser.GetClosingQuote(quotesFolder, ticker);
+                return quote?.PrecoFechamento ?? 0;
+            };
+
+            var summary = await _rebalancingService.RebalanceAllClientsAsync(activeBasket, activeBasket, getQuote);
+
+            return Ok(ApiResponse<object>.Success(new {
+                summary.ClientsAffected,
+                Message = "Proportional deviation rebalancing executed successfully."
+            }, "Rebalancing executed successfully."));
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ApiResponse<object>.Error(ex.Message, "REBALANCING_ERROR"));
         }
     }
 }

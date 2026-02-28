@@ -1,0 +1,6200 @@
+{
+  "Index5.Application.dll": {
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Application\\Services\\AuthService.cs": {
+      "Index5.Application.Services.AuthService": {
+        "Index5.Application.DTOs.LoginResponse Index5.Application.Services.AuthService::GenerateTokenResponse(Index5.Domain.Entities.User)": {
+          "Lines": {
+            "128": 1,
+            "129": 1,
+            "130": 1,
+            "131": 1,
+            "133": 1,
+            "134": 1,
+            "135": 1,
+            "136": 1,
+            "137": 1,
+            "138": 1,
+            "139": 1,
+            "140": 1,
+            "142": 1,
+            "143": 0,
+            "145": 1,
+            "146": 1,
+            "147": 1,
+            "148": 1,
+            "149": 1,
+            "150": 1,
+            "152": 1,
+            "153": 1,
+            "154": 1,
+            "155": 1,
+            "156": 1,
+            "157": 1,
+            "158": 1,
+            "159": 1,
+            "160": 1
+          },
+          "Branches": [
+            {
+              "Line": 131,
+              "Offset": 66,
+              "EndOffset": 68,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 131,
+              "Offset": 66,
+              "EndOffset": 74,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 142,
+              "Offset": 234,
+              "EndOffset": 236,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 142,
+              "Offset": 234,
+              "EndOffset": 259,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void Index5.Application.Services.AuthService::.ctor(Index5.Domain.Interfaces.IUserRepository,Index5.Domain.Interfaces.IUnitOfWork,Microsoft.Extensions.Configuration.IConfiguration)": {
+          "Lines": {
+            "18": 6,
+            "19": 6,
+            "20": 6,
+            "21": 6,
+            "22": 6,
+            "23": 6,
+            "24": 6,
+            "25": 6,
+            "26": 6
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.Services.AuthService/<LoginAdminAsync>d__6": {
+        "System.Void Index5.Application.Services.AuthService/<LoginAdminAsync>d__6::MoveNext()": {
+          "Lines": {
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "118": 0,
+            "119": 0,
+            "121": 0,
+            "122": 0,
+            "124": 0,
+            "125": 0
+          },
+          "Branches": [
+            {
+              "Line": 115,
+              "Offset": 162,
+              "EndOffset": 164,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 115,
+              "Offset": 162,
+              "EndOffset": 187,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 115,
+              "Offset": 192,
+              "EndOffset": 194,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 115,
+              "Offset": 192,
+              "EndOffset": 205,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 118,
+              "Offset": 241,
+              "EndOffset": 243,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 118,
+              "Offset": 241,
+              "EndOffset": 254,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 121,
+              "Offset": 272,
+              "EndOffset": 274,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 121,
+              "Offset": 272,
+              "EndOffset": 285,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Index5.Application.Services.AuthService/<LoginClientAsync>d__5": {
+        "System.Void Index5.Application.Services.AuthService/<LoginClientAsync>d__5::MoveNext()": {
+          "Lines": {
+            "98": 1,
+            "99": 1,
+            "100": 1,
+            "101": 0,
+            "103": 1,
+            "104": 0,
+            "106": 1,
+            "107": 0,
+            "109": 1,
+            "110": 1
+          },
+          "Branches": [
+            {
+              "Line": 100,
+              "Offset": 162,
+              "EndOffset": 164,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 100,
+              "Offset": 162,
+              "EndOffset": 187,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 100,
+              "Offset": 192,
+              "EndOffset": 194,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 100,
+              "Offset": 192,
+              "EndOffset": 205,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 103,
+              "Offset": 241,
+              "EndOffset": 243,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 103,
+              "Offset": 241,
+              "EndOffset": 254,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 106,
+              "Offset": 272,
+              "EndOffset": 274,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 106,
+              "Offset": 272,
+              "EndOffset": 285,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Index5.Application.Services.AuthService/<RegisterAsync>d__4": {
+        "System.Void Index5.Application.Services.AuthService/<RegisterAsync>d__4::MoveNext()": {
+          "Lines": {
+            "29": 5,
+            "30": 5,
+            "31": 1,
+            "33": 4,
+            "34": 1,
+            "36": 3,
+            "37": 0,
+            "39": 3,
+            "40": 0,
+            "42": 3,
+            "43": 0,
+            "45": 3,
+            "46": 1,
+            "48": 2,
+            "49": 0,
+            "51": 2,
+            "52": 0,
+            "54": 2,
+            "55": 2,
+            "56": 1,
+            "58": 1,
+            "59": 1,
+            "60": 0,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1,
+            "66": 0,
+            "67": 1,
+            "69": 1,
+            "70": 1,
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "78": 1,
+            "79": 1,
+            "80": 1,
+            "82": 1,
+            "83": 1,
+            "85": 1,
+            "86": 1,
+            "87": 1,
+            "88": 1,
+            "89": 1,
+            "90": 1,
+            "91": 1,
+            "92": 1,
+            "93": 1,
+            "94": 1,
+            "95": 1
+          },
+          "Branches": [
+            {
+              "Line": 30,
+              "Offset": 79,
+              "EndOffset": 81,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 30,
+              "Offset": 79,
+              "EndOffset": 92,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            },
+            {
+              "Line": 33,
+              "Offset": 110,
+              "EndOffset": 112,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 33,
+              "Offset": 110,
+              "EndOffset": 123,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            },
+            {
+              "Line": 36,
+              "Offset": 143,
+              "EndOffset": 145,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 36,
+              "Offset": 143,
+              "EndOffset": 156,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 3
+            },
+            {
+              "Line": 39,
+              "Offset": 176,
+              "EndOffset": 178,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 39,
+              "Offset": 176,
+              "EndOffset": 189,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 3
+            },
+            {
+              "Line": 42,
+              "Offset": 219,
+              "EndOffset": 221,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 42,
+              "Offset": 219,
+              "EndOffset": 232,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 3
+            },
+            {
+              "Line": 45,
+              "Offset": 253,
+              "EndOffset": 255,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 2
+            },
+            {
+              "Line": 45,
+              "Offset": 253,
+              "EndOffset": 278,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 1
+            },
+            {
+              "Line": 45,
+              "Offset": 283,
+              "EndOffset": 285,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 1
+            },
+            {
+              "Line": 45,
+              "Offset": 283,
+              "EndOffset": 296,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 2
+            },
+            {
+              "Line": 48,
+              "Offset": 317,
+              "EndOffset": 319,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 1
+            },
+            {
+              "Line": 48,
+              "Offset": 317,
+              "EndOffset": 337,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 1
+            },
+            {
+              "Line": 48,
+              "Offset": 342,
+              "EndOffset": 344,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 48,
+              "Offset": 342,
+              "EndOffset": 355,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 2
+            },
+            {
+              "Line": 51,
+              "Offset": 376,
+              "EndOffset": 378,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 1
+            },
+            {
+              "Line": 51,
+              "Offset": 376,
+              "EndOffset": 399,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 1
+            },
+            {
+              "Line": 51,
+              "Offset": 404,
+              "EndOffset": 406,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 0
+            },
+            {
+              "Line": 51,
+              "Offset": 404,
+              "EndOffset": 417,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 2
+            },
+            {
+              "Line": 55,
+              "Offset": 575,
+              "EndOffset": 577,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 1
+            },
+            {
+              "Line": 55,
+              "Offset": 575,
+              "EndOffset": 588,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 1
+            },
+            {
+              "Line": 59,
+              "Offset": 746,
+              "EndOffset": 748,
+              "Path": 0,
+              "Ordinal": 24,
+              "Hits": 0
+            },
+            {
+              "Line": 59,
+              "Offset": 746,
+              "EndOffset": 759,
+              "Path": 1,
+              "Ordinal": 25,
+              "Hits": 1
+            },
+            {
+              "Line": 62,
+              "Offset": 782,
+              "EndOffset": 787,
+              "Path": 0,
+              "Ordinal": 26,
+              "Hits": 1
+            },
+            {
+              "Line": 65,
+              "Offset": 946,
+              "EndOffset": 948,
+              "Path": 0,
+              "Ordinal": 28,
+              "Hits": 0
+            },
+            {
+              "Line": 65,
+              "Offset": 946,
+              "EndOffset": 959,
+              "Path": 1,
+              "Ordinal": 29,
+              "Hits": 1
+            },
+            {
+              "Line": 62,
+              "Offset": 782,
+              "EndOffset": 967,
+              "Path": 1,
+              "Ordinal": 27,
+              "Hits": 1
+            },
+            {
+              "Line": 69,
+              "Offset": 1049,
+              "EndOffset": 1051,
+              "Path": 0,
+              "Ordinal": 30,
+              "Hits": 0
+            },
+            {
+              "Line": 69,
+              "Offset": 1049,
+              "EndOffset": 1054,
+              "Path": 1,
+              "Ordinal": 31,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Application\\Services\\BasketService.cs": {
+      "Index5.Application.Services.BasketService": {
+        "System.Decimal Index5.Application.Services.BasketService::<CreateAsync>b__6_2(System.String)": {
+          "Lines": {
+            "78": 1
+          },
+          "Branches": [
+            {
+              "Line": 78,
+              "Offset": 19,
+              "EndOffset": 21,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 78,
+              "Offset": 19,
+              "EndOffset": 29,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void Index5.Application.Services.BasketService::.ctor(Index5.Domain.Interfaces.IBasketRepository,Index5.Domain.Interfaces.IUnitOfWork,Index5.Application.Services.RebalancingService,Index5.Domain.Interfaces.ICotahistParser,Microsoft.Extensions.Configuration.IConfiguration)": {
+          "Lines": {
+            "16": 4,
+            "17": 4,
+            "18": 4,
+            "19": 4,
+            "20": 4,
+            "21": 4,
+            "22": 4,
+            "23": 4,
+            "24": 4,
+            "25": 4,
+            "26": 4,
+            "27": 4,
+            "28": 4
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 51,
+              "EndOffset": 53,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 27,
+              "Offset": 51,
+              "EndOffset": 59,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            }
+          ]
+        }
+      },
+      "Index5.Application.Services.BasketService/<>c": {
+        "System.Decimal Index5.Application.Services.BasketService/<>c::<CreateAsync>b__6_0(Index5.Application.DTOs.BasketItemDto)": {
+          "Lines": {
+            "35": 12
+          },
+          "Branches": []
+        },
+        "Index5.Domain.Entities.BasketItem Index5.Application.Services.BasketService/<>c::<CreateAsync>b__6_1(Index5.Application.DTOs.BasketItemDto)": {
+          "Lines": {
+            "57": 12,
+            "58": 12,
+            "59": 12,
+            "60": 12,
+            "61": 12
+          },
+          "Branches": []
+        },
+        "Index5.Application.DTOs.BasketItemDto Index5.Application.Services.BasketService/<>c::<CreateAsync>b__6_3(Index5.Domain.Entities.BasketItem)": {
+          "Lines": {
+            "89": 10,
+            "90": 10,
+            "91": 10,
+            "92": 10,
+            "93": 10
+          },
+          "Branches": []
+        },
+        "Index5.Application.DTOs.BasketItemDto Index5.Application.Services.BasketService/<>c::<GetActiveAsync>b__7_0(Index5.Domain.Entities.BasketItem)": {
+          "Lines": {
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0
+          },
+          "Branches": []
+        },
+        "Index5.Application.DTOs.BasketHistoryDto Index5.Application.Services.BasketService/<>c::<GetHistoryAsync>b__8_0(Index5.Domain.Entities.RecommendationBasket)": {
+          "Lines": {
+            "129": 2,
+            "130": 2,
+            "131": 2,
+            "132": 2,
+            "133": 2,
+            "134": 2,
+            "135": 2,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 2
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.Services.BasketService/<CreateAsync>d__6": {
+        "System.Void Index5.Application.Services.BasketService/<CreateAsync>d__6::MoveNext()": {
+          "Lines": {
+            "31": 2,
+            "32": 2,
+            "33": 0,
+            "36": 2,
+            "37": 0,
+            "39": 2,
+            "40": 2,
+            "41": 2,
+            "43": 2,
+            "44": 1,
+            "45": 1,
+            "46": 1,
+            "47": 1,
+            "48": 1,
+            "49": 1,
+            "50": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1,
+            "63": 2,
+            "64": 2,
+            "65": 2,
+            "66": 2,
+            "67": 2,
+            "68": 2,
+            "69": 2,
+            "71": 2,
+            "73": 2,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "79": 1,
+            "81": 2,
+            "83": 2,
+            "84": 2,
+            "85": 2,
+            "86": 2,
+            "87": 2,
+            "88": 2,
+            "94": 2,
+            "95": 2,
+            "96": 2,
+            "97": 2,
+            "98": 2,
+            "99": 2,
+            "100": 2,
+            "101": 2,
+            "102": 2
+          },
+          "Branches": [
+            {
+              "Line": 32,
+              "Offset": 76,
+              "EndOffset": 78,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 32,
+              "Offset": 76,
+              "EndOffset": 89,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 36,
+              "Offset": 162,
+              "EndOffset": 164,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 36,
+              "Offset": 162,
+              "EndOffset": 175,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 43,
+              "Offset": 336,
+              "EndOffset": 338,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 43,
+              "Offset": 336,
+              "EndOffset": 463,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 73,
+              "Offset": 712,
+              "EndOffset": 717,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 73,
+              "Offset": 712,
+              "EndOffset": 882,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 2
+            },
+            {
+              "Line": 83,
+              "Offset": 1155,
+              "EndOffset": 1157,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1
+            },
+            {
+              "Line": 83,
+              "Offset": 1155,
+              "EndOffset": 1161,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            },
+            {
+              "Line": 83,
+              "Offset": 1180,
+              "EndOffset": 1182,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 1
+            },
+            {
+              "Line": 83,
+              "Offset": 1180,
+              "EndOffset": 1186,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 1
+            },
+            {
+              "Line": 83,
+              "Offset": 1204,
+              "EndOffset": 1206,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 1
+            },
+            {
+              "Line": 83,
+              "Offset": 1204,
+              "EndOffset": 1213,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Index5.Application.Services.BasketService/<GetActiveAsync>d__7": {
+        "System.Void Index5.Application.Services.BasketService/<GetActiveAsync>d__7::MoveNext()": {
+          "Lines": {
+            "105": 1,
+            "106": 1,
+            "107": 1,
+            "109": 1,
+            "110": 1,
+            "111": 1,
+            "112": 1,
+            "113": 1,
+            "114": 1,
+            "120": 1,
+            "121": 1
+          },
+          "Branches": [
+            {
+              "Line": 107,
+              "Offset": 158,
+              "EndOffset": 160,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 107,
+              "Offset": 158,
+              "EndOffset": 167,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Index5.Application.Services.BasketService/<GetHistoryAsync>d__8": {
+        "System.Void Index5.Application.Services.BasketService/<GetHistoryAsync>d__8::MoveNext()": {
+          "Lines": {
+            "124": 1,
+            "125": 1,
+            "127": 1,
+            "128": 1,
+            "142": 1,
+            "143": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Application\\Services\\ClientService.cs": {
+      "Index5.Application.Services.ClientService": {
+        "System.Void Index5.Application.Services.ClientService::.ctor(Index5.Domain.Interfaces.IClientRepository,Index5.Domain.Interfaces.IUserRepository,Index5.Domain.Interfaces.ICustodyRepository,Index5.Domain.Interfaces.IUnitOfWork)": {
+          "Lines": {
+            "14": 7,
+            "15": 7,
+            "16": 7,
+            "17": 7,
+            "18": 7,
+            "19": 7,
+            "20": 7
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.Services.ClientService/<>c": {
+        "Index5.Application.DTOs.PendingClientDto Index5.Application.Services.ClientService/<>c::<GetPendingClientsAsync>b__7_0(Index5.Domain.Entities.Client)": {
+          "Lines": {
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0
+          },
+          "Branches": []
+        },
+        "Index5.Application.DTOs.PendingClientDto Index5.Application.Services.ClientService/<>c::<GetFilteredPendingClientsAsync>b__8_0(Index5.Domain.Entities.Client)": {
+          "Lines": {
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "145": 0,
+            "146": 0,
+            "147": 0,
+            "148": 0
+          },
+          "Branches": []
+        },
+        "Index5.Application.DTOs.ActiveClientDto Index5.Application.Services.ClientService/<>c::<GetActiveClientsAsync>b__9_0(Index5.Domain.Entities.Client)": {
+          "Lines": {
+            "158": 0,
+            "159": 0,
+            "160": 0,
+            "161": 0,
+            "162": 0,
+            "163": 0,
+            "164": 0,
+            "165": 0,
+            "166": 0,
+            "167": 0
+          },
+          "Branches": [
+            {
+              "Line": 158,
+              "Offset": 78,
+              "EndOffset": 80,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 158,
+              "Offset": 78,
+              "EndOffset": 84,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 158,
+              "Offset": 90,
+              "EndOffset": 92,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 158,
+              "Offset": 90,
+              "EndOffset": 98,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        },
+        "Index5.Application.DTOs.ActiveClientDto Index5.Application.Services.ClientService/<>c::<GetPagedActiveClientsAsync>b__10_0(Index5.Domain.Entities.Client)": {
+          "Lines": {
+            "176": 0,
+            "177": 0,
+            "178": 0,
+            "179": 0,
+            "180": 0,
+            "181": 0,
+            "182": 0,
+            "183": 0,
+            "184": 0,
+            "185": 0
+          },
+          "Branches": [
+            {
+              "Line": 176,
+              "Offset": 78,
+              "EndOffset": 80,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 176,
+              "Offset": 78,
+              "EndOffset": 84,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 176,
+              "Offset": 90,
+              "EndOffset": 92,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 176,
+              "Offset": 90,
+              "EndOffset": 98,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Decimal Index5.Application.Services.ClientService/<>c::<GetPortfolioAsync>b__16_1(Index5.Application.DTOs.PortfolioAssetDto)": {
+          "Lines": {
+            "356": 2
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.Services.ClientService/<>c::<GetPortfolioAsync>b__16_2(Index5.Domain.Entities.ChildCustody)": {
+          "Lines": {
+            "357": 2
+          },
+          "Branches": []
+        },
+        "System.Boolean Index5.Application.Services.ClientService/<>c::<GetProfitabilityAsync>b__17_0(Index5.Domain.Entities.OperationHistory)": {
+          "Lines": {
+            "395": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Application.Services.ClientService/<>c::<GetProfitabilityAsync>b__17_1(Index5.Domain.Entities.OperationHistory)": {
+          "Lines": {
+            "396": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Application.Services.ClientService/<>c::<GetProfitabilityAsync>b__17_2(System.Linq.IGrouping`2<System.DateTime,Index5.Domain.Entities.OperationHistory>)": {
+          "Lines": {
+            "397": 0
+          },
+          "Branches": []
+        },
+        "Index5.Application.DTOs.ContributionHistoryDto Index5.Application.Services.ClientService/<>c::<GetProfitabilityAsync>b__17_3(System.Linq.IGrouping`2<System.DateTime,Index5.Domain.Entities.OperationHistory>)": {
+          "Lines": {
+            "398": 0,
+            "399": 0,
+            "400": 0,
+            "401": 0,
+            "402": 0,
+            "403": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Application.Services.ClientService/<>c::<GetProfitabilityAsync>b__17_4(Index5.Domain.Entities.OperationHistory)": {
+          "Lines": {
+            "406": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Application.Services.ClientService/<>c::<GetProfitabilityAsync>b__17_5(System.Linq.IGrouping`2<System.DateTime,Index5.Domain.Entities.OperationHistory>)": {
+          "Lines": {
+            "407": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean Index5.Application.Services.ClientService/<>c::<GetProfitabilityAsync>b__17_9(Index5.Domain.Entities.OperationHistory)": {
+          "Lines": {
+            "413": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.Services.ClientService/<>c::<GetProfitabilityAsync>b__17_10(Index5.Domain.Entities.OperationHistory)": {
+          "Lines": {
+            "414": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean Index5.Application.Services.ClientService/<>c::<GetProfitabilityAsync>b__17_11(Index5.Domain.Entities.OperationHistory)": {
+          "Lines": {
+            "416": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.Services.ClientService/<>c::<GetProfitabilityAsync>b__17_12(Index5.Domain.Entities.OperationHistory)": {
+          "Lines": {
+            "417": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.Services.ClientService/<>c__DisplayClass16_0": {
+        "Index5.Application.DTOs.PortfolioAssetDto Index5.Application.Services.ClientService/<>c__DisplayClass16_0::<GetPortfolioAsync>b__0(Index5.Domain.Entities.ChildCustody)": {
+          "Lines": {
+            "338": 1,
+            "339": 1,
+            "340": 1,
+            "341": 1,
+            "342": 1,
+            "344": 1,
+            "345": 1,
+            "346": 1,
+            "347": 1,
+            "348": 1,
+            "349": 1,
+            "350": 1,
+            "351": 1,
+            "352": 1,
+            "353": 1,
+            "354": 2
+          },
+          "Branches": [
+            {
+              "Line": 342,
+              "Offset": 82,
+              "EndOffset": 84,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 342,
+              "Offset": 82,
+              "EndOffset": 91,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Index5.Application.Services.ClientService/<>c__DisplayClass17_0": {
+        "Index5.Application.DTOs.PortfolioEvolutionDto Index5.Application.Services.ClientService/<>c__DisplayClass17_0::<GetProfitabilityAsync>b__6(System.Linq.IGrouping`2<System.DateTime,Index5.Domain.Entities.OperationHistory>)": {
+          "Lines": {
+            "408": 0,
+            "409": 0,
+            "410": 0,
+            "412": 0,
+            "415": 0,
+            "419": 0,
+            "420": 0,
+            "421": 0,
+            "422": 0,
+            "423": 0,
+            "424": 0,
+            "425": 0,
+            "426": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.Services.ClientService/<ApproveClientAsync>d__11": {
+        "System.Void Index5.Application.Services.ClientService/<ApproveClientAsync>d__11::MoveNext()": {
+          "Lines": {
+            "193": 1,
+            "194": 1,
+            "195": 1,
+            "196": 0,
+            "198": 1,
+            "199": 0,
+            "201": 1,
+            "202": 0,
+            "204": 1,
+            "205": 1,
+            "206": 1,
+            "207": 1,
+            "208": 1,
+            "209": 1,
+            "210": 1,
+            "212": 1,
+            "213": 1,
+            "215": 1,
+            "216": 1,
+            "217": 1,
+            "218": 1,
+            "219": 1,
+            "220": 1,
+            "221": 1,
+            "222": 1,
+            "223": 1,
+            "224": 1,
+            "225": 1,
+            "226": 1,
+            "227": 1,
+            "228": 1,
+            "229": 1,
+            "230": 1,
+            "231": 1,
+            "232": 1,
+            "233": 1
+          },
+          "Branches": [
+            {
+              "Line": 195,
+              "Offset": 175,
+              "EndOffset": 177,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 195,
+              "Offset": 175,
+              "EndOffset": 188,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 198,
+              "Offset": 199,
+              "EndOffset": 201,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 198,
+              "Offset": 199,
+              "EndOffset": 217,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 198,
+              "Offset": 222,
+              "EndOffset": 224,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 198,
+              "Offset": 222,
+              "EndOffset": 235,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 201,
+              "Offset": 259,
+              "EndOffset": 261,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 201,
+              "Offset": 259,
+              "EndOffset": 272,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Index5.Application.Services.ClientService/<DeactivateClientAsync>d__13": {
+        "System.Void Index5.Application.Services.ClientService/<DeactivateClientAsync>d__13::MoveNext()": {
+          "Lines": {
+            "258": 0,
+            "259": 0,
+            "260": 0,
+            "261": 0,
+            "263": 0,
+            "264": 0,
+            "266": 0,
+            "267": 0,
+            "268": 0,
+            "269": 0,
+            "271": 0,
+            "272": 0,
+            "273": 0,
+            "274": 0,
+            "275": 0,
+            "276": 0,
+            "277": 0,
+            "278": 0,
+            "279": 0
+          },
+          "Branches": [
+            {
+              "Line": 260,
+              "Offset": 175,
+              "EndOffset": 177,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 260,
+              "Offset": 175,
+              "EndOffset": 188,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 263,
+              "Offset": 206,
+              "EndOffset": 208,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 263,
+              "Offset": 206,
+              "EndOffset": 219,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Index5.Application.Services.ClientService/<ExitAsync>d__14": {
+        "System.Void Index5.Application.Services.ClientService/<ExitAsync>d__14::MoveNext()": {
+          "Lines": {
+            "282": 0,
+            "283": 0,
+            "284": 0,
+            "285": 0,
+            "287": 0,
+            "288": 0,
+            "290": 0,
+            "291": 0,
+            "292": 0,
+            "293": 0,
+            "295": 0,
+            "296": 0,
+            "297": 0,
+            "298": 0,
+            "299": 0,
+            "300": 0,
+            "301": 0,
+            "302": 0,
+            "303": 0
+          },
+          "Branches": [
+            {
+              "Line": 284,
+              "Offset": 175,
+              "EndOffset": 177,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 284,
+              "Offset": 175,
+              "EndOffset": 188,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 287,
+              "Offset": 206,
+              "EndOffset": 208,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 287,
+              "Offset": 206,
+              "EndOffset": 219,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Index5.Application.Services.ClientService/<GetActiveClientsAsync>d__9": {
+        "System.Void Index5.Application.Services.ClientService/<GetActiveClientsAsync>d__9::MoveNext()": {
+          "Lines": {
+            "156": 0,
+            "157": 0,
+            "168": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.Services.ClientService/<GetByCpfAsync>d__5": {
+        "System.Void Index5.Application.Services.ClientService/<GetByCpfAsync>d__5::MoveNext()": {
+          "Lines": {
+            "23": 2,
+            "24": 2,
+            "25": 3,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "42": 1,
+            "43": 1,
+            "44": 1,
+            "45": 2
+          },
+          "Branches": [
+            {
+              "Line": 25,
+              "Offset": 164,
+              "EndOffset": 166,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 25,
+              "Offset": 164,
+              "EndOffset": 173,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 289,
+              "EndOffset": 291,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 302,
+              "EndOffset": 304,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 27,
+              "Offset": 302,
+              "EndOffset": 311,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 289,
+              "EndOffset": 318,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 27,
+              "Offset": 359,
+              "EndOffset": 361,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 27,
+              "Offset": 359,
+              "EndOffset": 368,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 391,
+              "EndOffset": 393,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 391,
+              "EndOffset": 396,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Index5.Application.Services.ClientService/<GetFilteredPendingClientsAsync>d__8": {
+        "System.Void Index5.Application.Services.ClientService/<GetFilteredPendingClientsAsync>d__8::MoveNext()": {
+          "Lines": {
+            "135": 0,
+            "136": 0,
+            "138": 0,
+            "139": 0,
+            "149": 0,
+            "150": 0,
+            "151": 0,
+            "152": 0,
+            "153": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.Services.ClientService/<GetPagedActiveClientsAsync>d__10": {
+        "System.Void Index5.Application.Services.ClientService/<GetPagedActiveClientsAsync>d__10::MoveNext()": {
+          "Lines": {
+            "171": 0,
+            "172": 0,
+            "174": 0,
+            "175": 0,
+            "186": 0,
+            "187": 0,
+            "188": 0,
+            "189": 0,
+            "190": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.Services.ClientService/<GetPendingClientsAsync>d__7": {
+        "System.Void Index5.Application.Services.ClientService/<GetPendingClientsAsync>d__7::MoveNext()": {
+          "Lines": {
+            "121": 0,
+            "122": 0,
+            "132": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.Services.ClientService/<GetPortfolioAsync>d__16": {
+        "System.Void Index5.Application.Services.ClientService/<GetPortfolioAsync>d__16::MoveNext()": {
+          "Lines": {
+            "330": 1,
+            "331": 1,
+            "332": 1,
+            "333": 0,
+            "335": 1,
+            "337": 1,
+            "343": 1,
+            "358": 1,
+            "359": 1,
+            "361": 5,
+            "362": 1,
+            "363": 1,
+            "364": 1,
+            "365": 1,
+            "366": 1,
+            "368": 1,
+            "369": 1,
+            "370": 1,
+            "371": 1,
+            "372": 1,
+            "373": 1,
+            "374": 1,
+            "375": 1,
+            "376": 1,
+            "377": 1,
+            "378": 1,
+            "379": 1,
+            "380": 1,
+            "381": 1,
+            "382": 1,
+            "383": 1
+          },
+          "Branches": [
+            {
+              "Line": 332,
+              "Offset": 192,
+              "EndOffset": 194,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 332,
+              "Offset": 192,
+              "EndOffset": 205,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 335,
+              "Offset": 218,
+              "EndOffset": 220,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 335,
+              "Offset": 218,
+              "EndOffset": 224,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 335,
+              "Offset": 230,
+              "EndOffset": 232,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 335,
+              "Offset": 230,
+              "EndOffset": 236,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 335,
+              "Offset": 242,
+              "EndOffset": 244,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 335,
+              "Offset": 242,
+              "EndOffset": 250,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 359,
+              "Offset": 430,
+              "EndOffset": 432,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 359,
+              "Offset": 430,
+              "EndOffset": 439,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            },
+            {
+              "Line": 361,
+              "Offset": 607,
+              "EndOffset": 493,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 1
+            },
+            {
+              "Line": 363,
+              "Offset": 533,
+              "EndOffset": 535,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 363,
+              "Offset": 533,
+              "EndOffset": 542,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 1
+            },
+            {
+              "Line": 361,
+              "Offset": 607,
+              "EndOffset": 609,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 1
+            },
+            {
+              "Line": 368,
+              "Offset": 700,
+              "EndOffset": 702,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 368,
+              "Offset": 700,
+              "EndOffset": 706,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 1
+            },
+            {
+              "Line": 368,
+              "Offset": 712,
+              "EndOffset": 714,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 368,
+              "Offset": 712,
+              "EndOffset": 720,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Index5.Application.Services.ClientService/<GetProfitabilityAsync>d__17": {
+        "System.Void Index5.Application.Services.ClientService/<GetProfitabilityAsync>d__17::MoveNext()": {
+          "Lines": {
+            "386": 0,
+            "387": 0,
+            "388": 0,
+            "389": 0,
+            "391": 0,
+            "392": 0,
+            "394": 0,
+            "405": 0,
+            "411": 0,
+            "418": 0,
+            "428": 0,
+            "429": 0,
+            "430": 0,
+            "431": 0,
+            "432": 0,
+            "433": 0,
+            "434": 0,
+            "435": 0,
+            "436": 0,
+            "437": 0
+          },
+          "Branches": [
+            {
+              "Line": 388,
+              "Offset": 200,
+              "EndOffset": 202,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 388,
+              "Offset": 200,
+              "EndOffset": 213,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Index5.Application.Services.ClientService/<JoinAsync>d__6": {
+        "System.Void Index5.Application.Services.ClientService/<JoinAsync>d__6::MoveNext()": {
+          "Lines": {
+            "48": 2,
+            "49": 2,
+            "50": 2,
+            "51": 0,
+            "53": 2,
+            "54": 2,
+            "55": 2,
+            "56": 2,
+            "57": 1,
+            "58": 1,
+            "59": 0,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "65": 1,
+            "66": 1,
+            "68": 1,
+            "69": 1,
+            "70": 1,
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "78": 1,
+            "79": 1,
+            "80": 1,
+            "81": 1,
+            "82": 1,
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "88": 1,
+            "91": 0,
+            "92": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "104": 0,
+            "105": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 1
+          },
+          "Branches": [
+            {
+              "Line": 50,
+              "Offset": 207,
+              "EndOffset": 209,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 50,
+              "Offset": 207,
+              "EndOffset": 220,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 54,
+              "Offset": 372,
+              "EndOffset": 377,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 56,
+              "Offset": 402,
+              "EndOffset": 407,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 58,
+              "Offset": 435,
+              "EndOffset": 437,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 58,
+              "Offset": 435,
+              "EndOffset": 448,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 68,
+              "Offset": 745,
+              "EndOffset": 747,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1
+            },
+            {
+              "Line": 68,
+              "Offset": 745,
+              "EndOffset": 754,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 68,
+              "Offset": 807,
+              "EndOffset": 809,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 1
+            },
+            {
+              "Line": 68,
+              "Offset": 807,
+              "EndOffset": 812,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 56,
+              "Offset": 402,
+              "EndOffset": 921,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 54,
+              "Offset": 372,
+              "EndOffset": 932,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 91,
+              "Offset": 959,
+              "EndOffset": 961,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 91,
+              "Offset": 959,
+              "EndOffset": 972,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Index5.Application.Services.ClientService/<RejectClientAsync>d__12": {
+        "System.Void Index5.Application.Services.ClientService/<RejectClientAsync>d__12::MoveNext()": {
+          "Lines": {
+            "236": 0,
+            "237": 0,
+            "238": 0,
+            "239": 0,
+            "241": 0,
+            "242": 0,
+            "244": 0,
+            "245": 0,
+            "247": 0,
+            "248": 0,
+            "249": 0,
+            "250": 0,
+            "251": 0,
+            "252": 0,
+            "253": 0,
+            "254": 0,
+            "255": 0
+          },
+          "Branches": [
+            {
+              "Line": 238,
+              "Offset": 175,
+              "EndOffset": 177,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 238,
+              "Offset": 175,
+              "EndOffset": 188,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 241,
+              "Offset": 199,
+              "EndOffset": 201,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 241,
+              "Offset": 199,
+              "EndOffset": 217,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 241,
+              "Offset": 222,
+              "EndOffset": 224,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 241,
+              "Offset": 222,
+              "EndOffset": 235,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Index5.Application.Services.ClientService/<UpdateMonthlyValueAsync>d__15": {
+        "System.Void Index5.Application.Services.ClientService/<UpdateMonthlyValueAsync>d__15::MoveNext()": {
+          "Lines": {
+            "306": 1,
+            "307": 1,
+            "308": 1,
+            "309": 0,
+            "311": 1,
+            "312": 1,
+            "314": 0,
+            "315": 0,
+            "316": 0,
+            "317": 0,
+            "319": 0,
+            "320": 0,
+            "321": 0,
+            "322": 0,
+            "323": 0,
+            "324": 0,
+            "325": 0,
+            "326": 0,
+            "327": 0
+          },
+          "Branches": [
+            {
+              "Line": 308,
+              "Offset": 175,
+              "EndOffset": 177,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 308,
+              "Offset": 175,
+              "EndOffset": 188,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 311,
+              "Offset": 215,
+              "EndOffset": 217,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 311,
+              "Offset": 215,
+              "EndOffset": 228,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Application\\Services\\PurchaseEngineService.cs": {
+      "Index5.Application.Services.PurchaseEngineService": {
+        "System.Collections.Generic.List`1<Index5.Application.DTOs.OrderDetailDto> Index5.Application.Services.PurchaseEngineService::CalculateLotDetails(System.String,System.Int32)": {
+          "Lines": {
+            "236": 2,
+            "237": 2,
+            "239": 2,
+            "240": 2,
+            "242": 2,
+            "243": 0,
+            "244": 0,
+            "245": 0,
+            "246": 0,
+            "247": 0,
+            "248": 0,
+            "249": 0,
+            "250": 0,
+            "252": 2,
+            "253": 2,
+            "254": 2,
+            "255": 2,
+            "256": 2,
+            "257": 2,
+            "258": 2,
+            "259": 2,
+            "260": 2,
+            "262": 2,
+            "263": 2
+          },
+          "Branches": [
+            {
+              "Line": 242,
+              "Offset": 23,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 242,
+              "Offset": 23,
+              "EndOffset": 70,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 252,
+              "Offset": 78,
+              "EndOffset": 80,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 252,
+              "Offset": 78,
+              "EndOffset": 132,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Void Index5.Application.Services.PurchaseEngineService::.ctor(Index5.Domain.Interfaces.IClientRepository,Index5.Domain.Interfaces.IBasketRepository,Index5.Domain.Interfaces.ICustodyRepository,Index5.Domain.Interfaces.IUnitOfWork,Index5.Domain.Interfaces.IKafkaProducer)": {
+          "Lines": {
+            "15": 3,
+            "16": 3,
+            "17": 3,
+            "18": 3,
+            "19": 3,
+            "20": 3,
+            "21": 3,
+            "22": 3,
+            "23": 3,
+            "24": 3,
+            "25": 3,
+            "26": 3,
+            "27": 3
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.Services.PurchaseEngineService/<>c": {
+        "<>f__AnonymousType2`2<Index5.Domain.Entities.Client,System.Decimal> Index5.Application.Services.PurchaseEngineService/<>c::<ExecutePurchaseAsync>b__6_0(Index5.Domain.Entities.Client)": {
+          "Lines": {
+            "42": 3
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.Services.PurchaseEngineService/<>c::<ExecutePurchaseAsync>b__6_1(<>f__AnonymousType2`2<Index5.Domain.Entities.Client,System.Decimal>)": {
+          "Lines": {
+            "45": 6
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.Services.PurchaseEngineService/<ExecutePurchaseAsync>d__6": {
+        "System.Void Index5.Application.Services.PurchaseEngineService/<ExecutePurchaseAsync>d__6::MoveNext()": {
+          "Lines": {
+            "32": 3,
+            "33": 3,
+            "34": 3,
+            "35": 0,
+            "37": 3,
+            "38": 3,
+            "39": 0,
+            "41": 3,
+            "43": 3,
+            "47": 3,
+            "48": 3,
+            "50": 15,
+            "51": 3,
+            "52": 3,
+            "53": 3,
+            "54": 4,
+            "56": 2,
+            "58": 2,
+            "59": 2,
+            "61": 2,
+            "62": 2,
+            "64": 2,
+            "66": 2,
+            "67": 2,
+            "68": 2,
+            "70": 2,
+            "71": 2,
+            "72": 2,
+            "73": 2,
+            "74": 2,
+            "75": 2,
+            "76": 2,
+            "77": 2,
+            "78": 2,
+            "80": 2,
+            "81": 1,
+            "82": 1,
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "86": 2,
+            "88": 3,
+            "89": 3,
+            "90": 3,
+            "92": 13,
+            "93": 2,
+            "94": 2,
+            "95": 2,
+            "97": 15,
+            "98": 3,
+            "99": 3,
+            "100": 3,
+            "101": 3,
+            "103": 15,
+            "104": 3,
+            "105": 4,
+            "107": 2,
+            "108": 2,
+            "110": 2,
+            "112": 2,
+            "114": 2,
+            "115": 2,
+            "116": 2,
+            "117": 2,
+            "118": 2,
+            "120": 2,
+            "121": 2,
+            "122": 2,
+            "124": 2,
+            "125": 1,
+            "126": 1,
+            "127": 1,
+            "128": 1,
+            "129": 1,
+            "130": 1,
+            "131": 1,
+            "133": 1,
+            "134": 1,
+            "135": 1,
+            "136": 1,
+            "137": 1,
+            "138": 1,
+            "139": 1,
+            "140": 1,
+            "141": 1,
+            "143": 2,
+            "144": 2,
+            "145": 2,
+            "146": 2,
+            "147": 2,
+            "148": 2,
+            "149": 2,
+            "150": 2,
+            "151": 2,
+            "152": 2,
+            "153": 2,
+            "155": 2,
+            "156": 2,
+            "159": 2,
+            "160": 2,
+            "161": 2,
+            "162": 2,
+            "163": 2,
+            "164": 2,
+            "165": 2,
+            "166": 2,
+            "167": 2,
+            "168": 2,
+            "169": 2,
+            "170": 2,
+            "171": 0,
+            "172": 2,
+            "174": 3,
+            "175": 3,
+            "176": 3,
+            "177": 3,
+            "178": 3,
+            "179": 3,
+            "180": 3,
+            "181": 3,
+            "183": 3,
+            "184": 13,
+            "185": 2,
+            "186": 4,
+            "188": 0,
+            "189": 0,
+            "191": 0,
+            "192": 0,
+            "193": 0,
+            "194": 0,
+            "195": 0,
+            "196": 0,
+            "197": 0,
+            "198": 0,
+            "199": 0,
+            "200": 0,
+            "201": 0,
+            "203": 0,
+            "204": 0,
+            "205": 0,
+            "206": 0,
+            "207": 0,
+            "208": 0,
+            "209": 0,
+            "210": 0,
+            "211": 0,
+            "213": 0,
+            "214": 0,
+            "215": 0,
+            "216": 0,
+            "217": 0,
+            "218": 0,
+            "220": 3,
+            "222": 3,
+            "223": 3,
+            "224": 3,
+            "225": 3,
+            "226": 3,
+            "227": 3,
+            "228": 3,
+            "229": 3,
+            "230": 3,
+            "231": 3,
+            "232": 3,
+            "233": 3
+          },
+          "Branches": [
+            {
+              "Line": 34,
+              "Offset": 226,
+              "EndOffset": 228,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 34,
+              "Offset": 226,
+              "EndOffset": 239,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 38,
+              "Offset": 390,
+              "EndOffset": 392,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 38,
+              "Offset": 390,
+              "EndOffset": 403,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            },
+            {
+              "Line": 50,
+              "Offset": 1236,
+              "EndOffset": 566,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 3
+            },
+            {
+              "Line": 54,
+              "Offset": 672,
+              "EndOffset": 679,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 59,
+              "Offset": 864,
+              "EndOffset": 866,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 59,
+              "Offset": 864,
+              "EndOffset": 870,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 66,
+              "Offset": 959,
+              "EndOffset": 964,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 2
+            },
+            {
+              "Line": 66,
+              "Offset": 959,
+              "EndOffset": 1110,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 2
+            },
+            {
+              "Line": 80,
+              "Offset": 1117,
+              "EndOffset": 1119,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 1
+            },
+            {
+              "Line": 80,
+              "Offset": 1117,
+              "EndOffset": 1130,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 1
+            },
+            {
+              "Line": 80,
+              "Offset": 1135,
+              "EndOffset": 1137,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 1
+            },
+            {
+              "Line": 80,
+              "Offset": 1135,
+              "EndOffset": 1210,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 2
+            },
+            {
+              "Line": 54,
+              "Offset": 672,
+              "EndOffset": 1225,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 6
+            },
+            {
+              "Line": 50,
+              "Offset": 1236,
+              "EndOffset": 1241,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 3
+            },
+            {
+              "Line": 92,
+              "Offset": 1401,
+              "EndOffset": 1329,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 2
+            },
+            {
+              "Line": 92,
+              "Offset": 1401,
+              "EndOffset": 1403,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 3
+            },
+            {
+              "Line": 97,
+              "Offset": 3135,
+              "EndOffset": 1474,
+              "Path": 1,
+              "Ordinal": 31,
+              "Hits": 3
+            },
+            {
+              "Line": 97,
+              "Offset": 1463,
+              "EndOffset": 1571,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 3
+            },
+            {
+              "Line": 103,
+              "Offset": 2979,
+              "EndOffset": 1623,
+              "Path": 1,
+              "Ordinal": 29,
+              "Hits": 3
+            },
+            {
+              "Line": 105,
+              "Offset": 1670,
+              "EndOffset": 1677,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 2
+            },
+            {
+              "Line": 110,
+              "Offset": 1759,
+              "EndOffset": 1766,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 2
+            },
+            {
+              "Line": 120,
+              "Offset": 1874,
+              "EndOffset": 1876,
+              "Path": 0,
+              "Ordinal": 24,
+              "Hits": 0
+            },
+            {
+              "Line": 120,
+              "Offset": 1874,
+              "EndOffset": 1880,
+              "Path": 1,
+              "Ordinal": 25,
+              "Hits": 2
+            },
+            {
+              "Line": 124,
+              "Offset": 2081,
+              "EndOffset": 2086,
+              "Path": 0,
+              "Ordinal": 26,
+              "Hits": 1
+            },
+            {
+              "Line": 124,
+              "Offset": 2081,
+              "EndOffset": 2259,
+              "Path": 1,
+              "Ordinal": 27,
+              "Hits": 1
+            },
+            {
+              "Line": 105,
+              "Offset": 1670,
+              "EndOffset": 2968,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 6
+            },
+            {
+              "Line": 110,
+              "Offset": 1759,
+              "EndOffset": 2968,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 6
+            },
+            {
+              "Line": 103,
+              "Offset": 2979,
+              "EndOffset": 2984,
+              "Path": 0,
+              "Ordinal": 28,
+              "Hits": 3
+            },
+            {
+              "Line": 97,
+              "Offset": 1463,
+              "EndOffset": 3124,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 6
+            },
+            {
+              "Line": 97,
+              "Offset": 3135,
+              "EndOffset": 3140,
+              "Path": 0,
+              "Ordinal": 30,
+              "Hits": 3
+            },
+            {
+              "Line": 184,
+              "Offset": 3951,
+              "EndOffset": 3234,
+              "Path": 1,
+              "Ordinal": 39,
+              "Hits": 2
+            },
+            {
+              "Line": 186,
+              "Offset": 3292,
+              "EndOffset": 3299,
+              "Path": 1,
+              "Ordinal": 33,
+              "Hits": 0
+            },
+            {
+              "Line": 191,
+              "Offset": 3474,
+              "EndOffset": 3479,
+              "Path": 0,
+              "Ordinal": 34,
+              "Hits": 0
+            },
+            {
+              "Line": 195,
+              "Offset": 3534,
+              "EndOffset": 3536,
+              "Path": 0,
+              "Ordinal": 36,
+              "Hits": 0
+            },
+            {
+              "Line": 195,
+              "Offset": 3534,
+              "EndOffset": 3544,
+              "Path": 1,
+              "Ordinal": 37,
+              "Hits": 0
+            },
+            {
+              "Line": 191,
+              "Offset": 3474,
+              "EndOffset": 3704,
+              "Path": 1,
+              "Ordinal": 35,
+              "Hits": 0
+            },
+            {
+              "Line": 186,
+              "Offset": 3292,
+              "EndOffset": 3940,
+              "Path": 0,
+              "Ordinal": 32,
+              "Hits": 5
+            },
+            {
+              "Line": 184,
+              "Offset": 3951,
+              "EndOffset": 3956,
+              "Path": 0,
+              "Ordinal": 38,
+              "Hits": 3
+            }
+          ]
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Application\\Services\\RebalancingService.cs": {
+      "Index5.Application.Services.RebalancingService": {
+        "System.Void Index5.Application.Services.RebalancingService::.ctor(Index5.Domain.Interfaces.IClientRepository,Index5.Domain.Interfaces.ICustodyRepository,Index5.Domain.Interfaces.IUnitOfWork,Index5.Domain.Interfaces.IKafkaProducer)": {
+          "Lines": {
+            "13": 7,
+            "14": 7,
+            "15": 7,
+            "16": 7,
+            "17": 7,
+            "18": 7,
+            "19": 7,
+            "20": 7,
+            "21": 7,
+            "22": 7,
+            "23": 7
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.Services.RebalancingService/<>c": {
+        "System.String Index5.Application.Services.RebalancingService/<>c::<RebalanceAllClientsAsync>b__5_0(Index5.Domain.Entities.BasketItem)": {
+          "Lines": {
+            "41": 8
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.Services.RebalancingService/<>c::<RebalanceAllClientsAsync>b__5_1(Index5.Domain.Entities.BasketItem)": {
+          "Lines": {
+            "42": 12
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.Services.RebalancingService/<>c::<RebalanceAllClientsAsync>b__5_2(Index5.Domain.Entities.BasketItem)": {
+          "Lines": {
+            "44": 13
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.Services.RebalancingService/<>c::<RebalanceAllClientsAsync>b__5_3(Index5.Domain.Entities.BasketItem)": {
+          "Lines": {
+            "45": 8
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.Services.RebalancingService/<>c::<RebalanceClientAsync>b__6_0(Index5.Domain.Entities.ChildCustody)": {
+          "Lines": {
+            "74": 7
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.Services.RebalancingService/<>c::<RebalanceClientAsync>b__6_1(Index5.Domain.Entities.BasketItem)": {
+          "Lines": {
+            "75": 4
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.Services.RebalancingService/<>c::<RebalanceClientAsync>b__6_4(System.Object)": {
+          "Lines": {
+            "170": 2
+          },
+          "Branches": [
+            {
+              "Line": 170,
+              "Offset": 5,
+              "EndOffset": 9,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 170,
+              "Offset": 5,
+              "EndOffset": 46,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 170,
+              "Offset": 66,
+              "EndOffset": 70,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 170,
+              "Offset": 66,
+              "EndOffset": 117,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Index5.Application.Services.RebalancingService/<>c__DisplayClass6_0": {
+        "System.Boolean Index5.Application.Services.RebalancingService/<>c__DisplayClass6_0::<RebalanceClientAsync>b__2(Index5.Domain.Entities.BasketItem)": {
+          "Lines": {
+            "83": 13
+          },
+          "Branches": []
+        },
+        "System.Boolean Index5.Application.Services.RebalancingService/<>c__DisplayClass6_0::<RebalanceClientAsync>b__3(Index5.Domain.Entities.ChildCustody)": {
+          "Lines": {
+            "84": 13
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.Services.RebalancingService/<NotifyKafkaIRSniper>d__7": {
+        "System.Void Index5.Application.Services.RebalancingService/<NotifyKafkaIRSniper>d__7::MoveNext()": {
+          "Lines": {
+            "180": 6,
+            "181": 6,
+            "182": 6,
+            "184": 6,
+            "185": 6,
+            "186": 6,
+            "187": 6,
+            "188": 6,
+            "189": 6,
+            "190": 6,
+            "191": 6,
+            "192": 6,
+            "193": 6,
+            "194": 6,
+            "195": 6,
+            "196": 6,
+            "197": 6,
+            "198": 6,
+            "199": 6
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.Services.RebalancingService/<NotifyKafkaSaleIR>d__8": {
+        "System.Void Index5.Application.Services.RebalancingService/<NotifyKafkaSaleIR>d__8::MoveNext()": {
+          "Lines": {
+            "202": 1,
+            "203": 1,
+            "204": 1,
+            "205": 1,
+            "206": 1,
+            "207": 1,
+            "208": 1,
+            "209": 1,
+            "210": 1,
+            "211": 1,
+            "212": 1,
+            "213": 1,
+            "214": 1,
+            "215": 1,
+            "216": 1,
+            "217": 1
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.Services.RebalancingService/<RebalanceAllClientsAsync>d__5": {
+        "System.Void Index5.Application.Services.RebalancingService/<RebalanceAllClientsAsync>d__5::MoveNext()": {
+          "Lines": {
+            "29": 4,
+            "30": 4,
+            "31": 4,
+            "33": 18,
+            "34": 3,
+            "35": 3,
+            "36": 3,
+            "37": 3,
+            "39": 4,
+            "47": 4,
+            "48": 4,
+            "49": 4,
+            "50": 4,
+            "51": 4,
+            "52": 4,
+            "53": 4
+          },
+          "Branches": [
+            {
+              "Line": 33,
+              "Offset": 386,
+              "EndOffset": 209,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 33,
+              "Offset": 386,
+              "EndOffset": 391,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 4
+            },
+            {
+              "Line": 41,
+              "Offset": 545,
+              "EndOffset": 547,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 41,
+              "Offset": 545,
+              "EndOffset": 551,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            },
+            {
+              "Line": 41,
+              "Offset": 650,
+              "EndOffset": 652,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 41,
+              "Offset": 650,
+              "EndOffset": 658,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 4
+            },
+            {
+              "Line": 44,
+              "Offset": 718,
+              "EndOffset": 720,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 44,
+              "Offset": 718,
+              "EndOffset": 724,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 3
+            },
+            {
+              "Line": 44,
+              "Offset": 766,
+              "EndOffset": 768,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1
+            },
+            {
+              "Line": 44,
+              "Offset": 766,
+              "EndOffset": 774,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 4
+            }
+          ]
+        }
+      },
+      "Index5.Application.Services.RebalancingService/<RebalanceClientAsync>d__6": {
+        "System.Void Index5.Application.Services.RebalancingService/<RebalanceClientAsync>d__6::MoveNext()": {
+          "Lines": {
+            "56": 3,
+            "57": 3,
+            "59": 3,
+            "61": 3,
+            "62": 3,
+            "64": 17,
+            "65": 4,
+            "66": 4,
+            "67": 4,
+            "68": 4,
+            "69": 4,
+            "70": 4,
+            "72": 3,
+            "76": 3,
+            "78": 3,
+            "79": 3,
+            "81": 21,
+            "82": 6,
+            "86": 6,
+            "87": 6,
+            "89": 6,
+            "91": 6,
+            "92": 6,
+            "93": 6,
+            "95": 6,
+            "97": 6,
+            "98": 3,
+            "99": 3,
+            "100": 3,
+            "102": 3,
+            "103": 3,
+            "104": 3,
+            "105": 3,
+            "106": 3,
+            "107": 3,
+            "108": 3,
+            "109": 3,
+            "110": 3,
+            "112": 3,
+            "113": 3,
+            "115": 3,
+            "117": 3,
+            "118": 3,
+            "119": 3,
+            "120": 3,
+            "121": 3,
+            "122": 3,
+            "123": 3,
+            "124": 3,
+            "125": 3,
+            "126": 3,
+            "127": 3,
+            "128": 3,
+            "129": 3,
+            "130": 3,
+            "131": 3,
+            "132": 3,
+            "133": 3,
+            "134": 1,
+            "135": 1,
+            "136": 1,
+            "137": 1,
+            "138": 1,
+            "139": 1,
+            "140": 1,
+            "142": 2,
+            "143": 2,
+            "144": 2,
+            "145": 2,
+            "146": 2,
+            "147": 2,
+            "148": 2,
+            "149": 2,
+            "150": 2,
+            "152": 3,
+            "154": 3,
+            "155": 3,
+            "156": 3,
+            "157": 3,
+            "158": 3,
+            "159": 3,
+            "160": 3,
+            "161": 3,
+            "162": 3,
+            "163": 3,
+            "164": 3,
+            "165": 3,
+            "166": 6,
+            "168": 3,
+            "169": 1,
+            "171": 1,
+            "172": 1,
+            "173": 1,
+            "174": 1,
+            "175": 1,
+            "176": 1,
+            "177": 3
+          },
+          "Branches": [
+            {
+              "Line": 57,
+              "Offset": 72,
+              "EndOffset": 74,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 57,
+              "Offset": 72,
+              "EndOffset": 79,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 64,
+              "Offset": 448,
+              "EndOffset": 271,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 4
+            },
+            {
+              "Line": 67,
+              "Offset": 337,
+              "EndOffset": 339,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 337,
+              "EndOffset": 356,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 4
+            },
+            {
+              "Line": 64,
+              "Offset": 448,
+              "EndOffset": 453,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 3
+            },
+            {
+              "Line": 72,
+              "Offset": 510,
+              "EndOffset": 512,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 72,
+              "Offset": 510,
+              "EndOffset": 517,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 3
+            },
+            {
+              "Line": 81,
+              "Offset": 2508,
+              "EndOffset": 724,
+              "Path": 1,
+              "Ordinal": 25,
+              "Hits": 6
+            },
+            {
+              "Line": 86,
+              "Offset": 839,
+              "EndOffset": 841,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 2
+            },
+            {
+              "Line": 86,
+              "Offset": 839,
+              "EndOffset": 849,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 4
+            },
+            {
+              "Line": 87,
+              "Offset": 882,
+              "EndOffset": 884,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 2
+            },
+            {
+              "Line": 87,
+              "Offset": 882,
+              "EndOffset": 908,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 4
+            },
+            {
+              "Line": 89,
+              "Offset": 955,
+              "EndOffset": 962,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 6
+            },
+            {
+              "Line": 91,
+              "Offset": 970,
+              "EndOffset": 972,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 2
+            },
+            {
+              "Line": 91,
+              "Offset": 970,
+              "EndOffset": 976,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 4
+            },
+            {
+              "Line": 97,
+              "Offset": 1086,
+              "EndOffset": 1091,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 3
+            },
+            {
+              "Line": 102,
+              "Offset": 1161,
+              "EndOffset": 1166,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 3
+            },
+            {
+              "Line": 102,
+              "Offset": 1161,
+              "EndOffset": 1684,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 3
+            },
+            {
+              "Line": 97,
+              "Offset": 1086,
+              "EndOffset": 1690,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 3
+            },
+            {
+              "Line": 130,
+              "Offset": 1703,
+              "EndOffset": 1708,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 3
+            },
+            {
+              "Line": 133,
+              "Offset": 1734,
+              "EndOffset": 1739,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 1
+            },
+            {
+              "Line": 133,
+              "Offset": 1734,
+              "EndOffset": 1912,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 2
+            },
+            {
+              "Line": 130,
+              "Offset": 1703,
+              "EndOffset": 2475,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 6
+            },
+            {
+              "Line": 89,
+              "Offset": 955,
+              "EndOffset": 2497,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 9
+            },
+            {
+              "Line": 81,
+              "Offset": 2508,
+              "EndOffset": 2513,
+              "Path": 0,
+              "Ordinal": 24,
+              "Hits": 3
+            },
+            {
+              "Line": 168,
+              "Offset": 2572,
+              "EndOffset": 2577,
+              "Path": 0,
+              "Ordinal": 26,
+              "Hits": 1
+            },
+            {
+              "Line": 171,
+              "Offset": 2646,
+              "EndOffset": 2651,
+              "Path": 0,
+              "Ordinal": 28,
+              "Hits": 1
+            },
+            {
+              "Line": 171,
+              "Offset": 2646,
+              "EndOffset": 2821,
+              "Path": 1,
+              "Ordinal": 29,
+              "Hits": 1
+            },
+            {
+              "Line": 168,
+              "Offset": 2572,
+              "EndOffset": 2822,
+              "Path": 1,
+              "Ordinal": 27,
+              "Hits": 3
+            }
+          ]
+        }
+      },
+      "Index5.Application.Services.RebalancingSummary": {
+        "System.Int32 Index5.Application.Services.RebalancingSummary::get_ClientsAffected()": {
+          "Lines": {
+            "222": 6
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<System.String> Index5.Application.Services.RebalancingSummary::get_RemovedAssets()": {
+          "Lines": {
+            "223": 9
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<System.String> Index5.Application.Services.RebalancingSummary::get_AddedAssets()": {
+          "Lines": {
+            "224": 9
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Application\\DTOs\\ApiResponse.cs": {
+      "Index5.Application.DTOs.ApiResponse`1": {
+        "System.Int32 Index5.Application.DTOs.ApiResponse`1::get_Status()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.ApiResponse`1::get_Message()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "T Index5.Application.DTOs.ApiResponse`1::get_Data()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.ApiResponse`1::get_Timestamp()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "Index5.Application.DTOs.ApiResponse`1<T> Index5.Application.DTOs.ApiResponse`1::Success(T,System.String,System.Int32)": {
+          "Lines": {
+            "11": 0,
+            "12": 0,
+            "13": 0
+          },
+          "Branches": []
+        },
+        "Index5.Application.DTOs.ApiResponse`1<T> Index5.Application.DTOs.ApiResponse`1::Created(T,System.String)": {
+          "Lines": {
+            "16": 0,
+            "17": 0,
+            "18": 0
+          },
+          "Branches": []
+        },
+        "Index5.Application.DTOs.ApiResponse`1<System.Object> Index5.Application.DTOs.ApiResponse`1::Error(System.String,System.String,System.Int32)": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Application\\DTOs\\AuthDtos.cs": {
+      "Index5.Application.DTOs.RegisterRequest": {
+        "System.String Index5.Application.DTOs.RegisterRequest::get_Name()": {
+          "Lines": {
+            "10": 16
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.RegisterRequest::get_Cpf()": {
+          "Lines": {
+            "14": 17
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.RegisterRequest::get_Email()": {
+          "Lines": {
+            "18": 15
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.RegisterRequest::get_JKey()": {
+          "Lines": {
+            "20": 9
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.RegisterRequest::get_Password()": {
+          "Lines": {
+            "24": 14
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Application.DTOs.RegisterRequest::get_BirthDate()": {
+          "Lines": {
+            "27": 9
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.RegisterRequest::get_Role()": {
+          "Lines": {
+            "30": 21
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.RegisterResponse": {
+        "System.Int32 Index5.Application.DTOs.RegisterResponse::get_UserId()": {
+          "Lines": {
+            "35": 1
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.RegisterResponse::get_Name()": {
+          "Lines": {
+            "36": 2
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.RegisterResponse::get_Cpf()": {
+          "Lines": {
+            "37": 3
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.RegisterResponse::get_Email()": {
+          "Lines": {
+            "38": 2
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.RegisterResponse::get_JKey()": {
+          "Lines": {
+            "39": 2
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.RegisterResponse::get_Role()": {
+          "Lines": {
+            "40": 2
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Application.DTOs.RegisterResponse::get_CreatedAt()": {
+          "Lines": {
+            "41": 1
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.LoginClientRequest": {
+        "System.String Index5.Application.DTOs.LoginClientRequest::get_Cpf()": {
+          "Lines": {
+            "49": 3
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.LoginClientRequest::get_Password()": {
+          "Lines": {
+            "52": 3
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.LoginAdminRequest": {
+        "System.String Index5.Application.DTOs.LoginAdminRequest::get_JKey()": {
+          "Lines": {
+            "58": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.LoginAdminRequest::get_Password()": {
+          "Lines": {
+            "61": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.LoginResponse": {
+        "System.Int32 Index5.Application.DTOs.LoginResponse::get_UserId()": {
+          "Lines": {
+            "66": 1
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.LoginResponse::get_Name()": {
+          "Lines": {
+            "67": 2
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.LoginResponse::get_Role()": {
+          "Lines": {
+            "68": 2
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.LoginResponse::get_Token()": {
+          "Lines": {
+            "69": 3
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Application.DTOs.LoginResponse::get_Expiration()": {
+          "Lines": {
+            "70": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Application\\DTOs\\BasketDtos.cs": {
+      "Index5.Application.DTOs.BasketRequest": {
+        "System.String Index5.Application.DTOs.BasketRequest::get_Name()": {
+          "Lines": {
+            "5": 6
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Index5.Application.DTOs.BasketItemDto> Index5.Application.DTOs.BasketRequest::get_Items()": {
+          "Lines": {
+            "6": 10
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.BasketItemDto": {
+        "System.String Index5.Application.DTOs.BasketItemDto::get_Ticker()": {
+          "Lines": {
+            "11": 50
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.BasketItemDto::get_Percentage()": {
+          "Lines": {
+            "12": 40
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Decimal> Index5.Application.DTOs.BasketItemDto::get_CurrentQuote()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.BasketResponse": {
+        "System.Int32 Index5.Application.DTOs.BasketResponse::get_BasketId()": {
+          "Lines": {
+            "18": 3
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.BasketResponse::get_Name()": {
+          "Lines": {
+            "19": 7
+          },
+          "Branches": []
+        },
+        "System.Boolean Index5.Application.DTOs.BasketResponse::get_Active()": {
+          "Lines": {
+            "20": 4
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Application.DTOs.BasketResponse::get_CreatedAt()": {
+          "Lines": {
+            "21": 3
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Index5.Application.DTOs.BasketItemDto> Index5.Application.DTOs.BasketResponse::get_Items()": {
+          "Lines": {
+            "22": 7
+          },
+          "Branches": []
+        },
+        "Index5.Application.DTOs.PreviousBasketDto Index5.Application.DTOs.BasketResponse::get_PreviousBasketDeactivated()": {
+          "Lines": {
+            "25": 2
+          },
+          "Branches": []
+        },
+        "System.Boolean Index5.Application.DTOs.BasketResponse::get_RebalancingTriggered()": {
+          "Lines": {
+            "26": 2
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<System.String> Index5.Application.DTOs.BasketResponse::get_RemovedAssets()": {
+          "Lines": {
+            "27": 2
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<System.String> Index5.Application.DTOs.BasketResponse::get_AddedAssets()": {
+          "Lines": {
+            "28": 2
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.BasketResponse::get_Message()": {
+          "Lines": {
+            "29": 5
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.PreviousBasketDto": {
+        "System.Int32 Index5.Application.DTOs.PreviousBasketDto::get_BasketId()": {
+          "Lines": {
+            "34": 1
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.PreviousBasketDto::get_Name()": {
+          "Lines": {
+            "35": 2
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Application.DTOs.PreviousBasketDto::get_DeactivatedAt()": {
+          "Lines": {
+            "36": 2
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.BasketHistoryResponse": {
+        "System.Collections.Generic.List`1<Index5.Application.DTOs.BasketHistoryDto> Index5.Application.DTOs.BasketHistoryResponse::get_Baskets()": {
+          "Lines": {
+            "41": 3
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.BasketHistoryDto": {
+        "System.Int32 Index5.Application.DTOs.BasketHistoryDto::get_BasketId()": {
+          "Lines": {
+            "46": 2
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.BasketHistoryDto::get_Name()": {
+          "Lines": {
+            "47": 4
+          },
+          "Branches": []
+        },
+        "System.Boolean Index5.Application.DTOs.BasketHistoryDto::get_Active()": {
+          "Lines": {
+            "48": 2
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Application.DTOs.BasketHistoryDto::get_CreatedAt()": {
+          "Lines": {
+            "49": 2
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> Index5.Application.DTOs.BasketHistoryDto::get_DeactivatedAt()": {
+          "Lines": {
+            "50": 2
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Index5.Application.DTOs.BasketItemDto> Index5.Application.DTOs.BasketHistoryDto::get_Items()": {
+          "Lines": {
+            "51": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Application\\DTOs\\ClientDtos.cs": {
+      "Index5.Application.DTOs.JoinRequest": {
+        "System.Decimal Index5.Application.DTOs.JoinRequest::get_MonthlyValue()": {
+          "Lines": {
+            "9": 4
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.JoinResponse": {
+        "System.Int32 Index5.Application.DTOs.JoinResponse::get_ClientId()": {
+          "Lines": {
+            "14": 3
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.JoinResponse::get_Name()": {
+          "Lines": {
+            "15": 6
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.JoinResponse::get_Cpf()": {
+          "Lines": {
+            "16": 7
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.JoinResponse::get_Email()": {
+          "Lines": {
+            "17": 6
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.JoinResponse::get_MonthlyValue()": {
+          "Lines": {
+            "18": 3
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.JoinResponse::get_Status()": {
+          "Lines": {
+            "19": 7
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Application.DTOs.JoinResponse::get_JoinDate()": {
+          "Lines": {
+            "20": 3
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.JoinResponse::get_Message()": {
+          "Lines": {
+            "21": 7
+          },
+          "Branches": []
+        },
+        "Index5.Application.DTOs.GraphicAccountDto Index5.Application.DTOs.JoinResponse::get_GraphicAccount()": {
+          "Lines": {
+            "22": 3
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.PendingClientDto": {
+        "System.Int32 Index5.Application.DTOs.PendingClientDto::get_ClientId()": {
+          "Lines": {
+            "27": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.PendingClientDto::get_Name()": {
+          "Lines": {
+            "28": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.PendingClientDto::get_Cpf()": {
+          "Lines": {
+            "29": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.PendingClientDto::get_Email()": {
+          "Lines": {
+            "30": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.PendingClientDto::get_MonthlyValue()": {
+          "Lines": {
+            "31": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Application.DTOs.PendingClientDto::get_JoinDate()": {
+          "Lines": {
+            "32": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.ActiveClientDto": {
+        "System.Int32 Index5.Application.DTOs.ActiveClientDto::get_ClientId()": {
+          "Lines": {
+            "37": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.ActiveClientDto::get_Name()": {
+          "Lines": {
+            "38": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.ActiveClientDto::get_Cpf()": {
+          "Lines": {
+            "39": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.ActiveClientDto::get_Email()": {
+          "Lines": {
+            "40": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.ActiveClientDto::get_MonthlyValue()": {
+          "Lines": {
+            "41": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.ActiveClientDto::get_AccountNumber()": {
+          "Lines": {
+            "42": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Application.DTOs.ActiveClientDto::get_JoinDate()": {
+          "Lines": {
+            "43": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.GraphicAccountDto": {
+        "System.Int32 Index5.Application.DTOs.GraphicAccountDto::get_Id()": {
+          "Lines": {
+            "48": 1
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.GraphicAccountDto::get_AccountNumber()": {
+          "Lines": {
+            "49": 2
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.GraphicAccountDto::get_Type()": {
+          "Lines": {
+            "50": 2
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Application.DTOs.GraphicAccountDto::get_CreatedAt()": {
+          "Lines": {
+            "51": 1
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.ExitResponse": {
+        "System.Int32 Index5.Application.DTOs.ExitResponse::get_ClientId()": {
+          "Lines": {
+            "56": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.ExitResponse::get_Name()": {
+          "Lines": {
+            "57": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean Index5.Application.DTOs.ExitResponse::get_Active()": {
+          "Lines": {
+            "58": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> Index5.Application.DTOs.ExitResponse::get_ExitDate()": {
+          "Lines": {
+            "59": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.ExitResponse::get_Message()": {
+          "Lines": {
+            "60": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.UpdateMonthlyValueRequest": {
+        "System.Decimal Index5.Application.DTOs.UpdateMonthlyValueRequest::get_NewMonthlyValue()": {
+          "Lines": {
+            "65": 2
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.UpdateMonthlyValueResponse": {
+        "System.Int32 Index5.Application.DTOs.UpdateMonthlyValueResponse::get_ClientId()": {
+          "Lines": {
+            "70": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.UpdateMonthlyValueResponse::get_PreviousMonthlyValue()": {
+          "Lines": {
+            "71": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.UpdateMonthlyValueResponse::get_NewMonthlyValue()": {
+          "Lines": {
+            "72": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Application.DTOs.UpdateMonthlyValueResponse::get_UpdatedAt()": {
+          "Lines": {
+            "73": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.UpdateMonthlyValueResponse::get_Message()": {
+          "Lines": {
+            "74": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.ErrorResponse": {
+        "System.String Index5.Application.DTOs.ErrorResponse::get_Error()": {
+          "Lines": {
+            "79": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.ErrorResponse::get_Code()": {
+          "Lines": {
+            "80": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.PagedResult`1": {
+        "System.Collections.Generic.List`1<T> Index5.Application.DTOs.PagedResult`1::get_Items()": {
+          "Lines": {
+            "85": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Application.DTOs.PagedResult`1::get_TotalCount()": {
+          "Lines": {
+            "86": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Application.DTOs.PagedResult`1::get_Page()": {
+          "Lines": {
+            "87": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Application.DTOs.PagedResult`1::get_PageSize()": {
+          "Lines": {
+            "88": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Application.DTOs.PagedResult`1::get_TotalPages()": {
+          "Lines": {
+            "89": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Application\\DTOs\\EngineDtos.cs": {
+      "Index5.Application.DTOs.ExecutePurchaseRequest": {
+        "System.String Index5.Application.DTOs.ExecutePurchaseRequest::get_ReferenceDate()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.ExecutePurchaseResponse": {
+        "System.DateTime Index5.Application.DTOs.ExecutePurchaseResponse::get_ExecutionDate()": {
+          "Lines": {
+            "10": 3
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Application.DTOs.ExecutePurchaseResponse::get_TotalClients()": {
+          "Lines": {
+            "11": 3
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.ExecutePurchaseResponse::get_TotalConsolidated()": {
+          "Lines": {
+            "12": 3
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Index5.Application.DTOs.PurchaseOrderDto> Index5.Application.DTOs.ExecutePurchaseResponse::get_PurchaseOrders()": {
+          "Lines": {
+            "13": 8
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Index5.Application.DTOs.ClientDistributionDto> Index5.Application.DTOs.ExecutePurchaseResponse::get_Distributions()": {
+          "Lines": {
+            "14": 6
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Index5.Application.DTOs.MasterResidueDto> Index5.Application.DTOs.ExecutePurchaseResponse::get_MasterCustodyResidues()": {
+          "Lines": {
+            "15": 6
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Application.DTOs.ExecutePurchaseResponse::get_IREventsPublished()": {
+          "Lines": {
+            "16": 3
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.ExecutePurchaseResponse::get_Message()": {
+          "Lines": {
+            "17": 6
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.PurchaseOrderDto": {
+        "System.String Index5.Application.DTOs.PurchaseOrderDto::get_Ticker()": {
+          "Lines": {
+            "22": 5
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Application.DTOs.PurchaseOrderDto::get_TotalQuantity()": {
+          "Lines": {
+            "23": 3
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Index5.Application.DTOs.OrderDetailDto> Index5.Application.DTOs.PurchaseOrderDto::get_Details()": {
+          "Lines": {
+            "24": 4
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.PurchaseOrderDto::get_UnitPrice()": {
+          "Lines": {
+            "25": 2
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.PurchaseOrderDto::get_TotalValue()": {
+          "Lines": {
+            "26": 2
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.OrderDetailDto": {
+        "System.String Index5.Application.DTOs.OrderDetailDto::get_Type()": {
+          "Lines": {
+            "31": 4
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.OrderDetailDto::get_Ticker()": {
+          "Lines": {
+            "32": 4
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Application.DTOs.OrderDetailDto::get_Quantity()": {
+          "Lines": {
+            "33": 2
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.ClientDistributionDto": {
+        "System.Int32 Index5.Application.DTOs.ClientDistributionDto::get_ClientId()": {
+          "Lines": {
+            "38": 3
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.ClientDistributionDto::get_Name()": {
+          "Lines": {
+            "39": 6
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.ClientDistributionDto::get_ContributionValue()": {
+          "Lines": {
+            "40": 3
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Index5.Application.DTOs.DistributedAssetDto> Index5.Application.DTOs.ClientDistributionDto::get_Assets()": {
+          "Lines": {
+            "41": 6
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.DistributedAssetDto": {
+        "System.String Index5.Application.DTOs.DistributedAssetDto::get_Ticker()": {
+          "Lines": {
+            "46": 4
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Application.DTOs.DistributedAssetDto::get_Quantity()": {
+          "Lines": {
+            "47": 2
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.MasterResidueDto": {
+        "System.String Index5.Application.DTOs.MasterResidueDto::get_Ticker()": {
+          "Lines": {
+            "52": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Application.DTOs.MasterResidueDto::get_Quantity()": {
+          "Lines": {
+            "53": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.MasterCustodyResponse": {
+        "Index5.Application.DTOs.MasterAccountDto Index5.Application.DTOs.MasterCustodyResponse::get_MasterAccount()": {
+          "Lines": {
+            "58": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Index5.Application.DTOs.MasterCustodyItemDto> Index5.Application.DTOs.MasterCustodyResponse::get_Custody()": {
+          "Lines": {
+            "59": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.MasterCustodyResponse::get_TotalResidueValue()": {
+          "Lines": {
+            "60": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.MasterAccountDto": {
+        "System.Int32 Index5.Application.DTOs.MasterAccountDto::get_Id()": {
+          "Lines": {
+            "65": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.MasterAccountDto::get_AccountNumber()": {
+          "Lines": {
+            "66": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.MasterAccountDto::get_Type()": {
+          "Lines": {
+            "67": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.MasterCustodyItemDto": {
+        "System.String Index5.Application.DTOs.MasterCustodyItemDto::get_Ticker()": {
+          "Lines": {
+            "72": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Application.DTOs.MasterCustodyItemDto::get_Quantity()": {
+          "Lines": {
+            "73": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.MasterCustodyItemDto::get_AveragePrice()": {
+          "Lines": {
+            "74": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.MasterCustodyItemDto::get_CurrentValue()": {
+          "Lines": {
+            "75": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.MasterCustodyItemDto::get_Origin()": {
+          "Lines": {
+            "76": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Application\\DTOs\\PortfolioDtos.cs": {
+      "Index5.Application.DTOs.PortfolioResponse": {
+        "System.Int32 Index5.Application.DTOs.PortfolioResponse::get_ClientId()": {
+          "Lines": {
+            "5": 1
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.PortfolioResponse::get_Name()": {
+          "Lines": {
+            "6": 2
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.PortfolioResponse::get_GraphicAccount()": {
+          "Lines": {
+            "7": 2
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Application.DTOs.PortfolioResponse::get_ConsultedAt()": {
+          "Lines": {
+            "8": 1
+          },
+          "Branches": []
+        },
+        "Index5.Application.DTOs.PortfolioSummaryDto Index5.Application.DTOs.PortfolioResponse::get_Summary()": {
+          "Lines": {
+            "9": 3
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Index5.Application.DTOs.PortfolioAssetDto> Index5.Application.DTOs.PortfolioResponse::get_Assets()": {
+          "Lines": {
+            "10": 2
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.PortfolioSummaryDto": {
+        "System.Decimal Index5.Application.DTOs.PortfolioSummaryDto::get_TotalInvested()": {
+          "Lines": {
+            "15": 1
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.PortfolioSummaryDto::get_CurrentPortfolioValue()": {
+          "Lines": {
+            "16": 1
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.PortfolioSummaryDto::get_TotalPL()": {
+          "Lines": {
+            "17": 2
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.PortfolioSummaryDto::get_ProfitabilityPercentage()": {
+          "Lines": {
+            "18": 1
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.PortfolioAssetDto": {
+        "System.String Index5.Application.DTOs.PortfolioAssetDto::get_Ticker()": {
+          "Lines": {
+            "23": 2
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Application.DTOs.PortfolioAssetDto::get_Quantity()": {
+          "Lines": {
+            "24": 1
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.PortfolioAssetDto::get_AveragePrice()": {
+          "Lines": {
+            "25": 1
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.PortfolioAssetDto::get_CurrentQuote()": {
+          "Lines": {
+            "26": 1
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.PortfolioAssetDto::get_CurrentValue()": {
+          "Lines": {
+            "27": 3
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.PortfolioAssetDto::get_PL()": {
+          "Lines": {
+            "28": 1
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.PortfolioAssetDto::get_PLPercentage()": {
+          "Lines": {
+            "29": 1
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.PortfolioAssetDto::get_PortfolioComposition()": {
+          "Lines": {
+            "30": 1
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.ProfitabilityResponse": {
+        "System.Int32 Index5.Application.DTOs.ProfitabilityResponse::get_ClientId()": {
+          "Lines": {
+            "35": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.ProfitabilityResponse::get_Name()": {
+          "Lines": {
+            "36": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Application.DTOs.ProfitabilityResponse::get_ConsultedAt()": {
+          "Lines": {
+            "37": 0
+          },
+          "Branches": []
+        },
+        "Index5.Application.DTOs.PortfolioSummaryDto Index5.Application.DTOs.ProfitabilityResponse::get_Profitability()": {
+          "Lines": {
+            "38": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Index5.Application.DTOs.ContributionHistoryDto> Index5.Application.DTOs.ProfitabilityResponse::get_ContributionHistory()": {
+          "Lines": {
+            "39": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Index5.Application.DTOs.PortfolioEvolutionDto> Index5.Application.DTOs.ProfitabilityResponse::get_PortfolioEvolution()": {
+          "Lines": {
+            "40": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.ContributionHistoryDto": {
+        "System.String Index5.Application.DTOs.ContributionHistoryDto::get_Date()": {
+          "Lines": {
+            "45": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.ContributionHistoryDto::get_Value()": {
+          "Lines": {
+            "46": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Application.DTOs.ContributionHistoryDto::get_Installment()": {
+          "Lines": {
+            "47": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Application.DTOs.PortfolioEvolutionDto": {
+        "System.String Index5.Application.DTOs.PortfolioEvolutionDto::get_Date()": {
+          "Lines": {
+            "52": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.PortfolioEvolutionDto::get_PortfolioValue()": {
+          "Lines": {
+            "53": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.PortfolioEvolutionDto::get_InvestedValue()": {
+          "Lines": {
+            "54": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Application.DTOs.PortfolioEvolutionDto::get_Profitability()": {
+          "Lines": {
+            "55": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "Index5.Domain.dll": {
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Domain\\Entities\\BasketItem.cs": {
+      "Index5.Domain.Entities.BasketItem": {
+        "System.Int32 Index5.Domain.Entities.BasketItem::get_Id()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Domain.Entities.BasketItem::get_RecommendationBasketId()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.BasketItem::get_Ticker()": {
+          "Lines": {
+            "9": 113
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Domain.Entities.BasketItem::get_Percentage()": {
+          "Lines": {
+            "10": 36
+          },
+          "Branches": []
+        },
+        "Index5.Domain.Entities.RecommendationBasket Index5.Domain.Entities.BasketItem::get_RecommendationBasket()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Domain\\Entities\\ChildCustody.cs": {
+      "Index5.Domain.Entities.ChildCustody": {
+        "System.Int32 Index5.Domain.Entities.ChildCustody::get_Id()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Domain.Entities.ChildCustody::get_GraphicAccountId()": {
+          "Lines": {
+            "8": 4
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.ChildCustody::get_Ticker()": {
+          "Lines": {
+            "9": 44
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Domain.Entities.ChildCustody::get_Quantity()": {
+          "Lines": {
+            "10": 37
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Domain.Entities.ChildCustody::get_AveragePrice()": {
+          "Lines": {
+            "11": 26
+          },
+          "Branches": []
+        },
+        "Index5.Domain.Entities.GraphicAccount Index5.Domain.Entities.ChildCustody::get_GraphicAccount()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Domain\\Entities\\Client.cs": {
+      "Index5.Domain.Entities.Client": {
+        "System.Int32 Index5.Domain.Entities.Client::get_Id()": {
+          "Lines": {
+            "7": 33
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.Client::get_Name()": {
+          "Lines": {
+            "8": 21
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.Client::get_Cpf()": {
+          "Lines": {
+            "9": 40
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.Client::get_Email()": {
+          "Lines": {
+            "10": 16
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Domain.Entities.Client::get_MonthlyValue()": {
+          "Lines": {
+            "11": 12
+          },
+          "Branches": []
+        },
+        "System.Boolean Index5.Domain.Entities.Client::get_Active()": {
+          "Lines": {
+            "12": 11
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Domain.Entities.Client::get_JoinDate()": {
+          "Lines": {
+            "13": 4
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> Index5.Domain.Entities.Client::get_ExitDate()": {
+          "Lines": {
+            "14": 8
+          },
+          "Branches": []
+        },
+        "Index5.Domain.Entities.GraphicAccount Index5.Domain.Entities.Client::get_GraphicAccount()": {
+          "Lines": {
+            "16": 29
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.ICollection`1<Index5.Domain.Entities.Distribution> Index5.Domain.Entities.Client::get_Distributions()": {
+          "Lines": {
+            "19": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Domain\\Entities\\CotacaoB3.cs": {
+      "Index5.Domain.Entities.CotacaoB3": {
+        "System.Int32 Index5.Domain.Entities.CotacaoB3::get_Id()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Domain.Entities.CotacaoB3::get_DataPregao()": {
+          "Lines": {
+            "6": 2
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.CotacaoB3::get_Ticker()": {
+          "Lines": {
+            "7": 6
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.CotacaoB3::get_CodigoBDI()": {
+          "Lines": {
+            "8": 4
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Domain.Entities.CotacaoB3::get_TipoMercado()": {
+          "Lines": {
+            "9": 3
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.CotacaoB3::get_NomeEmpresa()": {
+          "Lines": {
+            "10": 4
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Domain.Entities.CotacaoB3::get_PrecoAbertura()": {
+          "Lines": {
+            "11": 3
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Domain.Entities.CotacaoB3::get_PrecoMaximo()": {
+          "Lines": {
+            "12": 2
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Domain.Entities.CotacaoB3::get_PrecoMinimo()": {
+          "Lines": {
+            "13": 2
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Domain.Entities.CotacaoB3::get_PrecoMedio()": {
+          "Lines": {
+            "14": 2
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Domain.Entities.CotacaoB3::get_PrecoFechamento()": {
+          "Lines": {
+            "15": 4
+          },
+          "Branches": []
+        },
+        "System.Int64 Index5.Domain.Entities.CotacaoB3::get_QuantidadeNegociada()": {
+          "Lines": {
+            "16": 2
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Domain.Entities.CotacaoB3::get_VolumeNegociado()": {
+          "Lines": {
+            "17": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Domain\\Entities\\Distribution.cs": {
+      "Index5.Domain.Entities.Distribution": {
+        "System.Int32 Index5.Domain.Entities.Distribution::get_Id()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Domain.Entities.Distribution::get_PurchaseOrderId()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Domain.Entities.Distribution::get_ClientId()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.Distribution::get_Ticker()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Domain.Entities.Distribution::get_Quantity()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "Index5.Domain.Entities.PurchaseOrder Index5.Domain.Entities.Distribution::get_PurchaseOrder()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "Index5.Domain.Entities.Client Index5.Domain.Entities.Distribution::get_Client()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Domain\\Entities\\GraphicAccount.cs": {
+      "Index5.Domain.Entities.GraphicAccount": {
+        "System.Int32 Index5.Domain.Entities.GraphicAccount::get_Id()": {
+          "Lines": {
+            "7": 14
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Domain.Entities.GraphicAccount::get_ClientId()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.GraphicAccount::get_AccountNumber()": {
+          "Lines": {
+            "9": 12
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.GraphicAccount::get_Type()": {
+          "Lines": {
+            "10": 10
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Domain.Entities.GraphicAccount::get_CreatedAt()": {
+          "Lines": {
+            "11": 2
+          },
+          "Branches": []
+        },
+        "Index5.Domain.Entities.Client Index5.Domain.Entities.GraphicAccount::get_Client()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.ICollection`1<Index5.Domain.Entities.ChildCustody> Index5.Domain.Entities.GraphicAccount::get_Custodies()": {
+          "Lines": {
+            "16": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Domain\\Entities\\MasterCustody.cs": {
+      "Index5.Domain.Entities.MasterCustody": {
+        "System.Int32 Index5.Domain.Entities.MasterCustody::get_Id()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.MasterCustody::get_Ticker()": {
+          "Lines": {
+            "6": 2
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Domain.Entities.MasterCustody::get_Quantity()": {
+          "Lines": {
+            "7": 5
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Domain.Entities.MasterCustody::get_AveragePrice()": {
+          "Lines": {
+            "8": 1
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.MasterCustody::get_Origin()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Domain\\Entities\\OperationHistory.cs": {
+      "Index5.Domain.Entities.OperationHistory": {
+        "System.Int32 Index5.Domain.Entities.OperationHistory::get_Id()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Domain.Entities.OperationHistory::get_ClientId()": {
+          "Lines": {
+            "8": 8
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.OperationHistory::get_Ticker()": {
+          "Lines": {
+            "9": 16
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.OperationHistory::get_OperationType()": {
+          "Lines": {
+            "10": 16
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Domain.Entities.OperationHistory::get_Quantity()": {
+          "Lines": {
+            "11": 8
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Domain.Entities.OperationHistory::get_UnitPrice()": {
+          "Lines": {
+            "12": 8
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Domain.Entities.OperationHistory::get_TotalValue()": {
+          "Lines": {
+            "13": 8
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Domain.Entities.OperationHistory::get_OperationDate()": {
+          "Lines": {
+            "14": 8
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.OperationHistory::get_Reason()": {
+          "Lines": {
+            "15": 16
+          },
+          "Branches": []
+        },
+        "Index5.Domain.Entities.Client Index5.Domain.Entities.OperationHistory::get_Client()": {
+          "Lines": {
+            "18": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Domain\\Entities\\PurchaseOrder.cs": {
+      "Index5.Domain.Entities.PurchaseOrder": {
+        "System.Int32 Index5.Domain.Entities.PurchaseOrder::get_Id()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.PurchaseOrder::get_Ticker()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Index5.Domain.Entities.PurchaseOrder::get_Quantity()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Domain.Entities.PurchaseOrder::get_UnitPrice()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal Index5.Domain.Entities.PurchaseOrder::get_TotalValue()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.PurchaseOrder::get_ReferenceDate()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Domain.Entities.PurchaseOrder::get_CreatedAt()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.ICollection`1<Index5.Domain.Entities.Distribution> Index5.Domain.Entities.PurchaseOrder::get_Distributions()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Domain\\Entities\\RecommendationBasket.cs": {
+      "Index5.Domain.Entities.RecommendationBasket": {
+        "System.Int32 Index5.Domain.Entities.RecommendationBasket::get_Id()": {
+          "Lines": {
+            "5": 7
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.RecommendationBasket::get_Name()": {
+          "Lines": {
+            "6": 22
+          },
+          "Branches": []
+        },
+        "System.Boolean Index5.Domain.Entities.RecommendationBasket::get_Active()": {
+          "Lines": {
+            "7": 8
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Domain.Entities.RecommendationBasket::get_CreatedAt()": {
+          "Lines": {
+            "8": 7
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> Index5.Domain.Entities.RecommendationBasket::get_DeactivatedAt()": {
+          "Lines": {
+            "9": 3
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.ICollection`1<Index5.Domain.Entities.BasketItem> Index5.Domain.Entities.RecommendationBasket::get_Items()": {
+          "Lines": {
+            "11": 59
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Domain\\Entities\\User.cs": {
+      "Index5.Domain.Entities.User": {
+        "System.Int32 Index5.Domain.Entities.User::get_Id()": {
+          "Lines": {
+            "5": 4
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.User::get_Name()": {
+          "Lines": {
+            "6": 10
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.User::get_Cpf()": {
+          "Lines": {
+            "7": 11
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.User::get_Email()": {
+          "Lines": {
+            "8": 9
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.User::get_JKey()": {
+          "Lines": {
+            "9": 3
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.User::get_PasswordHash()": {
+          "Lines": {
+            "10": 8
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Domain.Entities.User::get_BirthDate()": {
+          "Lines": {
+            "11": 1
+          },
+          "Branches": []
+        },
+        "System.String Index5.Domain.Entities.User::get_Role()": {
+          "Lines": {
+            "12": 11
+          },
+          "Branches": []
+        },
+        "System.DateTime Index5.Domain.Entities.User::get_CreatedAt()": {
+          "Lines": {
+            "13": 7
+          },
+          "Branches": []
+        },
+        "System.Boolean Index5.Domain.Entities.User::get_Active()": {
+          "Lines": {
+            "14": 8
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "Index5.Infrastructure.dll": {
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Infrastructure\\Repositories\\BasketRepository.cs": {
+      "Index5.Infrastructure.Repositories.BasketRepository": {
+        "System.Void Index5.Infrastructure.Repositories.BasketRepository::Update(Index5.Domain.Entities.RecommendationBasket)": {
+          "Lines": {
+            "38": 0,
+            "39": 0,
+            "40": 0
+          },
+          "Branches": []
+        },
+        "System.Void Index5.Infrastructure.Repositories.BasketRepository::.ctor(Index5.Infrastructure.Data.AppDbContext)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.BasketRepository/<AddAsync>d__4": {
+        "System.Void Index5.Infrastructure.Repositories.BasketRepository/<AddAsync>d__4::MoveNext()": {
+          "Lines": {
+            "33": 0,
+            "34": 0,
+            "35": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.BasketRepository/<GetActiveAsync>d__2": {
+        "System.Void Index5.Infrastructure.Repositories.BasketRepository/<GetActiveAsync>d__2::MoveNext()": {
+          "Lines": {
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.BasketRepository/<GetAllAsync>d__3": {
+        "System.Void Index5.Infrastructure.Repositories.BasketRepository/<GetAllAsync>d__3::MoveNext()": {
+          "Lines": {
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Infrastructure\\Repositories\\ClientRepository.cs": {
+      "Index5.Infrastructure.Repositories.ClientRepository": {
+        "System.Void Index5.Infrastructure.Repositories.ClientRepository::Update(Index5.Domain.Entities.Client)": {
+          "Lines": {
+            "100": 0,
+            "101": 0,
+            "102": 0
+          },
+          "Branches": []
+        },
+        "System.Void Index5.Infrastructure.Repositories.ClientRepository::Remove(Index5.Domain.Entities.Client)": {
+          "Lines": {
+            "105": 0,
+            "106": 0,
+            "107": 0
+          },
+          "Branches": []
+        },
+        "System.Void Index5.Infrastructure.Repositories.ClientRepository::.ctor(Index5.Infrastructure.Data.AppDbContext)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.ClientRepository/<AddAsync>d__8": {
+        "System.Void Index5.Infrastructure.Repositories.ClientRepository/<AddAsync>d__8::MoveNext()": {
+          "Lines": {
+            "95": 0,
+            "96": 0,
+            "97": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.ClientRepository/<GetAllActiveAsync>d__4": {
+        "System.Void Index5.Infrastructure.Repositories.ClientRepository/<GetAllActiveAsync>d__4::MoveNext()": {
+          "Lines": {
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.ClientRepository/<GetByCpfAsync>d__3": {
+        "System.Void Index5.Infrastructure.Repositories.ClientRepository/<GetByCpfAsync>d__3::MoveNext()": {
+          "Lines": {
+            "26": 0,
+            "27": 0,
+            "28": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.ClientRepository/<GetByIdAsync>d__2": {
+        "System.Void Index5.Infrastructure.Repositories.ClientRepository/<GetByIdAsync>d__2::MoveNext()": {
+          "Lines": {
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.ClientRepository/<GetFilteredActiveAsync>d__7": {
+        "System.Void Index5.Infrastructure.Repositories.ClientRepository/<GetFilteredActiveAsync>d__7::MoveNext()": {
+          "Lines": {
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "75": 0,
+            "76": 0,
+            "78": 0,
+            "79": 0,
+            "81": 0,
+            "82": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "91": 0,
+            "92": 0
+          },
+          "Branches": [
+            {
+              "Line": 75,
+              "Offset": 258,
+              "EndOffset": 263,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 75,
+              "Offset": 258,
+              "EndOffset": 402,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 78,
+              "Offset": 422,
+              "EndOffset": 427,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 78,
+              "Offset": 422,
+              "EndOffset": 567,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 81,
+              "Offset": 587,
+              "EndOffset": 592,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 81,
+              "Offset": 587,
+              "EndOffset": 732,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Index5.Infrastructure.Repositories.ClientRepository/<GetFilteredPendingAsync>d__6": {
+        "System.Void Index5.Infrastructure.Repositories.ClientRepository/<GetFilteredPendingAsync>d__6::MoveNext()": {
+          "Lines": {
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "50": 0,
+            "51": 0,
+            "53": 0,
+            "54": 0,
+            "56": 0,
+            "57": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "66": 0,
+            "67": 0
+          },
+          "Branches": [
+            {
+              "Line": 50,
+              "Offset": 326,
+              "EndOffset": 331,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 50,
+              "Offset": 326,
+              "EndOffset": 470,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 53,
+              "Offset": 490,
+              "EndOffset": 495,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 53,
+              "Offset": 490,
+              "EndOffset": 635,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 56,
+              "Offset": 655,
+              "EndOffset": 660,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 56,
+              "Offset": 655,
+              "EndOffset": 800,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Index5.Infrastructure.Repositories.ClientRepository/<GetPendingAsync>d__5": {
+        "System.Void Index5.Infrastructure.Repositories.ClientRepository/<GetPendingAsync>d__5::MoveNext()": {
+          "Lines": {
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Infrastructure\\Repositories\\CustodyRepository.cs": {
+      "Index5.Infrastructure.Repositories.CustodyRepository": {
+        "System.Void Index5.Infrastructure.Repositories.CustodyRepository::Update(Index5.Domain.Entities.ChildCustody)": {
+          "Lines": {
+            "42": 0,
+            "43": 0,
+            "44": 0
+          },
+          "Branches": []
+        },
+        "System.Void Index5.Infrastructure.Repositories.CustodyRepository::UpdateMaster(Index5.Domain.Entities.MasterCustody)": {
+          "Lines": {
+            "63": 0,
+            "64": 0,
+            "65": 0
+          },
+          "Branches": []
+        },
+        "System.Void Index5.Infrastructure.Repositories.CustodyRepository::.ctor(Index5.Infrastructure.Data.AppDbContext)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.CustodyRepository/<AddAsync>d__5": {
+        "System.Void Index5.Infrastructure.Repositories.CustodyRepository/<AddAsync>d__5::MoveNext()": {
+          "Lines": {
+            "37": 0,
+            "38": 0,
+            "39": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.CustodyRepository/<AddHistoryAsync>d__11": {
+        "System.Void Index5.Infrastructure.Repositories.CustodyRepository/<AddHistoryAsync>d__11::MoveNext()": {
+          "Lines": {
+            "69": 0,
+            "70": 0,
+            "71": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.CustodyRepository/<AddMasterAsync>d__9": {
+        "System.Void Index5.Infrastructure.Repositories.CustodyRepository/<AddMasterAsync>d__9::MoveNext()": {
+          "Lines": {
+            "58": 0,
+            "59": 0,
+            "60": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.CustodyRepository/<GetAllChildCustodiesAsync>d__4": {
+        "System.Void Index5.Infrastructure.Repositories.CustodyRepository/<GetAllChildCustodiesAsync>d__4::MoveNext()": {
+          "Lines": {
+            "32": 0,
+            "33": 0,
+            "34": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.CustodyRepository/<GetAllMasterAsync>d__8": {
+        "System.Void Index5.Infrastructure.Repositories.CustodyRepository/<GetAllMasterAsync>d__8::MoveNext()": {
+          "Lines": {
+            "53": 0,
+            "54": 0,
+            "55": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.CustodyRepository/<GetByAccountAndTickerAsync>d__3": {
+        "System.Void Index5.Infrastructure.Repositories.CustodyRepository/<GetByAccountAndTickerAsync>d__3::MoveNext()": {
+          "Lines": {
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.CustodyRepository/<GetByGraphicAccountIdAsync>d__2": {
+        "System.Void Index5.Infrastructure.Repositories.CustodyRepository/<GetByGraphicAccountIdAsync>d__2::MoveNext()": {
+          "Lines": {
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.CustodyRepository/<GetHistoryByClientIdAsync>d__12": {
+        "System.Void Index5.Infrastructure.Repositories.CustodyRepository/<GetHistoryByClientIdAsync>d__12::MoveNext()": {
+          "Lines": {
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.CustodyRepository/<GetMasterByTickerAsync>d__7": {
+        "System.Void Index5.Infrastructure.Repositories.CustodyRepository/<GetMasterByTickerAsync>d__7::MoveNext()": {
+          "Lines": {
+            "48": 0,
+            "49": 0,
+            "50": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Infrastructure\\Repositories\\UserRepository.cs": {
+      "Index5.Infrastructure.Repositories.UserRepository": {
+        "System.Void Index5.Infrastructure.Repositories.UserRepository::.ctor(Index5.Infrastructure.Data.AppDbContext)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.UserRepository/<AddAsync>d__5": {
+        "System.Void Index5.Infrastructure.Repositories.UserRepository/<AddAsync>d__5::MoveNext()": {
+          "Lines": {
+            "33": 0,
+            "34": 0,
+            "35": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.UserRepository/<GetByCpfAsync>d__2": {
+        "System.Void Index5.Infrastructure.Repositories.UserRepository/<GetByCpfAsync>d__2::MoveNext()": {
+          "Lines": {
+            "18": 0,
+            "19": 0,
+            "20": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.UserRepository/<GetByEmailAsync>d__4": {
+        "System.Void Index5.Infrastructure.Repositories.UserRepository/<GetByEmailAsync>d__4::MoveNext()": {
+          "Lines": {
+            "28": 0,
+            "29": 0,
+            "30": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Repositories.UserRepository/<GetByJKeyAsync>d__3": {
+        "System.Void Index5.Infrastructure.Repositories.UserRepository/<GetByJKeyAsync>d__3::MoveNext()": {
+          "Lines": {
+            "23": 0,
+            "24": 0,
+            "25": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Infrastructure\\Kafka\\KafkaProducerService.cs": {
+      "Index5.Infrastructure.Kafka.KafkaProducerService": {
+        "System.Void Index5.Infrastructure.Kafka.KafkaProducerService::Dispose()": {
+          "Lines": {
+            "35": 0,
+            "36": 0,
+            "37": 0
+          },
+          "Branches": [
+            {
+              "Line": 36,
+              "Offset": 8,
+              "EndOffset": 10,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 36,
+              "Offset": 8,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void Index5.Infrastructure.Kafka.KafkaProducerService::.ctor(System.String)": {
+          "Lines": {
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Kafka.KafkaProducerService/<PublishAsync>d__2": {
+        "System.Void Index5.Infrastructure.Kafka.KafkaProducerService/<PublishAsync>d__2::MoveNext()": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Infrastructure\\Data\\AppDbContext.cs": {
+      "Index5.Infrastructure.Data.AppDbContext": {
+        "Microsoft.EntityFrameworkCore.DbSet`1<Index5.Domain.Entities.Client> Index5.Infrastructure.Data.AppDbContext::get_Clients()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<Index5.Domain.Entities.GraphicAccount> Index5.Infrastructure.Data.AppDbContext::get_GraphicAccounts()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<Index5.Domain.Entities.ChildCustody> Index5.Infrastructure.Data.AppDbContext::get_ChildCustodies()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<Index5.Domain.Entities.MasterCustody> Index5.Infrastructure.Data.AppDbContext::get_MasterCustodies()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<Index5.Domain.Entities.RecommendationBasket> Index5.Infrastructure.Data.AppDbContext::get_RecommendationBaskets()": {
+          "Lines": {
+            "15": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<Index5.Domain.Entities.BasketItem> Index5.Infrastructure.Data.AppDbContext::get_BasketItems()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<Index5.Domain.Entities.PurchaseOrder> Index5.Infrastructure.Data.AppDbContext::get_PurchaseOrders()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<Index5.Domain.Entities.Distribution> Index5.Infrastructure.Data.AppDbContext::get_Distributions()": {
+          "Lines": {
+            "18": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<Index5.Domain.Entities.OperationHistory> Index5.Infrastructure.Data.AppDbContext::get_OperationHistory()": {
+          "Lines": {
+            "19": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<Index5.Domain.Entities.User> Index5.Infrastructure.Data.AppDbContext::get_Users()": {
+          "Lines": {
+            "20": 0
+          },
+          "Branches": []
+        },
+        "System.Void Index5.Infrastructure.Data.AppDbContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0
+          },
+          "Branches": []
+        },
+        "System.Void Index5.Infrastructure.Data.AppDbContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<Index5.Infrastructure.Data.AppDbContext>)": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        }
+      },
+      "Index5.Infrastructure.Data.AppDbContext/<SaveChangesAsync>d__21": {
+        "System.Void Index5.Infrastructure.Data.AppDbContext/<SaveChangesAsync>d__21::MoveNext()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Users\\jcalbuquerque\\Desktop\\it-test\\index5\\Index5\\Index5.Infrastructure\\Cotacoes\\CotahistParser.cs": {
+      "Index5.Infrastructure.Cotacoes.CotahistParser": {
+        "System.Collections.Generic.List`1<Index5.Domain.Entities.CotacaoB3> Index5.Infrastructure.Cotacoes.CotahistParser::ParseFile(System.String)": {
+          "Lines": {
+            "9": 1,
+            "10": 1,
+            "11": 5,
+            "12": 1,
+            "13": 1,
+            "14": 2,
+            "15": 1,
+            "16": 1,
+            "17": 1
+          },
+          "Branches": [
+            {
+              "Line": 11,
+              "Offset": 63,
+              "EndOffset": 22,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 14,
+              "Offset": 46,
+              "EndOffset": 48,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 14,
+              "Offset": 46,
+              "EndOffset": 56,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 11,
+              "Offset": 63,
+              "EndOffset": 65,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            }
+          ]
+        },
+        "Index5.Domain.Entities.CotacaoB3 Index5.Infrastructure.Cotacoes.CotahistParser::GetClosingQuote(System.String,System.String)": {
+          "Lines": {
+            "20": 1,
+            "21": 1,
+            "23": 1,
+            "24": 0,
+            "25": 1,
+            "27": 1,
+            "29": 4,
+            "30": 1,
+            "31": 5,
+            "32": 1,
+            "33": 1,
+            "35": 1,
+            "36": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "42": 1,
+            "43": 1,
+            "45": 2,
+            "46": 0,
+            "48": 0,
+            "49": 1
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 21,
+              "Offset": 12,
+              "EndOffset": 21,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 29,
+              "Offset": 289,
+              "EndOffset": 90,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 1
+            },
+            {
+              "Line": 31,
+              "Offset": 247,
+              "EndOffset": 117,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 1
+            },
+            {
+              "Line": 33,
+              "Offset": 145,
+              "EndOffset": 149,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 36,
+              "Offset": 183,
+              "EndOffset": 187,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 39,
+              "Offset": 199,
+              "EndOffset": 201,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 39,
+              "Offset": 202,
+              "EndOffset": 204,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 39,
+              "Offset": 202,
+              "EndOffset": 224,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            },
+            {
+              "Line": 39,
+              "Offset": 199,
+              "EndOffset": 227,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 39,
+              "Offset": 232,
+              "EndOffset": 234,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 1
+            },
+            {
+              "Line": 39,
+              "Offset": 232,
+              "EndOffset": 239,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 1
+            },
+            {
+              "Line": 33,
+              "Offset": 145,
+              "EndOffset": 240,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 36,
+              "Offset": 183,
+              "EndOffset": 240,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 2
+            },
+            {
+              "Line": 31,
+              "Offset": 247,
+              "EndOffset": 252,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 1
+            },
+            {
+              "Line": 45,
+              "Offset": 275,
+              "EndOffset": 277,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 1
+            },
+            {
+              "Line": 45,
+              "Offset": 275,
+              "EndOffset": 281,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            },
+            {
+              "Line": 29,
+              "Offset": 289,
+              "EndOffset": 294,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Collections.Generic.List`1<System.String> Index5.Infrastructure.Cotacoes.CotahistParser::GetAllAvailableTickers(System.String)": {
+          "Lines": {
+            "52": 1,
+            "53": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "59": 1,
+            "61": 1,
+            "62": 7,
+            "63": 2,
+            "64": 2,
+            "66": 2,
+            "67": 2,
+            "69": 2,
+            "71": 2,
+            "73": 2,
+            "74": 2,
+            "75": 2,
+            "76": 2,
+            "77": 2,
+            "78": 2,
+            "80": 3,
+            "81": 1
+          },
+          "Branches": [
+            {
+              "Line": 53,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 53,
+              "Offset": 12,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 59,
+              "Offset": 86,
+              "EndOffset": 88,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 59,
+              "Offset": 86,
+              "EndOffset": 99,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 62,
+              "Offset": 272,
+              "EndOffset": 124,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 2
+            },
+            {
+              "Line": 64,
+              "Offset": 152,
+              "EndOffset": 156,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 67,
+              "Offset": 183,
+              "EndOffset": 187,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 2
+            },
+            {
+              "Line": 71,
+              "Offset": 215,
+              "EndOffset": 219,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 2
+            },
+            {
+              "Line": 74,
+              "Offset": 251,
+              "EndOffset": 253,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 2
+            },
+            {
+              "Line": 74,
+              "Offset": 251,
+              "EndOffset": 264,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 2
+            },
+            {
+              "Line": 64,
+              "Offset": 152,
+              "EndOffset": 265,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 3
+            },
+            {
+              "Line": 67,
+              "Offset": 183,
+              "EndOffset": 265,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 3
+            },
+            {
+              "Line": 71,
+              "Offset": 215,
+              "EndOffset": 265,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 3
+            },
+            {
+              "Line": 62,
+              "Offset": 272,
+              "EndOffset": 277,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 1
+            }
+          ]
+        },
+        "Index5.Domain.Entities.CotacaoB3 Index5.Infrastructure.Cotacoes.CotahistParser::ParseLine(System.String)": {
+          "Lines": {
+            "84": 2,
+            "85": 2,
+            "87": 2,
+            "88": 2,
+            "90": 2,
+            "92": 2,
+            "94": 2,
+            "95": 2,
+            "96": 2,
+            "97": 2,
+            "98": 2,
+            "99": 2,
+            "100": 2,
+            "101": 2,
+            "102": 2,
+            "103": 2,
+            "104": 2,
+            "105": 2,
+            "106": 2,
+            "107": 2,
+            "108": 2,
+            "109": 2,
+            "110": 2,
+            "111": 2
+          },
+          "Branches": [
+            {
+              "Line": 85,
+              "Offset": 16,
+              "EndOffset": 18,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 85,
+              "Offset": 16,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 88,
+              "Offset": 49,
+              "EndOffset": 51,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 88,
+              "Offset": 49,
+              "EndOffset": 58,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 92,
+              "Offset": 81,
+              "EndOffset": 83,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 92,
+              "Offset": 81,
+              "EndOffset": 93,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 92,
+              "Offset": 98,
+              "EndOffset": 100,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 92,
+              "Offset": 98,
+              "EndOffset": 107,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Decimal Index5.Infrastructure.Cotacoes.CotahistParser::ParsePrice(System.String)": {
+          "Lines": {
+            "114": 12,
+            "115": 12,
+            "116": 10,
+            "117": 2,
+            "118": 12
+          },
+          "Branches": [
+            {
+              "Line": 115,
+              "Offset": 16,
+              "EndOffset": 18,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 10
+            },
+            {
+              "Line": 115,
+              "Offset": 16,
+              "EndOffset": 39,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        }
+      }
+    }
+  }
+}
