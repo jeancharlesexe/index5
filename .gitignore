@@ -1,3 +1,6 @@
 .vs/
 [Bb]in/
 [Oo]bj/
+coveragereport/
+TestResults/
+*.html
