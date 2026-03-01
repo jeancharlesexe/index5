@@ -99,6 +99,19 @@ public class PurchaseEngineService
                     UnitPrice = quote,
                     TotalValue = quantityToBuy * quote
                 });
+
+                foreach (var det in details)
+                {
+                    await _custodyRepo.AddPurchaseOrderAsync(new PurchaseOrder
+                    {
+                        Ticker = det.Ticker,
+                        Quantity = det.Quantity,
+                        UnitPrice = quote,
+                        TotalValue = det.Quantity * quote,
+                        ReferenceDate = referenceDate,
+                        CreatedAt = DateTime.UtcNow
+                    });
+                }
             }
 
             if (masterBalance > 0 && masterCustody != null)

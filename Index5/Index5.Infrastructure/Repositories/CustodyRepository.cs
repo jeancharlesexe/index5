@@ -65,6 +65,11 @@ public class CustodyRepository : ICustodyRepository
     }
 
     // History
+    public async Task AddPurchaseOrderAsync(PurchaseOrder order)
+    {
+        await _context.PurchaseOrders.AddAsync(order);
+    }
+
     public async Task AddHistoryAsync(OperationHistory history)
     {
         await _context.OperationHistory.AddAsync(history);

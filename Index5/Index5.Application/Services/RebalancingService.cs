@@ -75,7 +75,11 @@ public class RebalancingService
             .Union(newBasket.Items.Select(i => i.Ticker))
             .Distinct();
 
-        decimal totalSalesThisMonth = 0;
+        var clientHistory = await _custodyRepo.GetHistoryByClientIdAsync(client.Id);
+        decimal totalSalesThisMonth = clientHistory
+            .Where(h => h.OperationType == "SELL" && h.OperationDate.Year == DateTime.UtcNow.Year && h.OperationDate.Month == DateTime.UtcNow.Month)
+            .Sum(h => h.TotalValue);
+
         var saleDetails = new List<dynamic>();
 
         foreach (var ticker in allTickers)

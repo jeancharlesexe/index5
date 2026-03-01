@@ -18,6 +18,7 @@ public interface ICustodyRepository
     void UpdateMaster(MasterCustody masterCustody);
 
     // History
+    Task AddPurchaseOrderAsync(PurchaseOrder order);
     Task AddHistoryAsync(OperationHistory history);
     Task<List<OperationHistory>> GetHistoryByClientIdAsync(int clientId);
     Task<bool> HasScheduledPurchaseTodayAsync(DateTime date);
