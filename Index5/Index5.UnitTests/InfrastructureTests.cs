@@ -164,4 +164,73 @@ public class InfrastructureTests
         (await repo.GetAllChildCustodiesAsync()).Should().HaveCount(1);
         (await repo.GetAllMasterAsync()).Should().HaveCount(1);
     }
+
+    [Fact]
+    public async Task CustodyRepository_GetHistoryByClientId_Works()
+    {
+        using var context = CreateContext();
+        var repo = new CustodyRepository(context);
+        
+        await repo.AddHistoryAsync(new OperationHistory { ClientId = 1, Ticker = "ITUB4", Quantity = 1, OperationType = "BUY", Reason = "TEST", UnitPrice = 10, TotalValue = 10 });
+        await context.SaveChangesAsync();
+        
+        var hist = await repo.GetHistoryByClientIdAsync(1);
+        hist.Should().HaveCount(1);
+    }
+
+    [Fact]
+    public async Task CustodyRepository_HasScheduledPurchaseToday_Works()
+    {
+        using var context = CreateContext();
+        var repo = new CustodyRepository(context);
+        
+        await repo.AddHistoryAsync(new OperationHistory { ClientId = 1, Ticker = "A", OperationType = "BUY", Reason = "COMPRA_PROGRAMADA", Quantity = 1, UnitPrice = 5, TotalValue = 5, OperationDate = new DateTime(2023, 10, 10) });
+        await context.SaveChangesAsync();
+        
+        var has = await repo.HasScheduledPurchaseTodayAsync(new DateTime(2023, 10, 10));
+        has.Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task CustodyRepository_Updates_Works()
+    {
+        using var context = CreateContext();
+        var repo = new CustodyRepository(context);
+        var custody = new ChildCustody { GraphicAccountId = 3, Ticker = "X" };
+        await repo.AddAsync(custody);
+        
+        var master = new MasterCustody { Ticker = "Y" };
+        await repo.AddMasterAsync(master);
+        await context.SaveChangesAsync();
+        
+        // Retrieve tracked entities
+        var trackedMaster = await repo.GetMasterByTickerAsync("Y");
+        var trackedCustody = await repo.GetByAccountAndTickerAsync(3, "X");
+        
+        trackedMaster!.Quantity = 5;
+        repo.UpdateMaster(trackedMaster);
+        trackedCustody!.Quantity = 10;
+        repo.Update(trackedCustody);
+        
+        await context.SaveChangesAsync();
+        
+        var m = await repo.GetMasterByTickerAsync("Y");
+        m!.Quantity.Should().Be(5);
+        var c = await repo.GetByAccountAndTickerAsync(3, "X");
+        c!.Quantity.Should().Be(10);
+    }
+
+    [Fact]
+    public async Task ClientRepository_GetAllActiveAsync_Works()
+    {
+        using var context = CreateContext();
+        var repo = new ClientRepository(context);
+        context.Clients.Add(new Client { Active = true, Cpf = "act1", Email = "a@a", Name = "A" });
+        context.Clients.Add(new Client { Active = false, Cpf = "act2", Email = "b@b", Name = "B" });
+        await context.SaveChangesAsync();
+        
+        var active = await repo.GetAllActiveAsync();
+        active.Should().HaveCount(1);
+        active[0].Cpf.Should().Be("act1");
+    }
 }

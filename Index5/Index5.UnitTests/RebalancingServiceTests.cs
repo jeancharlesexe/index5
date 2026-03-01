@@ -39,6 +39,7 @@ public class RebalancingServiceTests
 
         _clientRepoMock.Setup(repo => repo.GetAllActiveAsync()).ReturnsAsync(new List<Client> { client });
         _custodyRepoMock.Setup(repo => repo.GetByGraphicAccountIdAsync(10)).ReturnsAsync(custody);
+        _custodyRepoMock.Setup(repo => repo.GetHistoryByClientIdAsync(1)).ReturnsAsync(new List<OperationHistory>());
 
         // Sale of 2000 @ 15 = 30000. Profit = 5 * 2000 = 10000. IR = 2000.
         // Act
@@ -65,6 +66,7 @@ public class RebalancingServiceTests
 
         _clientRepoMock.Setup(repo => repo.GetAllActiveAsync()).ReturnsAsync(new List<Client> { client });
         _custodyRepoMock.Setup(repo => repo.GetByGraphicAccountIdAsync(10)).ReturnsAsync(custody);
+        _custodyRepoMock.Setup(repo => repo.GetHistoryByClientIdAsync(1)).ReturnsAsync(new List<OperationHistory>());
 
         // Act
         await _service.RebalanceAllClientsAsync(basket, basket, t => 100m);
@@ -88,12 +90,15 @@ public class RebalancingServiceTests
 
         _clientRepoMock.Setup(repo => repo.GetAllActiveAsync()).ReturnsAsync(new List<Client> { client });
         _custodyRepoMock.Setup(repo => repo.GetByGraphicAccountIdAsync(10)).ReturnsAsync(existingCustody);
+        _custodyRepoMock.Setup(repo => repo.GetHistoryByClientIdAsync(1)).ReturnsAsync(new List<OperationHistory>());
 
         // Act
         await _service.RebalanceAllClientsAsync(basket, null, t => 100m);
 
         // Assert
         // OLD should be sold (10 * 100 = 1000). ITUB4 should be bought (1000 / 100 = 10)
+        _custodyRepoMock.Verify(repo => repo.AddAsync(It.Is<ChildCustody>(c => c.Ticker == "ITUB4" && c.Quantity == 10)), Times.Once);
+        existingCustody.Single(c => c.Ticker == "OLD").Quantity.Should().Be(0);
     }
 
     [Fact]
