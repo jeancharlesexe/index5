@@ -1,6 +1,11 @@
 using Index5.Application.DTOs;
 using Index5.Domain.Entities;
 using Index5.Domain.Interfaces;
+using Microsoft.Extensions.Configuration;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Index5.Application.Services;
 
@@ -37,7 +42,7 @@ public class PurchaseEngineService
     /// </summary>
     public async Task<ExecutePurchaseResponse> ExecutePurchaseAsync()
     {
-        var folder = _configuration.GetValue<string>("Cotacoes:Folder") ?? "";
+        var folder = _configuration["Cotacoes:Folder"] ?? "";
         return await ExecutePurchaseAsync(DateTime.UtcNow.ToString("yyyy-MM-dd"), (ticker) =>
         {
             var q = _cotahistParser.GetClosingQuote(folder, ticker);
@@ -320,7 +325,10 @@ public class PurchaseEngineService
 
     private DateTime GetExecutionDate(int year, int month, int day)
     {
-        var date = new DateTime(year, month, day, 0, 0, 0, DateTimeKind.Utc);
+        // Usamos meio-dia (12:00) em vez de meia-noite (00:00) 
+        // para evitar que fusos horários negativos (como o do Brasil -3) 
+        // façam a data retroceder um dia no frontend.
+        var date = new DateTime(year, month, day, 12, 0, 0, DateTimeKind.Utc);
         
         // RN-021: Se cair no fim de semana, move para a próxima segunda
         if (date.DayOfWeek == DayOfWeek.Saturday)

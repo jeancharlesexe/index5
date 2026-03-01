@@ -1,5 +1,11 @@
 using Index5.Application.Services;
 using Index5.Domain.Interfaces;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Index5.API.BackgroundServices;
 

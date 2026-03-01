@@ -4,6 +4,8 @@ using Index5.Application.Services;
 using Index5.Domain.Entities;
 using Index5.Domain.Interfaces;
 using Moq;
+using Microsoft.Extensions.Configuration;
+using Xunit;
 
 namespace Index5.UnitTests;
 
@@ -14,6 +16,8 @@ public class PurchaseEngineServiceTests
     private readonly Mock<ICustodyRepository> _custodyRepoMock;
     private readonly Mock<IUnitOfWork> _unitOfWorkMock;
     private readonly Mock<IKafkaProducer> _kafkaProducerMock;
+    private readonly Mock<ICotahistParser> _cotahistParserMock;
+    private readonly Mock<IConfiguration> _configurationMock;
     private readonly PurchaseEngineService _service;
 
     public PurchaseEngineServiceTests()
@@ -23,13 +27,17 @@ public class PurchaseEngineServiceTests
         _custodyRepoMock = new Mock<ICustodyRepository>();
         _unitOfWorkMock = new Mock<IUnitOfWork>();
         _kafkaProducerMock = new Mock<IKafkaProducer>();
+        _cotahistParserMock = new Mock<ICotahistParser>();
+        _configurationMock = new Mock<IConfiguration>();
 
         _service = new PurchaseEngineService(
             _clientRepoMock.Object,
             _basketRepoMock.Object,
             _custodyRepoMock.Object,
             _unitOfWorkMock.Object,
-            _kafkaProducerMock.Object);
+            _kafkaProducerMock.Object,
+            _cotahistParserMock.Object,
+            _configurationMock.Object);
     }
 
     [Fact]
