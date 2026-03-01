@@ -230,3 +230,9 @@ http://localhost:5246/scalar/v1
 ```
 
 Lá você encontrará a listagem detalhada de todos os controllers (Auth, Admin, Client e Engine), os modelos de JSON esperados para todas as requisições (`Request`) e o padrão detalhado do `ApiResponse` retornado em cada caso. Esta é a ferramenta ideal para uma rápida análise técnica e documentação viva das funcionalidades sem precisar ler o código.
+
+<div align="center">
+  <sub>
+  Construído por Jean Charles
+  </sub>
+</div>
