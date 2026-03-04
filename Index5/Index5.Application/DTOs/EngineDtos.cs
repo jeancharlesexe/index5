@@ -21,6 +21,7 @@ public class PurchaseOrderDto
 {
     public string Ticker { get; set; } = string.Empty;
     public int TotalQuantity { get; set; }
+    public int UsedFromMaster { get; set; }
     public List<OrderDetailDto> Details { get; set; } = new();
     public decimal UnitPrice { get; set; }
     public decimal TotalValue { get; set; }

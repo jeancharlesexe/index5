@@ -235,4 +235,35 @@ public class AdminController : ControllerBase
 
         return Ok(ApiResponse<object>.Success(result, "Total Assets Under Management retrieved successfully."));
     }
+
+    [HttpGet("purchase-history")]
+    public async Task<IActionResult> GetPurchaseHistory()
+    {
+        var orders = await _custodyRepo.GetAllPurchaseOrdersAsync();
+        
+        // Agrupa por ExecutionId (cada execução do motor tem um ID único)
+        // Fallback: ordens antigas sem ExecutionId agrupam por ReferenceDate
+        var history = orders
+            .GroupBy(o => !string.IsNullOrEmpty(o.ExecutionId) ? o.ExecutionId : o.ReferenceDate)
+            .OrderByDescending(g => g.Max(o => o.CreatedAt))
+            .Select(g => new
+            {
+                ReferenceDate = g.First().ReferenceDate,
+                ExecutionDate = g.Max(o => o.CreatedAt),
+                TotalB3 = g.Sum(o => o.Quantity),
+                TotalMasterUsed = g.Sum(o => o.UsedFromMaster),
+                TotalValue = g.Sum(o => o.TotalValue),
+                Orders = g.Select(o => new
+                {
+                    Ticker = o.Ticker,
+                    Quantity = o.Quantity,
+                    UnitPrice = o.UnitPrice,
+                    TotalValue = o.TotalValue,
+                    UsedFromMaster = o.UsedFromMaster
+                }).ToList()
+            })
+            .ToList();
+
+        return Ok(ApiResponse<object>.Success(new { history }, "Purchase history retrieved successfully."));
+    }
 }

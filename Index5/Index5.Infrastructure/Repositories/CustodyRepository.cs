@@ -82,6 +82,13 @@ public class CustodyRepository : ICustodyRepository
             .ToListAsync();
     }
 
+    public async Task<List<PurchaseOrder>> GetAllPurchaseOrdersAsync()
+    {
+        return await _context.PurchaseOrders
+            .OrderByDescending(o => o.CreatedAt)
+            .ToListAsync();
+    }
+
     public async Task<bool> HasScheduledPurchaseTodayAsync(DateTime date)
     {
         return await _context.OperationHistory

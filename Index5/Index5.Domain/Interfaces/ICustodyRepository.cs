@@ -21,5 +21,6 @@ public interface ICustodyRepository
     Task AddPurchaseOrderAsync(PurchaseOrder order);
     Task AddHistoryAsync(OperationHistory history);
     Task<List<OperationHistory>> GetHistoryByClientIdAsync(int clientId);
+    Task<List<PurchaseOrder>> GetAllPurchaseOrdersAsync();
     Task<bool> HasScheduledPurchaseTodayAsync(DateTime date);
 }

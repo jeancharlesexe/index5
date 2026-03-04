@@ -8,6 +8,8 @@ public class PurchaseOrder
     public decimal UnitPrice { get; set; }
     public decimal TotalValue { get; set; }
     public string ReferenceDate { get; set; } = string.Empty;
+    public string ExecutionId { get; set; } = string.Empty;
+    public int UsedFromMaster { get; set; }
     public DateTime CreatedAt { get; set; }
 
     public ICollection<Distribution>? Distributions { get; set; }

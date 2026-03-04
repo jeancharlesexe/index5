@@ -70,22 +70,34 @@ public class PurchaseEngineService
 
         var purchaseOrders = new List<PurchaseOrderDto>();
         var quantitiesPerTicker = new Dictionary<string, int>();
+        var usedFromMasterMap = new Dictionary<string, int>();
+        var executionId = Guid.NewGuid().ToString("N"); // Identificador único desta execução
 
+        // 1. Planejamento de Compra e Abatimento de Master
         foreach (var item in basket.Items)
         {
             var valueForAsset = totalConsolidated * (item.Percentage / 100m);
             var quote = getQuote(item.Ticker);
             if (quote <= 0) continue;
 
+            // Quantidade necessária total (o que os clientes 'comprariam' com o dinheiro novo)
             var calculatedQuantity = (int)Math.Truncate(valueForAsset / quote);
 
+            // RN-029: Verificar saldo na custodia master
             var masterCustody = await _custodyRepo.GetMasterByTickerAsync(item.Ticker);
             var masterBalance = masterCustody?.Quantity ?? 0;
 
+            // RN-030: Se houver saldo master, descontar da quantidade a comprar
             var quantityToBuy = Math.Max(0, calculatedQuantity - masterBalance);
-            var availableQuantity = calculatedQuantity;
+            
+            // RN-037: Quantidade total disponível = compradas + saldo master anterior
+            // Aqui garantimos que o que será distribuído é exatamente o que calculamos como necessidade,
+            // ou o que temos em master se master for maior que a necessidade.
+            var usedFromMaster = Math.Min(masterBalance, calculatedQuantity);
+            var availableQuantity = quantityToBuy + usedFromMaster;
 
             quantitiesPerTicker[item.Ticker] = availableQuantity;
+            usedFromMasterMap[item.Ticker] = usedFromMaster;
 
             if (quantityToBuy > 0)
             {
@@ -95,13 +107,15 @@ public class PurchaseEngineService
                 {
                     Ticker = item.Ticker,
                     TotalQuantity = quantityToBuy,
+                    UsedFromMaster = usedFromMaster,
                     Details = details,
                     UnitPrice = quote,
                     TotalValue = quantityToBuy * quote
                 });
 
-                foreach (var det in details)
+                for (int i = 0; i < details.Count; i++)
                 {
+                    var det = details[i];
                     await _custodyRepo.AddPurchaseOrderAsync(new PurchaseOrder
                     {
                         Ticker = det.Ticker,
@@ -109,54 +123,91 @@ public class PurchaseEngineService
                         UnitPrice = quote,
                         TotalValue = det.Quantity * quote,
                         ReferenceDate = referenceDate,
+                        ExecutionId = executionId,
+                        UsedFromMaster = (i == 0) ? usedFromMaster : 0,
                         CreatedAt = DateTime.UtcNow
                     });
                 }
             }
-
-            if (masterBalance > 0 && masterCustody != null)
+            else if (usedFromMaster > 0)
             {
-                var usedFromMaster = Math.Min(masterBalance, calculatedQuantity);
+                // Registro informativo de uso exclusivo da Master
+                await _custodyRepo.AddPurchaseOrderAsync(new PurchaseOrder
+                {
+                    Ticker = item.Ticker,
+                    Quantity = 0,
+                    UnitPrice = quote,
+                    TotalValue = 0,
+                    ReferenceDate = referenceDate,
+                    ExecutionId = executionId,
+                    UsedFromMaster = usedFromMaster,
+                    CreatedAt = DateTime.UtcNow
+                });
+
+                purchaseOrders.Add(new PurchaseOrderDto
+                {
+                    Ticker = item.Ticker,
+                    TotalQuantity = 0,
+                    UsedFromMaster = usedFromMaster,
+                    UnitPrice = quote,
+                    TotalValue = 0
+                });
+            }
+
+            // Atualiza Master (Consome o que foi usado do estoque antigo)
+            if (usedFromMaster > 0 && masterCustody != null)
+            {
                 masterCustody.Quantity -= usedFromMaster;
                 _custodyRepo.UpdateMaster(masterCustody);
             }
         }
 
         var distributions = new List<ClientDistributionDto>();
-        var residuesMap = new Dictionary<string, int>();
+        var finalResidues = new Dictionary<string, int>();
         int irEvents = 0;
 
         foreach (var ticker in quantitiesPerTicker.Keys)
         {
-            residuesMap[ticker] = quantitiesPerTicker[ticker];
-        }
+            var totalAvailable = quantitiesPerTicker[ticker];
+            if (totalAvailable <= 0) continue;
 
-        foreach (var vc in clientContributions)
-        {
-            var client = vc.Client;
-            var proportion = vc.Contribution / totalConsolidated;
-            var distributedAssets = new List<DistributedAssetDto>();
+            var quote = getQuote(ticker);
+            var residueForTicker = totalAvailable;
 
-            foreach (var item in basket.Items)
+            foreach (var vc in clientContributions)
             {
-                if (!quantitiesPerTicker.ContainsKey(item.Ticker)) continue;
-
-                var totalAvailable = quantitiesPerTicker[item.Ticker];
+                var client = vc.Client;
+                var proportion = (decimal)vc.Contribution / totalConsolidated;
+                
+                // RN-036: Quantidade por cliente = TRUNCAR(Proporcao x Quantidade Total Disponivel)
                 var clientQty = (int)Math.Truncate(totalAvailable * proportion);
 
                 if (clientQty <= 0) continue;
 
-                residuesMap[item.Ticker] -= clientQty;
+                residueForTicker -= clientQty;
 
-                distributedAssets.Add(new DistributedAssetDto
+                // Localiza ou cria o DTO de distribuição do cliente
+                var distDto = distributions.FirstOrDefault(d => d.ClientId == client.Id);
+                if (distDto == null)
                 {
-                    Ticker = item.Ticker,
+                    distDto = new ClientDistributionDto
+                    {
+                        ClientId = client.Id,
+                        Name = client.Name,
+                        ContributionValue = Math.Round(client.MonthlyValue / 3, 2),
+                        Assets = new List<DistributedAssetDto>()
+                    };
+                    distributions.Add(distDto);
+                }
+
+                distDto.Assets.Add(new DistributedAssetDto
+                {
+                    Ticker = ticker,
                     Quantity = clientQty
                 });
 
                 var graphicAccountId = client.GraphicAccount?.Id ?? 0;
-                var custody = await _custodyRepo.GetByAccountAndTickerAsync(graphicAccountId, item.Ticker);
-                var quote = getQuote(item.Ticker);
+                var custody = await _custodyRepo.GetByAccountAndTickerAsync(graphicAccountId, ticker);
 
                 if (custody != null)
                 {
@@ -171,7 +222,7 @@ public class PurchaseEngineService
                     await _custodyRepo.AddAsync(new ChildCustody
                     {
                         GraphicAccountId = graphicAccountId,
-                        Ticker = item.Ticker,
+                        Ticker = ticker,
                         Quantity = clientQty,
                         AveragePrice = quote
                     });
@@ -180,7 +231,7 @@ public class PurchaseEngineService
                 await _custodyRepo.AddHistoryAsync(new OperationHistory
                 {
                     ClientId = client.Id,
-                    Ticker = item.Ticker,
+                    Ticker = ticker,
                     OperationType = "BUY",
                     Quantity = clientQty,
                     UnitPrice = quote,
@@ -189,16 +240,16 @@ public class PurchaseEngineService
                     Reason = "COMPRA_PROGRAMADA"
                 });
 
+                // IR Dedo-duro
                 var operationValue = clientQty * quote;
                 var irValue = Math.Round(operationValue * 0.00005m, 2);
-
                 try
                 {
                     await _kafkaProducer.PublishAsync("ir-dedo-duro", client.Cpf, new
                     {
                         clientId = client.Id,
                         cpf = client.Cpf,
-                        ticker = item.Ticker,
+                        ticker = ticker,
                         operationValue = operationValue,
                         irValue = irValue,
                         date = DateTime.UtcNow
@@ -208,20 +259,17 @@ public class PurchaseEngineService
                 catch { }
             }
 
-            distributions.Add(new ClientDistributionDto
+            // RN-039: Ações não distribuídas permanecem na custodia master
+            if (residueForTicker > 0)
             {
-                ClientId = client.Id,
-                Name = client.Name,
-                ContributionValue = vc.Contribution,
-                Assets = distributedAssets
-            });
+                finalResidues[ticker] = residueForTicker;
+            }
         }
 
+        // 3. Persistência de Resíduos e Retorno
         var residuesResponse = new List<MasterResidueDto>();
-        foreach (var (ticker, residue) in residuesMap)
+        foreach (var (ticker, residue) in finalResidues)
         {
-            if (residue <= 0) continue;
-
             var masterCustody = await _custodyRepo.GetMasterByTickerAsync(ticker);
             var quote = getQuote(ticker);
 
@@ -233,7 +281,6 @@ public class PurchaseEngineService
                     ? (prevQty * prevAvgPrice + residue * quote) / (prevQty + residue)
                     : quote;
                 masterCustody.Quantity += residue;
-                masterCustody.Origin = $"Distribution residue {referenceDate}";
                 _custodyRepo.UpdateMaster(masterCustody);
             }
             else
@@ -247,11 +294,7 @@ public class PurchaseEngineService
                 });
             }
 
-            residuesResponse.Add(new MasterResidueDto
-            {
-                Ticker = ticker,
-                Quantity = residue
-            });
+            residuesResponse.Add(new MasterResidueDto { Ticker = ticker, Quantity = residue });
         }
 
         await _unitOfWork.SaveChangesAsync();
@@ -265,7 +308,7 @@ public class PurchaseEngineService
             Distributions = distributions,
             MasterCustodyResidues = residuesResponse,
             IREventsPublished = irEvents,
-            Message = $"Scheduled purchase executed successfully for {clients.Count} clients."
+            Message = $"Scheduled purchase executed successfully for {clients.Count} clients. Master deducted and residues minimized."
         };
     }
 

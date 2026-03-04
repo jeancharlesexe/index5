@@ -85,6 +85,7 @@ public class AppDbContext : DbContext, IUnitOfWork
         {
             entity.HasKey(e => e.Id);
             entity.Property(e => e.Ticker).HasMaxLength(10).IsRequired();
+            entity.Property(e => e.ExecutionId).HasMaxLength(50);
             entity.Property(e => e.UnitPrice).HasColumnType("decimal(18,4)");
             entity.Property(e => e.TotalValue).HasColumnType("decimal(18,2)");
 
